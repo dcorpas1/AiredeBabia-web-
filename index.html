@@ -1,0 +1,1618 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aire de Babia — Tres casas rurales de piedra en Piedrafita de Babia, León. Naturaleza, silencio y autenticidad en el corazón de la Comarca de Babia.">
+  <meta name="keywords" content="casas rurales Babia, alojamiento rural León, Piedrafita de Babia, turismo rural Cabrillanes, Aire de Babia, casas rurales León">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Aire de Babia">
+
+  <!-- Open Graph / WhatsApp / redes sociales -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.airedebabia.es/">
+  <meta property="og:site_name"   content="Aire de Babia">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Aire de Babia · Casas Rurales en León">
+  <meta property="og:description" content="Tres casas rurales de piedra en Piedrafita de Babia, León. Naturaleza, silencio y autenticidad en el corazón de la Comarca de Babia.">
+  <meta property="og:image"       content="https://www.airedebabia.es/img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Aire de Babia · Casas Rurales en León">
+  <meta name="twitter:description" content="Tres casas rurales de piedra en Piedrafita de Babia, León. Naturaleza, silencio y autenticidad en el corazón de la Comarca de Babia.">
+  <meta name="twitter:image"       content="https://www.airedebabia.es/img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg">
+
+  <title>Aire de Babia · Casas Rurales en León</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --green-light: #4A7C3F;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --stone:       #8A7A6A;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+      --shadow:      0 6px 30px rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.75;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    .label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block;
+    }
+    .title { font-size: clamp(1.9rem, 4vw, 2.9rem); color: var(--green); margin-bottom: 22px; }
+    .body-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 34px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase;
+      cursor: pointer; transition: var(--T); border: 2px solid transparent;
+    }
+    .btn-dark  { background: var(--green); color: var(--white); }
+    .btn-dark:hover { background: var(--green-mid); }
+    .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.7); color: var(--white); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+    .btn-gold  { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-wa    { background: #25D366; color: var(--white); }
+    .btn-wa:hover { background: #1fbe5a; }
+
+    /* ── NAVIGATION ───────────────────────────────────────────── */
+    #nav {
+      position: fixed; inset: 0 0 auto; z-index: 900;
+      padding: 22px 0;
+      transition: background var(--T), padding var(--T), box-shadow var(--T);
+    }
+    #nav.solid { background: var(--white); padding: 14px 0; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); letter-spacing: 0.02em; }
+    #nav.solid .nav-logo { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .lang-btn {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      border: 1px solid rgba(255,255,255,0.45); border-radius: 20px;
+      padding: 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T);
+    }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--white); padding: 20px 28px 28px;
+      gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      position: relative; height: 100vh; min-height: 620px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg') center/cover no-repeat;
+      transform: scale(1.06); transition: transform 10s ease;
+    }
+    #hero.loaded .hero-bg { transform: scale(1); }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,20,8,0.38) 0%, rgba(10,20,8,0.55) 60%, rgba(10,20,8,0.72) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; color: var(--white); max-width: 820px; padding: 0 24px; }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 22px; display: block; }
+    .hero-title { font-size: clamp(3.2rem, 9vw, 6rem); font-weight: 700; margin-bottom: 18px; line-height: 1.0; }
+    .hero-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.1rem, 2.5vw, 1.45rem); opacity: 0.88; margin-bottom: 42px; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-arrow {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.55); font-size: 1.1rem;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ── STRIP ────────────────────────────────────────────────── */
+    .strip { background: var(--green); padding: 22px 0; }
+    .strip-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; }
+    .strip-item { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,0.9); font-size: 0.88rem; }
+    .strip-item i { color: var(--gold-light); font-size: 1rem; }
+    .strip-item strong { font-weight: 700; }
+
+    /* ── ABOUT ────────────────────────────────────────────────── */
+    #nosotros { padding: 110px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .about-body-text { margin-bottom: 18px; }
+    .about-quote {
+      border-left: 3px solid var(--gold); padding: 4px 0 4px 22px; margin: 28px 0;
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.15rem; color: var(--stone); line-height: 1.6;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius); }
+    .about-img-accent {
+      position: absolute; bottom: -28px; right: -28px;
+      width: 180px; height: 180px; background: var(--gold);
+      opacity: 0.25; border-radius: var(--radius); z-index: -1;
+    }
+
+    /* ── HOUSE TABS ───────────────────────────────────────────── */
+    #alojamiento { padding: 90px 0; background: #EDE8E1; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header .body-text { max-width: 560px; margin: 0 auto; }
+
+    .house-tabs {
+      display: flex; border-bottom: 2px solid var(--border);
+      margin-bottom: 52px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .house-tabs::-webkit-scrollbar { display: none; }
+    .house-tab {
+      flex-shrink: 0; padding: 14px 32px;
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; border: none; border-bottom: 3px solid transparent;
+      margin-bottom: -2px; color: var(--text-muted); background: transparent; transition: var(--T);
+    }
+    .house-tab.active { color: var(--green); border-bottom-color: var(--gold); }
+    .house-tab:hover  { color: var(--green); }
+
+    .house-panel { display: none; }
+    .house-panel.active { display: block; }
+
+    .house-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+    .house-badge {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--cream); border: 1px solid var(--border);
+      color: var(--stone); padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .house-title { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--green); margin-bottom: 14px; }
+    .house-desc  { color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 28px; }
+
+    .house-specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+    .spec-card {
+      background: var(--white); padding: 18px 10px;
+      border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;
+    }
+    .spec-card i { font-size: 1.3rem; color: var(--green); margin-bottom: 8px; display: block; }
+    .spec-num { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .spec-card small { font-size: 0.76rem; color: var(--text-muted); line-height: 1.3; display: block; }
+
+    .price-table { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    .price-season { padding: 10px 20px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--green); color: rgba(255,255,255,0.88); }
+    .price-season.baja { background: var(--stone); }
+    .price-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px; border-bottom: 1px solid var(--border);
+      background: var(--white); font-size: 0.9rem;
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row strong { color: var(--text); font-weight: 400; }
+    .price-row span { color: var(--gold); font-weight: 700; font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+
+    .house-img-wrap { position: relative; margin-top: 232px; }
+    .house-img-wrap img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius); }
+    .house-img-accent { position: absolute; bottom: -22px; right: -22px; width: 140px; height: 140px; background: var(--gold); opacity: 0.2; border-radius: var(--radius); z-index: -1; }
+
+    /* ── AMENITIES ────────────────────────────────────────────── */
+    #servicios { padding: 110px 0; }
+    .amenities-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 36px 24px; }
+    .amenity { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 13px; }
+    .amenity-ico {
+      width: 64px; height: 64px; background: #EDE8E1; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem; color: var(--green); transition: var(--T);
+    }
+    .amenity:hover .amenity-ico { background: var(--green); color: var(--white); }
+    .amenity span { font-size: 0.84rem; font-weight: 700; color: var(--text); }
+    .amenity small { font-size: 0.74rem; color: var(--text-muted); margin-top: -8px; }
+
+    /* ── GALLERY + ALBUMS ─────────────────────────────────────── */
+    #galeria { padding: 100px 0; background: var(--text); }
+    #galeria .label { color: var(--gold-light); }
+    #galeria .title { color: var(--white); }
+    #galeria .section-header { margin-bottom: 36px; }
+
+    .album-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
+    .album-tab {
+      padding: 9px 22px; border: 1px solid rgba(255,255,255,0.28); border-radius: 20px;
+      color: rgba(255,255,255,0.72); font-size: 0.77rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; background: transparent; transition: var(--T);
+    }
+    .album-tab.active { background: var(--gold); border-color: var(--gold); color: var(--white); }
+    .album-tab:hover  { border-color: var(--gold-light); color: var(--gold-light); }
+
+    .album-panel { display: none; }
+    .album-panel.active { display: block; }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 240px; gap: 6px;
+    }
+    .gallery-grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+    .gallery-grid.cols2 { grid-template-columns: repeat(2, 1fr); }
+
+    .g-item { overflow: hidden; position: relative; cursor: pointer; background: #2a2a2a; }
+    .g-item.span2c { grid-column: span 2; }
+    .g-item.span2r { grid-row: span 2; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
+    .g-item:hover img { transform: scale(1.07); }
+    .g-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.38);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity var(--T); color: var(--white); font-size: 1.8rem;
+    }
+    .g-item:hover .g-overlay { opacity: 1; }
+
+    .album-soon {
+      text-align: center; padding: 80px 20px; color: rgba(255,255,255,0.4);
+      font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.94);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #lightbox.on { opacity: 1; pointer-events: all; }
+    #lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: var(--radius); }
+    .lb-close { position: absolute; top: 22px; right: 28px; color: var(--white); font-size: 1.8rem; cursor: pointer; opacity: 0.65; transition: opacity var(--T); }
+    .lb-close:hover { opacity: 1; }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); color: var(--white); font-size: 1.8rem; cursor: pointer; opacity: 0.6; padding: 18px 20px; transition: opacity var(--T); }
+    .lb-nav:hover { opacity: 1; }
+    .lb-prev { left: 12px; }
+    .lb-next { right: 12px; }
+
+    /* ── ENTORNO ──────────────────────────────────────────────── */
+    #entorno { padding: 110px 0; }
+    .entorno-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; }
+    .e-card { border-top: 2px solid var(--gold); padding-top: 26px; }
+    .e-card i { font-size: 1.7rem; color: var(--green-mid); margin-bottom: 16px; display: block; }
+    .e-card h3 { font-size: 1.1rem; color: var(--green); margin-bottom: 10px; }
+    .e-card p  { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+    /* ── CONTACT ──────────────────────────────────────────────── */
+    #reservas { padding: 110px 0; background: #EDE8E1; }
+    .reservas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .reservas-grid .body-text { margin-bottom: 32px; }
+    .contact-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+    .c-item { display: flex; align-items: center; gap: 18px; background: var(--white); padding: 16px 20px; border-radius: var(--radius); }
+    .c-item i { font-size: 1.2rem; color: var(--green); width: 22px; text-align: center; }
+    .c-item-text { display: flex; flex-direction: column; }
+    .c-item-text small { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+    .c-item-text a { font-weight: 700; font-size: 0.95rem; transition: color var(--T); }
+    .c-item-text a:hover { color: var(--green); }
+    .policy { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .policy li { font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+    .policy li i { color: var(--green-light); font-size: 0.75rem; }
+    .reservas-img img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius); }
+
+    /* ── TESTIMONIOS ──────────────────────────────────────────── */
+    #testimonios { padding: 90px 0; background: var(--cream); }
+    #testimonios .section-header { margin-bottom: 56px; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .testi-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 36px 30px; box-shadow: var(--shadow);
+      border-top: 3px solid var(--gold);
+      display: flex; flex-direction: column;
+    }
+    .testi-stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; margin-bottom: 16px; }
+    .testi-quote {
+      color: var(--text-muted); font-size: 0.96rem; line-height: 1.82;
+      flex: 1; margin-bottom: 24px; font-style: italic;
+    }
+    .testi-quote::before {
+      content: '\201C'; font-size: 1.6rem; color: var(--gold);
+      font-style: normal; line-height: 0; vertical-align: -0.45rem; margin-right: 3px;
+    }
+    .testi-name { font-weight: 700; color: var(--green); font-size: 0.9rem; }
+    .testi-sub  { color: var(--stone); font-size: 0.8rem; margin-top: 3px; }
+
+    /* ── CONTACT FORM ─────────────────────────────────────────── */
+    .reservas-form h3 { font-size: 1.35rem; color: var(--green); margin-bottom: 26px; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--stone); }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 12px 16px; font-family: 'Lato', sans-serif;
+      font-size: 0.95rem; color: var(--text); background: var(--white);
+      transition: border-color var(--T), box-shadow var(--T); width: 100%;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184,136,42,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .btn-form {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--green); color: var(--white); border: none;
+      padding: 14px 30px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.82rem;
+      font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      cursor: pointer; transition: background var(--T); align-self: flex-start;
+    }
+    .btn-form:hover { background: var(--green-mid); }
+    .form-note { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ── FAQ ──────────────────────────────────────────────────── */
+    #faq { padding: 110px 0; }
+    .faq-wrap { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; font-size: 0.98rem; background: var(--white); transition: color var(--T); gap: 16px; }
+    .faq-q:hover { color: var(--green); }
+    .faq-item.open .faq-q { color: var(--green); }
+    .faq-q i { color: var(--gold); flex-shrink: 0; transition: transform var(--T); }
+    .faq-item.open .faq-q i { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-a-inner { padding: 18px 26px 24px; color: var(--text-muted); font-size: 0.94rem; line-height: 1.8; background: var(--cream); }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer { background: var(--green); color: rgba(255,255,255,0.68); padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--white); display: block; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.75; max-width: 300px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 22px; }
+    .footer-social a { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.22); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.88rem; transition: var(--T); }
+    .footer-social a:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .footer-col h4 { font-family: 'Lato', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); margin-bottom: 22px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col ul a { font-size: 0.9rem; transition: color var(--T); }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom a { transition: color var(--T); }
+    .footer-bottom a:hover { color: var(--white); }
+    .footer-credit { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── SCROLL REVEAL ────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .amenities-grid { grid-template-columns: repeat(4, 1fr); }
+      .house-specs { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .house-detail { grid-template-columns: 1fr; gap: 40px; }
+      .house-img-wrap { margin-top: 0 !important; }
+      .house-img-wrap img { height: 320px; }
+      .house-img-accent { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid, .reservas-grid { grid-template-columns: 1fr; gap: 48px; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-img-accent { display: none; }
+      .about-img-wrap img, .reservas-img img { height: 320px; }
+      .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+      .g-item.span2c { grid-column: span 2; }
+      .g-item.span2r { grid-row: span 1; }
+      .entorno-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid  { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .strip-inner { gap: 22px; }
+    }
+    @media (max-width: 540px) {
+      .hero-btns { flex-direction: column; align-items: center; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .house-specs { grid-template-columns: repeat(2, 1fr); }
+      .entorno-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .g-item.span2c, .g-item.span2r { grid-column: span 1; grid-row: span 1; }
+      .album-tab { padding: 8px 16px; font-size: 0.72rem; }
+      .house-tab { padding: 12px 18px; font-size: 0.78rem; }
+    }
+
+    /* ── WHATSAPP POPUP ───────────────────────────────────── */
+    .wa-wrap { position: fixed; bottom: 28px; right: 28px; z-index: 800; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+    .map-float {
+      width: 52px; height: 52px; background: var(--green); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--white); border: none; cursor: pointer;
+      box-shadow: 0 5px 20px rgba(36,61,26,0.38);
+      transition: transform var(--T), box-shadow var(--T);
+    }
+    .map-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(36,61,26,0.52); }
+    .wa-popup {
+      background: var(--white); border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 18px 20px;
+      min-width: 250px; display: flex; flex-direction: column; gap: 8px;
+      opacity: 0; transform: translateY(10px) scale(0.96);
+      pointer-events: none; transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .wa-popup.on { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .wa-popup-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .wa-popup-btn {
+      display: flex; align-items: center; gap: 11px;
+      background: #25D366; color: var(--white);
+      border-radius: 7px; padding: 10px 14px;
+      font-weight: 700; font-size: 0.92rem; transition: background 0.2s;
+    }
+    .wa-popup-btn:hover { background: #1fbe5a; }
+    .wa-popup-btn i { font-size: 1.15rem; }
+    .wa-float {
+      width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.65rem; color: var(--white); border: none; cursor: pointer;
+      box-shadow: 0 5px 20px rgba(37,211,102,0.42);
+      transition: transform var(--T), box-shadow var(--T);
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
+
+    /* ── MAP MODAL ────────────────────────────────────────── */
+    .map-modal {
+      position: fixed; inset: 0; z-index: 9998;
+      background: rgba(0,0,0,0.68);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .map-modal.on { opacity: 1; pointer-events: all; }
+    .map-modal-inner {
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      width: min(760px, 94vw); box-shadow: 0 24px 64px rgba(0,0,0,0.38);
+      animation: mapIn 0.28s ease;
+    }
+    @keyframes mapIn { from { transform: scale(0.95) translateY(12px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+    .map-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--border); }
+    .map-modal-header h3 { font-family: 'Playfair Display', serif; color: var(--green); font-size: 1.1rem; }
+    .map-modal-close { color: var(--text-muted); cursor: pointer; font-size: 1.25rem; transition: color var(--T); line-height: 1; }
+    .map-modal-close:hover { color: var(--text); }
+    .map-modal iframe { width: 100%; height: 380px; border: none; display: block; }
+    .map-modal-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 22px; background: var(--cream); font-size: 0.84rem; color: var(--text-muted); }
+    .map-modal-footer a { color: var(--green); font-weight: 700; transition: color var(--T); }
+    .map-modal-footer a:hover { color: var(--green-mid); }
+    @media (max-width: 540px) { .map-modal iframe { height: 260px; } .wa-popup { min-width: 210px; } }
+
+    /* ── NAV DROPDOWN ────────────────────────────────────────── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-caret { font-size: 0.55rem; transition: transform var(--T); }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    /* Puente invisible que cubre el hueco entre el enlace y el menú */
+    .nav-dropdown::after {
+      content: ''; position: absolute; top: 100%; left: -20px; right: -20px; height: 14px;
+    }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(-4px);
+      background: var(--white); border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      padding: 6px 0; min-width: 200px; list-style: none;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      z-index: 901;
+    }
+    .nav-dropdown-menu::before {
+      content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%);
+      border-left: 6px solid transparent; border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--white);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu li a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 20px; color: var(--text) !important;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; white-space: nowrap;
+      transition: background var(--T), color var(--T) !important;
+    }
+    .nav-dropdown-menu li a:hover { background: var(--cream); color: var(--green) !important; }
+    .nav-dropdown-menu li a i { color: var(--gold); font-size: 0.68rem; }
+    @media (max-width: 768px) {
+      .nav-dropdown-menu {
+        display: none; position: static; transform: none !important;
+        box-shadow: none; opacity: 1; pointer-events: all;
+        background: var(--cream); border-left: 2px solid var(--gold);
+        border-radius: 4px; margin: 6px 0 4px 16px; padding: 4px 0;
+        min-width: unset;
+      }
+      .nav-dropdown-menu::before { display: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: block; }
+      .nav-dropdown.open .nav-caret { transform: rotate(180deg); }
+    }
+
+    /* ── COOKIE BANNER ─────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1A2E12;
+      border-top: 2px solid var(--gold);
+      padding: 18px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      box-shadow: 0 -4px 32px rgba(0,0,0,0.28);
+      transform: translateY(100%);
+      transition: transform 0.45s ease;
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-text { color: rgba(255,255,255,0.82); font-size: 0.87rem; line-height: 1.65; flex: 1; min-width: 220px; }
+    .cookie-text a { color: var(--gold-light); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn-all {
+      background: var(--gold); color: #fff; border: none;
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cookie-btn-all:hover { background: var(--gold-light); }
+    .cookie-btn-ess {
+      background: transparent; color: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cookie-btn-ess:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+  </style>
+</head>
+<body>
+<!-- Designed & built by Daniel Corpas · dcorpas.dev -->
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#nosotros"    data-es="La Casona"    data-en="The Estate">Historia</a></li>
+      <li class="nav-dropdown">
+        <a href="#alojamiento" data-es="Las Casas" data-en="The Houses">Las Casas <i class="fa-solid fa-chevron-down nav-caret"></i></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="#alojamiento" onclick="showHouse(0)" data-es="Aire de Babia I" data-en="Aire de Babia I"><i class="fa-solid fa-house"></i> Aire de Babia I</a></li>
+          <li><a href="#alojamiento" onclick="showHouse(1)" data-es="Aire de Babia II" data-en="Aire de Babia II"><i class="fa-solid fa-house"></i> Aire de Babia II</a></li>
+          <li><a href="#alojamiento" onclick="showHouse(2)" data-es="Aire de Babia III" data-en="Aire de Babia III"><i class="fa-solid fa-house"></i> Aire de Babia III</a></li>
+        </ul>
+      </li>
+      <li><a href="#servicios"   data-es="Servicios"    data-en="Amenities">Servicios</a></li>
+      <li><a href="#galeria"     data-es="Galería"      data-en="Gallery">Galería</a></li>
+      <li><a href="#entorno"     data-es="Entorno"      data-en="Surroundings">Entorno</a></li>
+      <li><a href="actividades.html" data-es="Actividades" data-en="Activities">Actividades</a></li>
+      <li><a href="#reservas" class="nav-cta" data-es="Reservar" data-en="Book Now">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn">EN</button>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow" data-es="Casas Rurales · Piedrafita de Babia, León" data-en="Rural Houses · Piedrafita de Babia, León">Casas Rurales · Piedrafita de Babia, León</span>
+    <h1 class="hero-title">Aire de Babia</h1>
+    <p class="hero-tagline" data-es="Respira diferente." data-en="Breathe differently.">Respira diferente.</p>
+    <div class="hero-btns">
+      <a href="#alojamiento" class="btn btn-ghost" data-es="Ver las casas" data-en="Explore the houses">Ver las casas</a>
+      <a href="#reservas"    class="btn btn-gold"  data-es="Consultar disponibilidad" data-en="Check availability">Consultar disponibilidad</a>
+    </div>
+  </div>
+  <div class="hero-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+</section>
+
+<!-- ════════════ STRIP ════════════ -->
+<div class="strip">
+  <div class="container strip-inner">
+    <div class="strip-item">
+      <i class="fa-solid fa-house"></i>
+      <span><strong data-es="3 Casas independientes" data-en="3 Independent houses">3 Casas independientes</strong></span>
+    </div>
+    <div class="strip-item">
+      <i class="fa-solid fa-users"></i>
+      <span><strong data-es="Hasta 8 personas / casa" data-en="Up to 8 guests / house">Hasta 8 personas / casa</strong></span>
+    </div>
+    <div class="strip-item">
+      <i class="fa-solid fa-location-dot"></i>
+      <span><strong data-es="Piedrafita de Babia, León" data-en="Piedrafita de Babia, León">Piedrafita de Babia, León</strong></span>
+    </div>
+    <div class="strip-item">
+      <i class="fa-solid fa-mountain-sun"></i>
+      <span><strong data-es="Reserva de la Biosfera" data-en="Biosphere Reserve">Reserva de la Biosfera</strong></span>
+    </div>
+    <div class="strip-item">
+      <i class="fa-solid fa-paw"></i>
+      <span><strong data-es="Mascotas bienvenidas" data-en="Pets welcome">Mascotas bienvenidas</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ ABOUT ════════════ -->
+<section id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="label" data-es="Nuestra historia" data-en="Our story">Nuestra historia</span>
+        <h2 class="title" data-es="Una casona de piedra con siglos de historia" data-en="A stone manor with centuries of history">Una casona de piedra con siglos de historia</h2>
+        <p class="body-text about-body-text" data-es="En el corazón de Piedrafita de Babia (Cabrillanes, León), a los pies de montañas que tocan las nubes, se alza Aire de Babia: una casona rural de piedra centenaria restaurada con mimo y respeto por su arquitectura original, donde el tiempo se ralentiza y el silencio sabe a libertad." data-en="In the heart of Piedrafita de Babia (Cabrillanes, León), at the foot of mountains that touch the clouds, stands Aire de Babia: a centuries-old stone manor lovingly restored while respecting its original architecture, where time slows down and silence tastes like freedom.">
+          En el corazón de Piedrafita de Babia (Cabrillanes, León), a los pies de montañas que tocan las nubes, se alza Aire de Babia: una casona rural de piedra centenaria restaurada con mimo y respeto por su arquitectura original, donde el tiempo se ralentiza y el silencio sabe a libertad.
+        </p>
+        <blockquote class="about-quote" data-es="«Estar en Babia» no es perderse — es encontrarse." data-en="«Being in Babia» is not being lost — it is being found.">«Estar en Babia» no es perderse — es encontrarse.</blockquote>
+        <p class="body-text about-body-text" data-es="El conjunto se compone de tres alojamientos independientes: Aire de Babia I, II y III — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España." data-en="The complex comprises three independent accommodations: Aire de Babia I, II and III — each with its own character, complete privacy and its own facilities. The wide stone courtyard, spring water fountain and panoramic views of the Sierra de Gistredo make this place unique in northwest Spain.">
+          El conjunto se compone de tres alojamientos independientes: Aire de Babia I, II y III — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España.
+        </p>
+      </div>
+      <div class="about-img-wrap reveal">
+        <img src="img/casas/Gemini_Generated_Image_nl1ak5nl1ak5nl1a.jpg" alt="Casona de piedra centenaria de Aire de Babia" style="object-position: center 35%;">
+        <div class="about-img-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ HOUSES ════════════ -->
+<section id="alojamiento">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Elige tu alojamiento" data-en="Choose your accommodation">Elige tu alojamiento</span>
+      <h2 class="title" data-es="Tres casas, un mismo espíritu" data-en="Three houses, one spirit">Tres casas, un mismo espíritu</h2>
+      <p class="body-text" data-es="Cada alojamiento es independiente y privado, con sus propias estancias y servicios. Elige el que mejor se adapte a tu grupo." data-en="Each accommodation is independent and private, with its own rooms and amenities. Choose the one that best suits your group.">Cada alojamiento es independiente y privado, con sus propias estancias y servicios. Elige el que mejor se adapte a tu grupo.</p>
+    </div>
+
+    <div class="house-tabs">
+      <button class="house-tab active" onclick="showHouse(0)">Aire de Babia I</button>
+      <button class="house-tab" onclick="showHouse(1)">Aire de Babia II</button>
+      <button class="house-tab" onclick="showHouse(2)">Aire de Babia III</button>
+    </div>
+
+    <!-- ── CASA I ── -->
+    <div class="house-panel active" id="house-0">
+      <div class="house-detail">
+        <div>
+          <span class="house-badge" data-es="Casa I · Hasta 8 personas" data-en="House I · Up to 8 guests">Casa I · Hasta 8 personas</span>
+          <h3 class="house-title">Aire de Babia I</h3>
+          <p class="house-desc" data-es="La casa más amplia del conjunto. Tres habitaciones dobles en la casona de piedra centenaria, con posibilidad de alojar hasta 8 personas con camas supletorias. Perfecta para familias o grupos de amigos que buscan espacio y privacidad total." data-en="The largest house in the complex. Three double rooms in the centuries-old stone manor, accommodating up to 8 guests with extra beds. Perfect for families or groups of friends seeking full space and privacy.">La casa más amplia del conjunto. Tres habitaciones dobles en la casona de piedra centenaria, con posibilidad de alojar hasta 8 personas con camas supletorias. Perfecta para familias o grupos de amigos que buscan espacio y privacidad total.</p>
+          <div class="house-specs">
+            <div class="spec-card">
+              <i class="fa-solid fa-bed"></i>
+              <span class="spec-num">3</span>
+              <small data-es="Hab. dobles" data-en="Double rooms">Hab. dobles</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-users"></i>
+              <span class="spec-num">8</span>
+              <small data-es="Personas máx." data-en="Guests max.">Personas máx.</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-bath"></i>
+              <span class="spec-num">2</span>
+              <small data-es="Baños con ducha" data-en="Shower rooms">Baños con ducha</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-plus"></i>
+              <span class="spec-num">2</span>
+              <small data-es="Camas supletorias" data-en="Extra beds">Camas supletorias</small>
+            </div>
+          </div>
+          <div class="price-table">
+            <div class="price-season" data-es="✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep" data-en="✦ High Season — Weekends, public holidays, Christmas, Easter, 1 Jul – 15 Sep">✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>400 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>220 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>1.200 €</span></div>
+            <div class="price-season baja" data-es="✦ Temporada Baja — Resto del año" data-en="✦ Low Season — Rest of year">✦ Temporada Baja — Resto del año</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>280 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>154 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>840 €</span></div>
+          </div>
+          <div style="margin-top:24px;">
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(0)" data-es="Ver galería — Aire de Babia I" data-en="View gallery — House I" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia I
+            </a>
+          </div>
+        </div>
+        <div class="house-img-wrap reveal">
+          <img src="img/casas/IMG_8059.jpg" alt="Aire de Babia I — patio exterior" style="object-position: center 25%;">
+          <div class="house-img-accent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CASA II ── -->
+    <div class="house-panel" id="house-1">
+      <div class="house-detail">
+        <div>
+          <span class="house-badge" data-es="Casa II · Hasta 8 personas" data-en="House II · Up to 8 guests">Casa II · Hasta 8 personas</span>
+          <h3 class="house-title">Aire de Babia II</h3>
+          <p class="house-desc" data-es="Elegancia y confort en una misma casa. Dos habitaciones dobles y una Suite exclusiva con cama doble y sofá cama doble. Dos baños completos — uno de ellos con ducha de hidromasaje y bañera. El mayor nivel de confort del conjunto." data-en="Elegance and comfort in one house. Two double rooms and an exclusive Suite with double bed and double sofa bed. Two full bathrooms — one with hydromassage shower and bathtub. The highest level of comfort in the complex.">Elegancia y confort en una misma casa. Dos habitaciones dobles y una Suite exclusiva con cama doble y sofá cama doble. Dos baños completos — uno de ellos con ducha de hidromasaje y bañera. El mayor nivel de confort del conjunto.</p>
+          <div class="house-specs">
+            <div class="spec-card">
+              <i class="fa-solid fa-bed"></i>
+              <span class="spec-num">3</span>
+              <small data-es="Hab. (2 dobles + Suite)" data-en="Rooms (2 dbl + Suite)">Hab. (2 dobles + Suite)</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-users"></i>
+              <span class="spec-num">8</span>
+              <small data-es="Personas máx." data-en="Guests max.">Personas máx.</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-bath"></i>
+              <span class="spec-num">2</span>
+              <small data-es="Baños completos" data-en="Full bathrooms">Baños completos</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-shower"></i>
+              <span class="spec-num"><i class="fa-solid fa-star" style="font-size:1.2rem;color:var(--gold)"></i></span>
+              <small data-es="Hidromasaje + bañera" data-en="Hydromassage + bath">Hidromasaje + bañera</small>
+            </div>
+          </div>
+          <div class="price-table">
+            <div class="price-season" data-es="✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep" data-en="✦ High Season — Weekends, public holidays, Christmas, Easter, 1 Jul – 15 Sep">✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>450 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>250 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>1.400 €</span></div>
+            <div class="price-season baja" data-es="✦ Temporada Baja — Resto del año" data-en="✦ Low Season — Rest of year">✦ Temporada Baja — Resto del año</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>315 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>175 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>980 €</span></div>
+          </div>
+          <div style="margin-top:24px;">
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(1)" data-es="Ver galería — Casa II" data-en="View gallery — House II" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia II
+            </a>
+          </div>
+        </div>
+        <div class="house-img-wrap reveal">
+          <img src="img/casas/IMG_7881.jpg" alt="Aire de Babia II — patio exterior" style="object-position: center 30%;">
+          <div class="house-img-accent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CASA III ── -->
+    <div class="house-panel" id="house-2">
+      <div class="house-detail">
+        <div>
+          <span class="house-badge" data-es="Casa III · Hasta 6 personas" data-en="House III · Up to 6 guests">Casa III · Hasta 6 personas</span>
+          <h3 class="house-title">Aire de Babia III</h3>
+          <p class="house-desc" data-es="Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible." data-en="Cosy apartment with integrated living-kitchen and open bedroom with two partial dividers for up to 6 guests. The perfect option for couples or small families seeking simplicity, privacy and all the charm of Babia at an accessible price.">Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible.</p>
+          <div class="house-specs">
+            <div class="spec-card">
+              <i class="fa-solid fa-door-open"></i>
+              <span class="spec-num">1</span>
+              <small data-es="Dormitorio (2 sep.)" data-en="Bedroom (2 div.)">Dormitorio (2 sep.)</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-users"></i>
+              <span class="spec-num">6</span>
+              <small data-es="Personas máx." data-en="Guests max.">Personas máx.</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-bath"></i>
+              <span class="spec-num">1</span>
+              <small data-es="Baño con ducha" data-en="Shower bathroom">Baño con ducha</small>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-couch"></i>
+              <span class="spec-num"><i class="fa-solid fa-star" style="font-size:1.2rem;color:var(--gold)"></i></span>
+              <small data-es="Salón-cocina" data-en="Living-kitchen">Salón-cocina</small>
+            </div>
+          </div>
+          <div class="price-table">
+            <div class="price-season" data-es="✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep" data-en="✦ High Season — Weekends, public holidays, Christmas, Easter, 1 Jul – 15 Sep">✦ Temporada Alta — Fines de semana, festivos, Navidad, Semana Santa, 1 jul – 15 sep</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>180 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>95 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>600 €</span></div>
+            <div class="price-season baja" data-es="✦ Temporada Baja — Resto del año" data-en="✦ Low Season — Rest of year">✦ Temporada Baja — Resto del año</div>
+            <div class="price-row"><strong data-es="2 noches (estancia mínima)" data-en="2 nights (minimum stay)">2 noches (estancia mínima)</strong><span>126 €</span></div>
+            <div class="price-row"><strong data-es="Noche adicional" data-en="Additional night">Noche adicional</strong><span>67 €</span></div>
+            <div class="price-row"><strong data-es="Semana completa" data-en="Full week">Semana completa</strong><span>420 €</span></div>
+          </div>
+          <div style="margin-top:24px;">
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(2)" data-es="Ver galería — Casa III" data-en="View gallery — House III" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia III
+            </a>
+          </div>
+        </div>
+        <div class="house-img-wrap reveal">
+          <img src="img/casas/s.jpg" alt="Aire de Babia III" style="object-position: center 45%;">
+          <div class="house-img-accent"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════ AMENITIES ════════════ -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Servicios incluidos" data-en="Included amenities">Servicios incluidos</span>
+      <h2 class="title" data-es="Todo lo que necesitas" data-en="Everything you need">Todo lo que necesitas</h2>
+      <p class="body-text" data-es="Servicios comunes y de cada alojamiento para que no te falte de nada." data-en="Shared and in-house amenities so you have everything you need.">Servicios comunes y de cada alojamiento para que no te falte de nada.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-wifi"></i></div>
+        <span data-es="WiFi gratis" data-en="Free WiFi">WiFi gratis</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-temperature-half"></i></div>
+        <span data-es="Calefacción" data-en="Heating">Calefacción</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-utensils"></i></div>
+        <span data-es="Cocina equipada" data-en="Equipped kitchen">Cocina equipada</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-tv"></i></div>
+        <span data-es="Smart TV" data-en="Smart TV">Smart TV</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-shirt"></i></div>
+        <span data-es="Lavadora" data-en="Washing machine">Lavadora</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-square-parking"></i></div>
+        <span data-es="Parking gratuito" data-en="Free parking">Parking gratuito</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-fire-burner"></i></div>
+        <span data-es="Barbacoa compartida" data-en="Shared BBQ">Barbacoa compartida</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-leaf"></i></div>
+        <span data-es="Jardín compartido" data-en="Shared garden">Jardín compartido</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-umbrella-beach"></i></div>
+        <span data-es="Terraza compartida" data-en="Shared terrace">Terraza compartida</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-shower"></i></div>
+        <span data-es="Hidromasaje y bañera" data-en="Hydromassage &amp; bath">Hidromasaje y bañera</span>
+        <small data-es="(Aire de Babia II)" data-en="(Aire de Babia II)">(Aire de Babia II)</small>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-paw"></i></div>
+        <span data-es="Mascotas admitidas" data-en="Pets welcome">Mascotas admitidas</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-baby"></i></div>
+        <span data-es="Cuna disponible" data-en="Crib available">Cuna disponible</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-faucet-drip"></i></div>
+        <span data-es="Fuente de manantial" data-en="Spring water fountain">Fuente de manantial</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-person-biking"></i></div>
+        <span data-es="Zona para bicicletas" data-en="Bike storage">Zona para bicicletas</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-snowflake"></i></div>
+        <span data-es="Zona para esquís" data-en="Ski storage">Zona para esquís</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-star"></i></div>
+        <span data-es="Info productos locales" data-en="Local produce info">Info productos locales</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-plate-wheat"></i></div>
+        <span data-es="Lavavajillas" data-en="Dishwasher">Lavavajillas</span>
+      </div>
+      <div class="amenity reveal">
+        <div class="amenity-ico"><i class="fa-solid fa-mountain-sun"></i></div>
+        <span data-es="Vistas a la montaña" data-en="Mountain views">Vistas a la montaña</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ GALLERY ════════════ -->
+<section id="galeria">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Imágenes" data-en="Photos">Imágenes</span>
+      <h2 class="title" data-es="Así es Aire de Babia" data-en="This is Aire de Babia">Así es Aire de Babia</h2>
+    </div>
+
+    <div class="album-tabs">
+      <button class="album-tab active" onclick="showAlbum(0)" data-es="Aire de Babia I" data-en="Aire de Babia I">Aire de Babia I</button>
+      <button class="album-tab" onclick="showAlbum(1)" data-es="Aire de Babia II" data-en="Aire de Babia II">Aire de Babia II</button>
+      <button class="album-tab" onclick="showAlbum(2)" data-es="Aire de Babia III" data-en="Aire de Babia III">Aire de Babia III</button>
+      <button class="album-tab" onclick="showAlbum(3)" data-es="Exterior" data-en="Exterior">Exterior</button>
+    </div>
+  </div>
+
+  <!-- Álbum I -->
+  <div class="album-panel active" id="album-0">
+    <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
+      <div class="g-item">
+        <img src="img/casas/dd.png" alt="Aire de Babia I — exterior nevado en invierno" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_7881.jpg" alt="Patio exterior de Aire de Babia I en primavera" style="object-position: center 30%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Aire de Babia I">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_20260430_184701.jpg" alt="Vidriera de Aire de Babia I">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_20260430_185005.jpg" alt="Vidriera de Aire de Babia I">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Álbum II -->
+  <div class="album-panel" id="album-1">
+    <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
+      <div class="g-item">
+        <img src="img/casas/IMG_7881.jpg" alt="Patio exterior de Aire de Babia II en primavera" style="object-position: center 30%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_7709.jpg" alt="Lago de montaña con picos nevados" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_8235.jpg" alt="Valle de Babia con flores silvestres y montañas nevadas" style="object-position: center 50%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Álbum III -->
+  <div class="album-panel" id="album-2">
+    <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
+      <div class="g-item">
+        <img src="img/casas/s.jpg" alt="Exterior de Aire de Babia III con fuente de piedra" style="object-position: center 45%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/dd.png" alt="Aire de Babia III — vista exterior en invierno" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Aire de Babia III">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Álbum Exterior -->
+  <div class="album-panel" id="album-3">
+    <div class="gallery-grid" style="max-width:1160px;margin:0 auto;padding:0 28px;">
+      <div class="g-item">
+        <img src="img/casas/dd.png" alt="Aire de Babia nevado en invierno — vista panorámica" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_7881.jpg" alt="Patio exterior de Aire de Babia en primavera" style="object-position: center 30%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/IMG_8059.jpg" alt="Patio de las casas rurales al atardecer">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/s.jpg" alt="Exterior de Aire de Babia con fuente de piedra" style="object-position: center 45%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_7206.jpg" alt="Panorámica de la Sierra de Babia en invierno" style="object-position: center 50%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_8251.jpg" alt="Senderismo junto a un arroyo en Babia" style="object-position: center 30%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/dffff.png" alt="Vacas tudancas en el camino de Piedrafita" style="object-position: center 60%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_7709.jpg" alt="Lago de montaña con picos nevados" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_7722.jpg" alt="Lago glaciar desde las cumbres de Babia" style="object-position: center 40%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_8235.jpg" alt="Valle de Babia con flores silvestres y montañas nevadas" style="object-position: center 50%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/naturaleza/IMG_8248.jpg" alt="Arroyo de montaña en pradera verde de Babia">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="g-item">
+        <img src="img/casas/Gemini_Generated_Image_nl1ak5nl1ak5nl1a.jpg" alt="Patio de primavera de Aire de Babia" style="object-position: center 35%;">
+        <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span class="lb-close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></span>
+    <span class="lb-nav lb-prev" onclick="navLb(-1)"><i class="fa-solid fa-chevron-left"></i></span>
+    <img id="lbImg" src="" alt="">
+    <span class="lb-nav lb-next" onclick="navLb(1)"><i class="fa-solid fa-chevron-right"></i></span>
+  </div>
+</section>
+
+<!-- ════════════ ENTORNO ════════════ -->
+<section id="entorno">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Alrededor de la casona" data-en="Around the manor">Alrededor de la casona</span>
+      <h2 class="title" data-es="Babia te espera" data-en="Babia awaits you">Babia te espera</h2>
+      <p class="body-text" data-es="La Comarca de Babia es uno de los rincones más salvajes y auténticos de la Península Ibérica. Tierra de reyes, lobos y cielos sin fin." data-en="The Babia region is one of the wildest and most authentic corners of the Iberian Peninsula. Land of kings, wolves and endless skies.">La Comarca de Babia es uno de los rincones más salvajes y auténticos de la Península Ibérica. Tierra de reyes, lobos y cielos sin fin.</p>
+    </div>
+    <div class="entorno-grid">
+      <div class="e-card reveal">
+        <i class="fa-solid fa-person-hiking"></i>
+        <h3 data-es="Senderismo" data-en="Hiking">Senderismo</h3>
+        <p data-es="Rutas para todos los niveles: paseos fluviales junto al Río Luna, ascensiones a cumbres de más de 2.000 m y senderos entre pueblos medievales." data-en="Trails for all levels: riverside walks along the Río Luna, ascents to peaks over 2,000 m and paths between medieval villages.">Rutas para todos los niveles: paseos fluviales junto al Río Luna, ascensiones a cumbres de más de 2.000 m y senderos entre pueblos medievales.</p>
+      </div>
+      <div class="e-card reveal">
+        <i class="fa-solid fa-otter"></i>
+        <h3 data-es="Fauna salvaje" data-en="Wildlife">Fauna salvaje</h3>
+        <p data-es="Avistamiento de oso pardo cantábrico, lobo ibérico, urogallo y cigüeña negra en su hábitat natural. Un espectáculo único en Europa." data-en="Spot Cantabrian brown bears, Iberian wolves, capercaillies and black storks in their natural habitat. A unique spectacle in Europe.">Avistamiento de oso pardo cantábrico, lobo ibérico, urogallo y cigüeña negra en su hábitat natural. Un espectáculo único en Europa.</p>
+      </div>
+      <div class="e-card reveal">
+        <i class="fa-solid fa-water"></i>
+        <h3 data-es="Lagos y ríos" data-en="Lakes and rivers">Lagos y ríos</h3>
+        <p data-es="A 30 minutos, los lagos glaciares del Parque Natural de Somiedo. Pesca en el Río Luna, kayak en los embalses y baño en aguas cristalinas." data-en="30 minutes away, the glacial lakes of Somiedo Natural Park. Fishing on the Río Luna, kayaking on reservoirs and swimming in crystal-clear waters.">A 30 minutos, los lagos glaciares del Parque Natural de Somiedo. Pesca en el Río Luna, kayak en los embalses y baño en aguas cristalinas.</p>
+      </div>
+      <div class="e-card reveal">
+        <i class="fa-solid fa-snowflake"></i>
+        <h3 data-es="Esquí en Leitariegos" data-en="Skiing at Leitariegos">Esquí en Leitariegos</h3>
+        <p data-es="La estación de Leitariegos, a solo 20 minutos, ofrece pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son sencillamente de cuento." data-en="Leitariegos ski resort, just 20 minutes away, offers alpine slopes, cross-country skiing and snowshoeing. Winters in Babia are simply fairy-tale material.">La estación de Leitariegos, a solo 20 minutos, ofrece pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son sencillamente de cuento.</p>
+      </div>
+      <div class="e-card reveal">
+        <i class="fa-solid fa-moon"></i>
+        <h3 data-es="Cielo estrellado" data-en="Starry skies">Cielo estrellado</h3>
+        <p data-es="Babia tiene una de las contaminaciones lumínicas más bajas de España. Aquí, la Vía Láctea se ve a simple vista. Noche tras noche." data-en="Babia has one of the lowest light pollution levels in Spain. Here, the Milky Way is visible to the naked eye. Night after night.">Babia tiene una de las contaminaciones lumínicas más bajas de España. Aquí, la Vía Láctea se ve a simple vista. Noche tras noche.</p>
+      </div>
+      <div class="e-card reveal">
+        <i class="fa-solid fa-church"></i>
+        <h3 data-es="Patrimonio" data-en="Heritage">Patrimonio</h3>
+        <p data-es="Iglesias románicas, pueblos medievales y el origen del dicho «estar en Babia»: los reyes de León eligieron este valle como su retiro de caza y descanso." data-en="Romanesque churches, medieval villages and the origin of the saying «estar en Babia»: the kings of León chose this valley as their royal hunting and resting retreat.">Iglesias románicas, pueblos medievales y el origen del dicho «estar en Babia»: los reyes de León eligieron este valle como su retiro de caza y descanso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ TESTIMONIOS ════════════ -->
+<section id="testimonios">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Lo que dicen nuestros huéspedes" data-en="What our guests say">Lo que dicen nuestros huéspedes</span>
+      <h2 class="title" data-es="Experiencias reales en Aire de Babia" data-en="Real experiences at Aire de Babia">Experiencias reales en Aire de Babia</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-es="Las casas superaron todas nuestras expectativas. La piedra, el silencio por las noches, ver las estrellas desde el patio... Un fin de semana que no olvidaremos. Volvemos sin duda el año que viene." data-en="The houses exceeded all our expectations. The stone walls, the silence at night, watching the stars from the courtyard... A weekend we won't forget. We'll definitely be back next year.">Las casas superaron todas nuestras expectativas. La piedra, el silencio por las noches, ver las estrellas desde el patio... Un fin de semana que no olvidaremos. Volvemos sin duda el año que viene.</p>
+        <div class="testi-name">María &amp; Carlos</div>
+        <div class="testi-sub" data-es="Madrid · Casa I" data-en="Madrid · House I">Madrid · Casa I</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-es="Llevábamos años buscando un sitio así. Babia es otro mundo. Tres días se nos hicieron cortísimos. Las casas están cuidadas con mucho mimo y el trato fue de diez." data-en="We'd been looking for a place like this for years. Babia is another world. Three days went by in a flash. The houses are lovingly maintained and the service was outstanding.">Llevábamos años buscando un sitio así. Babia es otro mundo. Tres días se nos hicieron cortísimos. Las casas están cuidadas con mucho mimo y el trato fue de diez.</p>
+        <div class="testi-name">Javier &amp; Lucía</div>
+        <div class="testi-sub" data-es="Bilbao · Casa II" data-en="Bilbao · House II">Bilbao · Casa II</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-es="Perfectas para desconectar en familia. Los niños fliparon con el entorno y nosotros con el silencio y las vistas. La cocina equipada y todo impecable. Repetiremos sin duda." data-en="Perfect for a family getaway. The kids were amazed by the surroundings and we loved the silence and the views. Fully equipped kitchen and everything spotless. We'll definitely be back.">Perfectas para desconectar en familia. Los niños fliparon con el entorno y nosotros con el silencio y las vistas. La cocina equipada y todo impecable. Repetiremos sin duda.</p>
+        <div class="testi-name">Familia Romero</div>
+        <div class="testi-sub" data-es="Barcelona · Casa III" data-en="Barcelona · House III">Barcelona · Casa III</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CONTACT ════════════ -->
+<section id="reservas">
+  <div class="container">
+    <div class="reservas-grid">
+      <div class="reservas-info">
+        <span class="label" data-es="Contacto y reservas" data-en="Contact & booking">Contacto y reservas</span>
+        <h2 class="title" data-es="¿Listo para escaparte a Babia?" data-en="Ready to escape to Babia?">¿Listo para escaparte a Babia?</h2>
+        <p class="body-text" data-es="Contáctanos por WhatsApp, teléfono o email. Respondemos en menos de 24 horas y estamos encantados de resolver cualquier duda sobre las casas, el entorno o la mejor época para venir." data-en="Contact us by WhatsApp, phone or email. We reply within 24 hours and are happy to answer any questions about the houses, surroundings or the best time to visit.">
+          Contáctanos por WhatsApp, teléfono o email. Respondemos en menos de 24 horas y estamos encantados de resolver cualquier duda sobre las casas, el entorno o la mejor época para venir.
+        </p>
+
+        <div class="contact-items">
+          <div class="c-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div class="c-item-text">
+              <small data-es="WhatsApp" data-en="WhatsApp">WhatsApp</small>
+              <a href="https://wa.me/34679777247" target="_blank">+34 679 777 247</a>
+              <a href="https://wa.me/34646211866" target="_blank">+34 646 211 866</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <i class="fa-solid fa-phone"></i>
+            <div class="c-item-text">
+              <small data-es="Teléfono" data-en="Phone">Teléfono</small>
+              <a href="tel:+34679777247">+34 679 777 247</a>
+              <a href="tel:+34646211866">+34 646 211 866</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="c-item-text">
+              <small data-es="Email" data-en="Email">Email</small>
+              <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="c-item-text">
+              <small data-es="Dirección" data-en="Address">Dirección</small>
+              <a href="https://maps.google.com/?q=Plaza+del+Carmen+1+Piedrafita+de+Babia" target="_blank">Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León</a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="policy">
+          <li><i class="fa-solid fa-check"></i> <span data-es="Estancia mínima: 2 noches" data-en="Minimum stay: 2 nights">Estancia mínima: 2 noches</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-es="Check-in 16:00 · Check-out 12:00" data-en="Check-in 4pm · Check-out 12pm">Check-in 16:00 · Check-out 12:00</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-es="Ropa de cama y toallas incluidas" data-en="Bed linen and towels included">Ropa de cama y toallas incluidas</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-es="Todos los suministros incluidos" data-en="All utilities included">Todos los suministros incluidos</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-es="Mascotas admitidas (consultar)" data-en="Pets allowed (please enquire)">Mascotas admitidas (consultar)</span></li>
+        </ul>
+      </div>
+
+      <div class="reservas-form reveal">
+        <h3 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h3>
+        <form class="contact-form" action="https://formspree.io/f/mnjrlkow" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre" data-es="Nombre *" data-en="Name *">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="casa" data-es="Casa de interés" data-en="House of interest">Casa de interés</label>
+            <select id="casa" name="casa">
+              <option value="" data-es="Cualquiera" data-en="Any house">Cualquiera</option>
+              <option value="Casa I">Aire de Babia I</option>
+              <option value="Casa II">Aire de Babia II</option>
+              <option value="Casa III">Aire de Babia III</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje" data-es="Mensaje *" data-en="Message *">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" required data-es-placeholder="Cuéntanos cuándo quieres venir y cualquier duda..." data-en-placeholder="Tell us when you'd like to visit and any questions..." placeholder="Cuéntanos cuándo quieres venir y cualquier duda..."></textarea>
+          </div>
+          <button type="submit" class="btn-form">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</span>
+          </button>
+          <p class="form-note" data-es="* Campos obligatorios · Respondemos en menos de 24 h." data-en="* Required fields · We reply within 24 h.">* Campos obligatorios · Respondemos en menos de 24 h.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FAQ ════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</span>
+      <h2 class="title" data-es="Lo que más nos preguntan" data-en="What people ask most">Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq-wrap">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Cuántas casas hay y se pueden alquilar a la vez?" data-en="How many houses are there and can they be rented at the same time?">¿Cuántas casas hay y se pueden alquilar a la vez?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="El conjunto cuenta con tres alojamientos independientes: Aire de Babia I (hasta 8 personas), Aire de Babia II (hasta 8 personas) y Aire de Babia III (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos." data-en="The complex has three independent accommodations: Aire de Babia I (up to 8 guests), Aire de Babia II (up to 8 guests) and Aire de Babia III (up to 6 guests). Each is rented independently with full privacy. It is also possible to book all three at once for large groups or events.">El conjunto cuenta con tres alojamientos independientes: Aire de Babia I (hasta 8 personas), Aire de Babia II (hasta 8 personas) y Aire de Babia III (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿La casona es apta para niños pequeños?" data-en="Is the estate suitable for young children?">¿La casona es apta para niños pequeños?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="Sí, disponemos de cuna y un amplio patio de piedra seguro para los más pequeños. El entorno es perfecto para que los niños descubran la naturaleza y los animales con total libertad." data-en="Yes, we have a cot and a large, safe stone courtyard for the little ones. The surroundings are perfect for children to discover nature and animals in complete freedom.">Sí, disponemos de cuna y un amplio patio de piedra seguro para los más pequeños. El entorno es perfecto para que los niños descubran la naturaleza y los animales con total libertad.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Se admiten mascotas?" data-en="Are pets allowed?">¿Se admiten mascotas?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="Sí, aceptamos mascotas previo aviso. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar." data-en="Yes, we accept pets with prior notice. The courtyard and garden are perfect for your dog to enjoy freely. A small cleaning supplement may apply. Please ask us before booking.">Sí, aceptamos mascotas previo aviso. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Cuándo aplica la temporada alta y cuándo la baja?" data-en="When is high season and when is low season?">¿Cuándo aplica la temporada alta y cuándo la baja?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="Temporada Alta: fines de semana, festivos, puentes, Navidades, Semana Santa y del 1 de julio al 15 de septiembre. Temporada Baja: el resto del año, con un descuento del 30% sobre todos los precios." data-en="High Season: weekends, public holidays, long weekends, Christmas, Easter and 1 July to 15 September. Low Season: the rest of the year, with a 30% discount on all prices.">Temporada Alta: fines de semana, festivos, puentes, Navidades, Semana Santa y del 1 de julio al 15 de septiembre. Temporada Baja: el resto del año, con un descuento del 30% sobre todos los precios.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Cuál es la mejor época para visitar Babia?" data-en="What is the best time to visit Babia?">¿Cuál es la mejor época para visitar Babia?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="Babia es preciosa en todas las estaciones. La primavera trae prados verdes y flores silvestres. El verano ofrece días largos y temperaturas suaves. El otoño tiñe el paisaje de ocres y dorados, con setas en el monte. Y el invierno, con nieve sobre la piedra y esquí en Leitariegos a 20 minutos, convierte la casona en un lugar de cuento." data-en="Babia is beautiful in every season. Spring brings green meadows and wildflowers. Summer offers long days and mild temperatures. Autumn paints the landscape in ochres and golds, with mushrooms in the woods. And winter, with snow on the stone and skiing at Leitariegos 20 minutes away, turns the estate into a fairy-tale place.">Babia es preciosa en todas las estaciones. La primavera trae prados verdes y flores silvestres. El verano ofrece días largos y temperaturas suaves. El otoño tiñe el paisaje de ocres y dorados, con setas en el monte. Y el invierno, con nieve sobre la piedra y esquí en Leitariegos a 20 minutos, convierte la casona en un lugar de cuento.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Cómo se llega a Aire de Babia?" data-en="How do I get to Aire de Babia?">¿Cómo se llega a Aire de Babia?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="Las casas se encuentran en Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León. Desde León capital son aproximadamente 80 km por la CL-626 en dirección a Villablino. Una vez confirmada tu reserva, te enviamos la ruta recomendada." data-en="The houses are at Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León. From León city it is approximately 80 km via the CL-626 towards Villablino. Once your booking is confirmed, we will send you the recommended route.">Las casas se encuentran en Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León. Desde León capital son aproximadamente 80 km por la CL-626 en dirección a Villablino. Una vez confirmada tu reserva, te enviamos la ruta recomendada.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-es="¿Qué está incluido en el precio?" data-en="What is included in the price?">¿Qué está incluido en el precio?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-es="El precio incluye el uso de todas las instalaciones (patio, jardín, barbacoa, terraza), ropa de cama y toallas, WiFi, calefacción y todos los suministros. La cocina está completamente equipada. No incluye desayuno ni comidas." data-en="The price includes use of all facilities (courtyard, garden, BBQ, terrace), bed linen and towels, WiFi, heating and all utilities. The kitchen is fully equipped. Breakfast and meals are not included.">El precio incluye el uso de todas las instalaciones (patio, jardín, barbacoa, terraza), ropa de cama y toallas, WiFi, calefacción y todos los suministros. La cocina está completamente equipada. No incluye desayuno ni comidas.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Aire de Babia</span>
+        <p data-es="Tres casas rurales de piedra en el corazón de la Comarca de Babia, León. Naturaleza, silencio y autenticidad." data-en="Three stone rural houses in the heart of the Babia region, León. Nature, silence and authenticity.">Tres casas rurales de piedra en el corazón de la Comarca de Babia, León. Naturaleza, silencio y autenticidad.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/airedebabia/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/34679777247" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-es="Las casas" data-en="The houses">Las casas</h4>
+        <ul>
+          <li><a href="#nosotros"    data-es="Nuestra historia"  data-en="Our story">Nuestra historia</a></li>
+          <li><a href="#alojamiento" data-es="Aire de Babia I"   data-en="Aire de Babia I" onclick="showHouse(0)">Aire de Babia I</a></li>
+          <li><a href="#alojamiento" data-es="Aire de Babia II"  data-en="Aire de Babia II" onclick="showHouse(1)">Aire de Babia II</a></li>
+          <li><a href="#alojamiento" data-es="Aire de Babia III" data-en="Aire de Babia III" onclick="showHouse(2)">Aire de Babia III</a></li>
+          <li><a href="#servicios"   data-es="Servicios"         data-en="Amenities">Servicios</a></li>
+          <li><a href="actividades.html" data-es="Actividades"   data-en="Activities">Actividades</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+        <ul>
+          <li><a href="mailto:info@airedebabia.es">info@airedebabia.es</a></li>
+          <li><a href="tel:+34679777247">+34 679 777 247</a></li>
+          <li><a href="tel:+34646211866">+34 646 211 866</a></li>
+          <li><a href="#faq"      data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a></li>
+          <li><a href="#" onclick="openMap();return false;" data-es="Cómo llegar" data-en="How to get here">Cómo llegar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span></span>
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float + popup -->
+<div class="wa-wrap">
+  <div class="wa-popup" id="waPopup">
+    <span class="wa-popup-title" data-es="Escríbenos por WhatsApp" data-en="Message us on WhatsApp">Escríbenos por WhatsApp</span>
+    <a href="https://wa.me/34679777247" class="wa-popup-btn" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> +34 679 777 247
+    </a>
+    <a href="https://wa.me/34646211866" class="wa-popup-btn" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> +34 646 211 866
+    </a>
+  </div>
+  <button class="map-float" onclick="openMap()" aria-label="Cómo llegar">
+    <i class="fa-solid fa-map-location-dot"></i>
+  </button>
+  <button class="wa-float" id="waFloat" aria-label="WhatsApp" onclick="toggleWa()">
+    <i class="fa-brands fa-whatsapp"></i>
+  </button>
+</div>
+
+<!-- Map modal -->
+<div class="map-modal" id="mapModal">
+  <div class="map-modal-inner">
+    <div class="map-modal-header">
+      <h3 data-es="Cómo llegar a Aire de Babia" data-en="How to get to Aire de Babia">Cómo llegar a Aire de Babia</h3>
+      <span class="map-modal-close" onclick="closeMap()"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+    <iframe
+      src="https://maps.google.com/maps?q=Piedrafita+de+Babia,+Cabrillanes,+León,+España&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div class="map-modal-footer">
+      <span><i class="fa-solid fa-location-dot" style="color:var(--green);margin-right:6px"></i>Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León</span>
+      <a href="https://maps.google.com/?q=Plaza+del+Carmen+1+Piedrafita+de+Babia" target="_blank" data-es="Abrir en Google Maps" data-en="Open in Google Maps">Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem"></i></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── NAV SCROLL ──────────────────────────────────────────
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+
+  // ── HERO KEN BURNS ──────────────────────────────────────
+  document.getElementById('hero').classList.add('loaded');
+
+  // ── MOBILE MENU ─────────────────────────────────────────
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', e => {
+      const parentLi = a.parentElement;
+      const isDropdownTrigger = parentLi.classList.contains('nav-dropdown');
+      if (isDropdownTrigger && window.innerWidth <= 768) {
+        e.preventDefault();
+        const isOpen = parentLi.classList.toggle('open');
+        parentLi.querySelector('.nav-dropdown-menu').style.display = isOpen ? 'block' : 'none';
+      } else {
+        document.getElementById('navLinks').classList.remove('open');
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          d.classList.remove('open');
+          const m = d.querySelector('.nav-dropdown-menu');
+          if (m) m.style.display = '';
+        });
+      }
+    });
+  });
+
+  // ── LANGUAGE ────────────────────────────────────────────
+  let lang = localStorage.getItem('lang') || 'es';
+  const langBtn = document.getElementById('langBtn');
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langBtn.textContent = l === 'es' ? 'EN' : 'ES';
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + l);
+    });
+  }
+  langBtn.addEventListener('click', () => applyLang(lang === 'es' ? 'en' : 'es'));
+  if (lang !== 'es') applyLang(lang);
+
+  // ── HOUSE TABS ──────────────────────────────────────────
+  function showHouse(n) {
+    document.querySelectorAll('.house-tab').forEach((t,i)   => t.classList.toggle('active', i===n));
+    document.querySelectorAll('.house-panel').forEach((p,i) => p.classList.toggle('active', i===n));
+  }
+
+  // ── ALBUM TABS ──────────────────────────────────────────
+  function showAlbum(n) {
+    document.querySelectorAll('.album-tab').forEach((t,i)   => t.classList.toggle('active', i===n));
+    document.querySelectorAll('.album-panel').forEach((p,i) => p.classList.toggle('active', i===n));
+  }
+
+  // ── FAQ ─────────────────────────────────────────────────
+  function toggleFaq(btn) {
+    const item   = btn.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // ── GALLERY / LIGHTBOX ──────────────────────────────────
+  let albumImgs = [];
+  let lbIdx = 0;
+
+  document.querySelectorAll('.g-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const panel = item.closest('.album-panel');
+      const items = Array.from(panel.querySelectorAll('.g-item'));
+      albumImgs = items.map(i => i.querySelector('img').src);
+      lbIdx = items.indexOf(item);
+      openLb(lbIdx);
+    });
+  });
+
+  function openLb(idx) {
+    document.getElementById('lbImg').src = albumImgs[idx];
+    document.getElementById('lightbox').classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('on');
+    document.body.style.overflow = '';
+  }
+  function navLb(dir) {
+    lbIdx = (lbIdx + dir + albumImgs.length) % albumImgs.length;
+    document.getElementById('lbImg').src = albumImgs[lbIdx];
+  }
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === document.getElementById('lightbox')) closeLb();
+  });
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('on')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  navLb(-1);
+    if (e.key === 'ArrowRight') navLb(1);
+  });
+
+  // ── WHATSAPP POPUP ───────────────────────────────────────
+  const waPopup = document.getElementById('waPopup');
+  const waFloat = document.getElementById('waFloat');
+  function toggleWa() { waPopup.classList.toggle('on'); }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.wa-wrap')) waPopup.classList.remove('on');
+  });
+
+  // ── MAP MODAL ────────────────────────────────────────────
+  function openMap() {
+    document.getElementById('mapModal').classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMap() {
+    document.getElementById('mapModal').classList.remove('on');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('mapModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('mapModal')) closeMap();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeLb(); closeMap(); waPopup.classList.remove('on'); }
+  });
+
+  // ── SCROLL REVEAL ────────────────────────────────────────
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── COOKIE BANNER ────────────────────────────────────────
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => {
+        const b = document.getElementById('cookieBanner');
+        if (b) b.classList.add('show');
+      }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <i class="fa-solid fa-cookie-bite" style="color:var(--gold-light);margin-right:8px"></i>
+    Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales.
+    <a href="cookies.html">Política de cookies</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')">Solo esenciales</button>
+    <button class="cookie-btn-all" onclick="acceptCookies('all')">Aceptar todo</button>
+  </div>
+</div>
+</body>
+</html>

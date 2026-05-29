@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividades en Babia, León — Astroturismo, safari de fauna cantábrica, senderismo, esquí, pesca, micología y mucho más desde Aire de Babia.">
+  <meta name="keywords" content="actividades Babia, senderismo León, astroturismo Babia, esquí Leitariegos, fauna cantábrica, turismo rural León, micología Babia">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Aire de Babia">
+
+  <!-- Open Graph / WhatsApp / redes sociales -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.airedebabia.es/actividades.html">
+  <meta property="og:site_name"   content="Aire de Babia">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Actividades en Babia · Aire de Babia">
+  <meta property="og:description" content="Astroturismo, fauna cantábrica, senderismo, esquí, pesca, micología y mucho más. Descubre todo lo que hacer en Babia, León.">
+  <meta property="og:image"       content="https://www.airedebabia.es/img/naturaleza/IMG_8251.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Actividades en Babia · Aire de Babia">
+  <meta name="twitter:description" content="Astroturismo, fauna cantábrica, senderismo, esquí, pesca, micología y mucho más. Descubre todo lo que hacer en Babia, León.">
+  <meta name="twitter:image"       content="https://www.airedebabia.es/img/naturaleza/IMG_8251.jpg">
+
+  <title>Actividades · Aire de Babia</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --green-light: #4A7C3F;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --stone:       #8A7A6A;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+      --shadow:      0 6px 30px rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.75;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .title { font-size: clamp(1.9rem, 4vw, 2.9rem); color: var(--green); margin-bottom: 22px; }
+    .body-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 900;
+      padding: 22px 0;
+      transition: background var(--T), padding var(--T), box-shadow var(--T);
+    }
+    #nav.solid {
+      background: var(--white);
+      padding: 14px 0;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); }
+    #nav.solid .nav-logo { color: var(--green); }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-links a.active { color: var(--gold-light) !important; }
+
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+
+    .lang-btn {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      border: 1px solid rgba(255,255,255,0.45); border-radius: 20px;
+      padding: 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T);
+    }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--white); padding: 20px 28px 28px;
+      gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      height: 55vh;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('img/naturaleza/IMG_8251.jpg') center/cover no-repeat;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,20,8,0.85) 0%, rgba(10,20,8,0.3) 60%, rgba(10,20,8,0.2) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 60px;
+      width: 100%;
+    }
+    .page-hero-content .label { color: var(--gold-light); }
+    .page-hero-content h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: var(--white); margin-bottom: 10px; }
+    .page-hero-content p { color: rgba(255,255,255,0.78); font-size: 1.1rem; font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* ── FEATURED ──────────────────────────────────────────── */
+    #destacadas {
+      padding: 90px 0 60px;
+      background: var(--green);
+    }
+    #destacadas .label { color: var(--gold-light); }
+    #destacadas .title { color: var(--white); margin-bottom: 10px; }
+    #destacadas .body-text { color: rgba(255,255,255,0.65); margin-bottom: 56px; }
+
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feat-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: background var(--T), transform var(--T);
+    }
+    .feat-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-3px); }
+
+    .feat-card-img {
+      width: 100%;
+      height: 210px;
+      background-size: cover;
+      background-position: center;
+      border-top: 3px solid var(--gold);
+    }
+    .feat-card-body { padding: 30px 28px 34px; display: flex; flex-direction: column; }
+
+    .feat-card i { font-size: 1.8rem; color: var(--gold-light); margin-bottom: 16px; display: block; }
+    .feat-card h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 12px; }
+    .feat-card p { font-size: 0.91rem; color: rgba(255,255,255,0.65); line-height: 1.78; margin-bottom: 20px; flex: 1; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(196,168,87,0.2); color: var(--gold-light);
+      border: 1px solid rgba(196,168,87,0.38);
+      padding: 4px 11px; border-radius: 20px; margin-right: 6px; margin-bottom: 6px;
+      align-self: flex-start;
+    }
+
+    /* ── ALL ACTIVITIES ────────────────────────────────────── */
+    #todas {
+      padding: 80px 0 110px;
+      background: var(--green);
+    }
+
+    .act-divider {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 48px;
+    }
+    .act-divider::before, .act-divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.12);
+    }
+
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .act-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: background var(--T), transform var(--T);
+    }
+    .act-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-2px); }
+
+    .act-ico {
+      width: 52px; height: 52px;
+      background: rgba(196,168,87,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--gold-light); flex-shrink: 0;
+    }
+    .act-text h4 { font-size: 0.98rem; color: var(--white); margin-bottom: 6px; }
+    .act-text p  { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .act-cta {
+      margin-top: 72px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .act-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 14px; }
+    .act-cta p  { color: rgba(255,255,255,0.62); font-size: 1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 34px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase;
+      cursor: pointer; transition: var(--T); border: 2px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-wa   { background: #25D366; color: var(--white); }
+    .btn-wa:hover { background: #1fbe5a; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.68);
+      padding: 48px 0 28px;
+    }
+    .footer-simple {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.88rem; transition: color var(--T); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { font-size: 0.78rem; text-align: center; }
+    .footer-credit { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── WA FLOAT ──────────────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 800;
+      width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.65rem; color: var(--white);
+      box-shadow: 0 5px 20px rgba(37,211,102,0.42);
+      transition: transform var(--T), box-shadow var(--T);
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* ── REVEAL ────────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .feat-grid { grid-template-columns: 1fr; }
+      #todas .feat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-simple { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 540px) {
+      #todas .feat-grid { grid-template-columns: 1fr; }
+      .act-cta  { padding: 36px 22px; }
+    }
+
+    /* ── COOKIE BANNER ─────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1A2E12;
+      border-top: 2px solid var(--gold);
+      padding: 18px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      box-shadow: 0 -4px 32px rgba(0,0,0,0.28);
+      transform: translateY(100%);
+      transition: transform 0.45s ease;
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-text { color: rgba(255,255,255,0.82); font-size: 0.87rem; line-height: 1.65; flex: 1; min-width: 220px; }
+    .cookie-text a { color: var(--gold-light); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn-all {
+      background: var(--gold); color: #fff; border: none;
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cookie-btn-all:hover { background: var(--gold-light); }
+    .cookie-btn-ess {
+      background: transparent; color: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cookie-btn-ess:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+  </style>
+</head>
+<body>
+<!-- Designed & built by Daniel Corpas · dcorpas.dev -->
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="The House">La Casona</a></li>
+      <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities">Servicios</a></li>
+      <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery">Galería</a></li>
+      <li><a href="index.html#entorno"   data-es="Entorno"     data-en="Surroundings">Entorno</a></li>
+      <li><a href="actividades.html" class="active" data-es="Actividades" data-en="Activities">Actividades</a></li>
+      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book Now">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn">EN</button>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="label" data-es="Qué hacer en Babia" data-en="Things to do in Babia">Qué hacer en Babia</span>
+      <h1 data-es="Actividades" data-en="Activities">Actividades</h1>
+      <p data-es="La comarca lo tiene todo. Solo hay que salir a buscarlo." data-en="The region has everything. You just have to go out and find it.">La comarca lo tiene todo. Solo hay que salir a buscarlo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ DESTACADAS ════════ -->
+<section id="destacadas">
+  <div class="container">
+    <span class="label" data-es="Lo que hace única a esta tierra" data-en="What makes this land unique">Lo que hace única a esta tierra</span>
+    <h2 class="title" data-es="Experiencias que no encontrarás en otro sitio" data-en="Experiences you won't find anywhere else">Experiencias que no encontrarás en otro sitio</h2>
+    <p class="body-text" data-es="Babia atesora tres regalos naturales e históricos que la distinguen de cualquier otro destino rural en España." data-en="Babia holds three natural and historical gifts that set it apart from any other rural destination in Spain.">Babia atesora tres regalos naturales e históricos que la distinguen de cualquier otro destino rural en España.</p>
+
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/Captura de pantalla 2026-05-25 123005.png'); background-position: center 45%;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-moon"></i>
+          <h3 data-es="Cielos oscuros · Astroturismo" data-en="Dark skies · Stargazing">Cielos oscuros · Astroturismo</h3>
+          <p data-es="Babia es una de las zonas con menor contaminación lumínica de toda España. Sin farolas que compitan, la Vía Láctea se despliega nítida sobre los prados cada noche despejada. Un espectáculo que no requiere ningún equipo — solo salir y mirar hacia arriba." data-en="Babia is one of the least light-polluted areas in all of Spain. With no street lights to compete, the Milky Way stretches clear across the meadows on every cloudless night. A spectacle that requires no equipment — just step outside and look up.">Babia es una de las zonas con menor contaminación lumínica de toda España. Sin farolas que compitan, la Vía Láctea se despliega nítida sobre los prados cada noche despejada. Un espectáculo que no requiere ningún equipo — solo salir y mirar hacia arriba.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Cielo sin contaminación lumínica" data-en="Unpolluted skies">Cielo sin contaminación lumínica</span>
+        </div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/Gemini_Generated_Image_tmaoggtmaoggtmao.jpg'); background-position: center 60%;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-paw"></i>
+          <h3 data-es="Fauna salvaje cantábrica" data-en="Cantabrian wildlife">Fauna salvaje cantábrica</h3>
+          <p data-es="En plena Reserva de la Biosfera, el oso pardo cantábrico, el lobo ibérico, el urogallo y la cigüeña negra viven en libertad en los montes que rodean la casona. Los amaneceres y atardeceres son los mejores momentos para avistarlos en prados y bosques." data-en="In the heart of the Biosphere Reserve, the Cantabrian brown bear, Iberian wolf, capercaillie and black stork roam freely in the hills surrounding the house. Dawn and dusk are the best times to spot them in the meadows and forests.">En plena Reserva de la Biosfera, el oso pardo cantábrico, el lobo ibérico, el urogallo y la cigüeña negra viven en libertad en los montes que rodean la casona. Los amaneceres y atardeceres son los mejores momentos para avistarlos en prados y bosques.</p>
+          <span class="tag" data-es="Primavera / Otoño" data-en="Spring / Autumn">Primavera / Otoño</span>
+          <span class="tag" data-es="Fauna protegida" data-en="Protected wildlife">Fauna protegida</span>
+        </div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/El origen del dicho «estar en Babia».png'); background-position: center 25%;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-crown"></i>
+          <h3 data-es="El origen del dicho «estar en Babia»" data-en="The origin of the saying «estar en Babia»">El origen del dicho «estar en Babia»</h3>
+          <p data-es="Los reyes medievales de León viajaban hasta aquí para cazar y descansar lejos del reino — tanto que sus súbditos decían que el rey «estaba en Babia». Sus caminos, pueblos de piedra y ermitas románicas siguen intactos. Aquí el tiempo se ha detenido de verdad." data-en="The medieval kings of León travelled here to hunt and rest away from the court — so often that subjects said the king «was in Babia». Their paths, stone villages and Romanesque chapels survive unchanged. Here, time has genuinely stood still.">Los reyes medievales de León viajaban hasta aquí para cazar y descansar lejos del reino — tanto que sus súbditos decían que el rey «estaba en Babia». Sus caminos, pueblos de piedra y ermitas románicas siguen intactos. Aquí el tiempo se ha detenido de verdad.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Historia medieval viva" data-en="Living medieval history">Historia medieval viva</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TODAS LAS ACTIVIDADES ════════ -->
+<section id="todas">
+  <div class="container">
+    <div class="act-divider" data-es="Más en la comarca" data-en="More in the region">Más en la comarca</div>
+
+    <div class="feat-grid">
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_8251.jpg'); background-position: center 40%;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-hiking"></i>
+          <h3 data-es="Senderismo" data-en="Hiking">Senderismo</h3>
+          <p data-es="Más de 200 km de senderos señalizados para todos los niveles. Desde paseos fluviales junto al Río Luna hasta cumbres de más de 2.000 m." data-en="Over 200 km of marked trails for all levels. From riverside walks along the Río Luna to peaks over 2,000 m.">Más de 200 km de senderos señalizados para todos los niveles. Desde paseos fluviales junto al Río Luna hasta cumbres de más de 2.000 m.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Todos los niveles" data-en="All abilities">Todos los niveles</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/Ciclismo en babia.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-biking"></i>
+          <h3 data-es="BTT y ciclismo de montaña" data-en="Mountain biking">BTT y ciclismo de montaña</h3>
+          <p data-es="Rutas técnicas y paisajísticas entre valles, bosques de roble y puertos de montaña. Ideal para ciclistas de todos los niveles." data-en="Technical and scenic routes through valleys, oak forests and mountain passes. Ideal for cyclists of all levels.">Rutas técnicas y paisajísticas entre valles, bosques de roble y puertos de montaña. Ideal para ciclistas de todos los niveles.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Rutas señalizadas" data-en="Marked routes">Rutas señalizadas</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_7206.jpg'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-snowflake"></i>
+          <h3 data-es="Esquí en Leitariegos" data-en="Skiing at Leitariegos">Esquí en Leitariegos</h3>
+          <p data-es="Estación de esquí a solo 20 minutos. Pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son de cuento." data-en="Ski resort just 20 minutes away. Alpine slopes, cross-country skiing and snowshoeing. Winters in Babia are fairy-tale material.">Estación de esquí a solo 20 minutos. Pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son de cuento.</p>
+          <span class="tag" data-es="Invierno" data-en="Winter">Invierno</span>
+          <span class="tag" data-es="A 20 minutos" data-en="20 min away">A 20 minutos</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_8248.jpg'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-fish"></i>
+          <h3 data-es="Pesca con mosca" data-en="Fly fishing">Pesca con mosca</h3>
+          <p data-es="El Río Luna es un destino legendario para la pesca de trucha en aguas cristalinas de montaña. Un paraíso para los aficionados a la pesca." data-en="The Río Luna is a legendary destination for trout fishing in crystal-clear mountain waters. A paradise for fishing enthusiasts.">El Río Luna es un destino legendario para la pesca de trucha en aguas cristalinas de montaña. Un paraíso para los aficionados a la pesca.</p>
+          <span class="tag" data-es="Primavera · Verano" data-en="Spring · Summer">Primavera · Verano</span>
+          <span class="tag" data-es="Trucha de montaña" data-en="Mountain trout">Trucha de montaña</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/dffff.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-horse"></i>
+          <h3 data-es="Rutas a caballo" data-en="Horse riding">Rutas a caballo</h3>
+          <p data-es="La comarca cuenta con rutas ecuestres entre prados, bosques de roble y senderos medievales. Varias empresas locales ofrecen excursiones a caballo para todos los niveles." data-en="The region has equestrian routes through meadows, oak forests and medieval paths. Several local companies offer horse riding trips for all abilities.">La comarca cuenta con rutas ecuestres entre prados, bosques de roble y senderos medievales. Varias empresas locales ofrecen excursiones a caballo para todos los niveles.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Guías locales" data-en="Local guides">Guías locales</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_7709.jpg'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-water"></i>
+          <h3 data-es="Kayak y piragüismo" data-en="Kayak & canoeing">Kayak y piragüismo</h3>
+          <p data-es="Los embalses y ríos de la comarca ofrecen posibilidades para el piragüismo y el kayak en aguas tranquilas rodeadas de un paisaje de montaña inigualable." data-en="The reservoirs and rivers of the region offer kayaking and canoeing in calm waters surrounded by an unbeatable mountain landscape.">Los embalses y ríos de la comarca ofrecen posibilidades para el piragüismo y el kayak en aguas tranquilas rodeadas de un paisaje de montaña inigualable.</p>
+          <span class="tag" data-es="Primavera · Verano" data-en="Spring · Summer">Primavera · Verano</span>
+          <span class="tag" data-es="Aguas tranquilas" data-en="Calm waters">Aguas tranquilas</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_8235.jpg'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-seedling"></i>
+          <h3 data-es="Micología" data-en="Mushroom foraging">Micología</h3>
+          <p data-es="En otoño, los robledales y abedulares de Babia se llenan de boletus, rebozuelos y níscalos. Una de las zonas micológicas más ricas del noroeste de España." data-en="In autumn, Babia's oak and birch forests fill with porcini, chanterelles and saffron milk caps — one of the richest mushroom-foraging areas in northwestern Spain.">En otoño, los robledales y abedulares de Babia se llenan de boletus, rebozuelos y níscalos. Una de las zonas micológicas más ricas del noroeste de España.</p>
+          <span class="tag" data-es="Otoño" data-en="Autumn">Otoño</span>
+          <span class="tag" data-es="Robledales y abedulares" data-en="Oak & birch forests">Robledales y abedulares</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_7722.jpg'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-camera"></i>
+          <h3 data-es="Fotografía de naturaleza" data-en="Nature photography">Fotografía de naturaleza</h3>
+          <p data-es="Paisajes épicos, fauna salvaje y luz de montaña inigualable. Babia es el paraíso del fotógrafo de naturaleza en cualquier estación del año." data-en="Epic landscapes, wild fauna and unmatched mountain light. Babia is a nature photographer's paradise in every season.">Paisajes épicos, fauna salvaje y luz de montaña inigualable. Babia es el paraíso del fotógrafo de naturaleza en cualquier estación del año.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Fauna y paisaje" data-en="Wildlife & scenery">Fauna y paisaje</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/gastronomia.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-utensils"></i>
+          <h3 data-es="Gastronomía leonesa" data-en="Leonese gastronomy">Gastronomía leonesa</h3>
+          <p data-es="Cecina de León, botillo del Bierzo, queso de Babia, cocido maragato y los vinos del Bierzo. Una experiencia culinaria auténtica e inolvidable." data-en="Cecina de León, botillo del Bierzo, Babia cheese, cocido maragato and Bierzo wines. An authentic and unforgettable culinary experience.">Cecina de León, botillo del Bierzo, queso de Babia, cocido maragato y los vinos del Bierzo. Una experiencia culinaria auténtica e inolvidable.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Productos locales" data-en="Local produce">Productos locales</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/Museos mineros.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-hard-hat"></i>
+          <h3 data-es="Museos mineros de Laciana" data-en="Laciana mining museums">Museos mineros de Laciana</h3>
+          <p data-es="La comarca de Laciana tiene una rica historia minera. Sus museos y minas visitables cuentan la identidad y cultura de sus gentes." data-en="The Laciana region has a rich mining history. Its museums and visitable mines tell the identity and culture of its people.">La comarca de Laciana tiene una rica historia minera. Sus museos y minas visitables cuentan la identidad y cultura de sus gentes.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Historia industrial" data-en="Industrial history">Historia industrial</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/yoga.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-spa"></i>
+          <h3 data-es="Yoga y bienestar" data-en="Yoga & wellness">Yoga y bienestar</h3>
+          <p data-es="El silencio absoluto de Babia, su aire limpio y sus paisajes son el escenario ideal para practicar yoga, meditación o simplemente descansar la mente." data-en="Babia's absolute silence, clean air and landscapes are the ideal setting for yoga, meditation or simply resting the mind.">El silencio absoluto de Babia, su aire limpio y sus paisajes son el escenario ideal para practicar yoga, meditación o simplemente descansar la mente.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag" data-es="Silencio y naturaleza" data-en="Silence & nature">Silencio y naturaleza</span>
+        </div>
+      </div>
+
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/actividades/Captura de pantalla 2026-05-25 123840.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-binoculars"></i>
+          <h3 data-es="Reserva de la Biosfera" data-en="Biosphere Reserve">Reserva de la Biosfera</h3>
+          <p data-es="Babia y el Valle de Laciana son Reservas de la Biosfera reconocidas por la UNESCO. Cuenta con centros de interpretación de la naturaleza abiertos al público durante todo el año." data-en="Babia and the Laciana Valley are UNESCO-recognised Biosphere Reserves, with nature interpretation centres open to the public year-round.">Babia y el Valle de Laciana son Reservas de la Biosfera reconocidas por la UNESCO. Cuenta con centros de interpretación de la naturaleza abiertos al público durante todo el año.</p>
+          <span class="tag" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+          <span class="tag">UNESCO</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="act-cta reveal">
+      <h2 data-es="¿Listo para vivir Babia?" data-en="Ready to experience Babia?">¿Listo para vivir Babia?</h2>
+      <p data-es="Cuéntanos cuándo quieres venir y qué te apetece hacer. Te compartimos todo lo que conocemos de la comarca." data-en="Tell us when you want to come and what you feel like doing. We'll share everything we know about the area.">Cuéntanos cuándo quieres venir y qué te apetece hacer. Te compartimos todo lo que conocemos de la comarca.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/34679777247" class="btn btn-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        </a>
+        <a href="index.html#reservas" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book">Ver cómo reservar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="footer-logo">Aire de Babia</a>
+      <div class="footer-links">
+        <a href="index.html#nosotros"  data-es="La Casona"    data-en="The House">La Casona</a>
+        <a href="index.html#galeria"   data-es="Galería"      data-en="Gallery">Galería</a>
+        <a href="actividades.html"     data-es="Actividades"  data-en="Activities">Actividades</a>
+        <a href="index.html#reservas"  data-es="Reservar"     data-en="Book">Reservar</a>
+        <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span></span>
+      <br style="margin-bottom:8px">
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice" style="color:inherit;transition:color .3s">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy" style="color:inherit;transition:color .3s">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy" style="color:inherit;transition:color .3s">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/34679777247" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  let lang = localStorage.getItem('lang') || 'es';
+  const langBtn = document.getElementById('langBtn');
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langBtn.textContent = l === 'es' ? 'EN' : 'ES';
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-es]').forEach(el => el.textContent = el.getAttribute('data-' + l));
+  }
+  langBtn.addEventListener('click', () => applyLang(lang === 'es' ? 'en' : 'es'));
+  if (lang !== 'es') applyLang(lang);
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── COOKIE BANNER ────────────────────────────────────────
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => {
+        const b = document.getElementById('cookieBanner');
+        if (b) b.classList.add('show');
+      }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <i class="fa-solid fa-cookie-bite" style="color:var(--gold-light);margin-right:8px"></i>
+    Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales.
+    <a href="cookies.html">Política de cookies</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')">Solo esenciales</button>
+    <button class="cookie-btn-all" onclick="acceptCookies('all')">Aceptar todo</button>
+  </div>
+</div>
+</body>
+</html>

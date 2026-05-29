@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brandboard · Aire de Babia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #243D1A;
+      --green-mid:  #355929;
+      --green-light:#4A7C3F;
+      --gold:       #B8882A;
+      --gold-light: #D4A84B;
+      --stone:      #8A7A6A;
+      --cream:      #F7F4EF;
+      --sand:       #EDE8E1;
+      --white:      #FFFFFF;
+      --text:       #1A1A1A;
+      --muted:      #6A6A6A;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #F0EDE7;
+      color: var(--text);
+      padding: 60px 40px;
+      min-height: 100vh;
+    }
+
+    /* ── GRID ── */
+    .bb-wrap { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 48px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .card-dark { background: var(--green); }
+    .card-cream { background: var(--cream); }
+
+    .section-tag {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag::after { content: ''; flex: 1; height: 1px; background: var(--sand); }
+    .card-dark .section-tag::after { background: rgba(255,255,255,0.15); }
+
+    /* ── HEADER ── */
+    .bb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .bb-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+    .bb-brand-name span { color: var(--gold); }
+    .bb-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--stone);
+      margin-top: 10px;
+    }
+    .bb-meta {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .bb-meta strong { color: var(--text); font-weight: 700; }
+
+    /* ── LOGO TREATMENTS ── */
+    .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .logo-box {
+      border-radius: 4px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 140px;
+    }
+    .logo-box-light { background: var(--cream); }
+    .logo-box-dark  { background: var(--green); }
+    .logo-box-gold  { background: var(--gold); }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-align: center;
+    }
+    .logo-sub {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .c-green  { color: var(--green); }
+    .c-white  { color: var(--white); }
+    .c-gold   { color: var(--gold); }
+    .c-gold-l { color: var(--gold-light); }
+    .c-stone  { color: var(--stone); }
+    .c-muted  { color: var(--muted); }
+
+    /* ── COLORS ── */
+    .color-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .color-row-2 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 16px; }
+
+    .swatch {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .swatch-color { height: 100px; }
+    .swatch-info {
+      background: var(--white);
+      padding: 12px 14px;
+    }
+    .swatch-name { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .swatch-hex  { font-size: 0.72rem; color: var(--muted); font-family: monospace; }
+    .swatch-role { font-size: 0.65rem; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── TYPOGRAPHY ── */
+    .type-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    .type-block { padding: 32px; background: var(--cream); border-radius: 4px; }
+    .type-label { font-size: 0.65rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .type-family { font-size: 0.82rem; font-weight: 700; color: var(--muted); margin-bottom: 20px; }
+
+    .type-specimen-serif {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .type-specimen-serif-italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--stone);
+      margin-bottom: 16px;
+    }
+    .type-specimen-sans {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .type-weights { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--sand); }
+    .type-w { font-size: 0.88rem; color: var(--text); display: flex; justify-content: space-between; align-items: baseline; }
+    .type-w span { font-size: 0.68rem; color: var(--muted); }
+    .w300 { font-weight: 300; }
+    .w400 { font-weight: 400; }
+    .w700 { font-weight: 700; }
+    .w900 { font-weight: 900; }
+    .serif-400 { font-family: 'Playfair Display', serif; font-weight: 400; }
+    .serif-600 { font-family: 'Playfair Display', serif; font-weight: 600; }
+    .serif-700 { font-family: 'Playfair Display', serif; font-weight: 700; }
+    .serif-i   { font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* ── TYPE SCALE ── */
+    .scale-list { display: flex; flex-direction: column; gap: 16px; }
+    .scale-item { display: flex; align-items: baseline; gap: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--sand); }
+    .scale-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .scale-meta { font-size: 0.65rem; color: var(--muted); width: 90px; flex-shrink: 0; text-align: right; line-height: 1.5; }
+    .scale-meta strong { display: block; font-size: 0.72rem; color: var(--stone); }
+
+    /* ── BUTTONS ── */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 3px;
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.8rem; letter-spacing: 0.07em; text-transform: uppercase;
+      border: 2px solid transparent; cursor: default; text-decoration: none;
+    }
+    .btn-primary  { background: var(--green);  color: var(--white); }
+    .btn-gold     { background: var(--gold);   color: var(--white); }
+    .btn-outline-dark { background: transparent; border-color: var(--green); color: var(--green); }
+    .btn-outline-white{ background: transparent; border-color: rgba(255,255,255,0.7); color: var(--white); }
+    .btn-wa       { background: #25D366; color: var(--white); }
+    .btn-ghost    { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .btn-sm { padding: 9px 22px; font-size: 0.72rem; }
+
+    /* ── ICONS ── */
+    .icon-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+    .icon-item { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 72px; }
+    .icon-circle {
+      width: 52px; height: 52px; background: var(--cream); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; color: var(--green);
+    }
+    .icon-item span { font-size: 0.65rem; color: var(--muted); text-align: center; line-height: 1.3; }
+
+    /* ── VOICE ── */
+    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .voice-card { padding: 28px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-top: 2px solid var(--gold); border-radius: 4px; }
+    .voice-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--white); margin-bottom: 10px; }
+    .voice-card p  { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.7; }
+
+    .taglines { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
+    .tagline-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 24px; background: rgba(255,255,255,0.05); border-radius: 4px;
+      border-left: 3px solid var(--gold);
+    }
+    .tagline-item .tag-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--white);
+    }
+    .tagline-item .tag-note { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-left: auto; white-space: nowrap; }
+
+    /* ── PATTERNS ── */
+    .pattern-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .pattern-box { height: 90px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── PRINT HINT ── */
+    .print-hint {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 16px;
+    }
+
+    @media print {
+      body { padding: 20px; background: white; }
+      .card { box-shadow: none; border: 1px solid #eee; }
+    }
+    @media (max-width: 768px) {
+      body { padding: 24px 16px; }
+      .logo-grid, .color-row, .color-row-2, .type-row, .voice-grid, .pattern-row { grid-template-columns: 1fr 1fr; }
+      .bb-brand-name { font-size: 2.4rem; }
+    }
+    @media (max-width: 480px) {
+      .color-row, .color-row-2 { grid-template-columns: repeat(3, 1fr); }
+      .type-row, .voice-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="bb-wrap">
+
+  <!-- ══ 01 · COVER ══ -->
+  <div class="card">
+    <div class="bb-header">
+      <div>
+        <div class="bb-brand-name">Aire <span>de</span> Babia</div>
+        <div class="bb-tagline">«Respira diferente.»</div>
+      </div>
+      <div class="bb-meta">
+        <strong>Brand Board</strong><br>
+        Casona Rural · Babia, León<br>
+        airedebabia.es<br>
+        info@airedebabia.es<br>
+        <br>
+        Versión 1.0 · 2025
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 02 · LOGO TREATMENTS ══ -->
+  <div class="card">
+    <div class="section-tag">02 · Tratamientos del logotipo</div>
+    <div class="logo-grid">
+      <div class="logo-box logo-box-light">
+        <div class="logo-name c-green">Aire de Babia</div>
+        <div class="logo-sub c-stone">Casona Rural · Babia, León</div>
+      </div>
+      <div class="logo-box logo-box-dark">
+        <div class="logo-name c-white">Aire de Babia</div>
+        <div class="logo-sub c-gold-l">Casona Rural · Babia, León</div>
+      </div>
+      <div class="logo-box logo-box-gold">
+        <div class="logo-name c-white">Aire de Babia</div>
+        <div class="logo-sub c-white" style="opacity:.8">Casona Rural · Babia, León</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 03 · PALETA DE COLORES ══ -->
+  <div class="card">
+    <div class="section-tag">03 · Paleta de colores</div>
+    <div class="color-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#243D1A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde Babia</div>
+          <div class="swatch-hex">#243D1A</div>
+          <div class="swatch-role">Principal · Fondo oscuro</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#355929"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde Medio</div>
+          <div class="swatch-hex">#355929</div>
+          <div class="swatch-role">Hover · Variante</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4A7C3F"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde Prado</div>
+          <div class="swatch-hex">#4A7C3F</div>
+          <div class="swatch-role">Acento verde · Checks</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#B8882A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Oro Babia</div>
+          <div class="swatch-hex">#B8882A</div>
+          <div class="swatch-role">Acento · CTA · Labels</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D4A84B"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Oro Claro</div>
+          <div class="swatch-hex">#D4A84B</div>
+          <div class="swatch-role">Hover dorado · Tags</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-row-2">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8A7A6A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Piedra</div>
+          <div class="swatch-hex">#8A7A6A</div>
+          <div class="swatch-role">Citas · Secundario</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F7F4EF"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Crema</div>
+          <div class="swatch-hex">#F7F4EF</div>
+          <div class="swatch-role">Fondo principal</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EDE8E1; border:1px solid #ddd"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Arena</div>
+          <div class="swatch-hex">#EDE8E1</div>
+          <div class="swatch-role">Secciones alternas</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#6A6A6A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Gris Texto</div>
+          <div class="swatch-hex">#6A6A6A</div>
+          <div class="swatch-role">Texto secundario</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1A1A1A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Negro Suave</div>
+          <div class="swatch-hex">#1A1A1A</div>
+          <div class="swatch-role">Texto principal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 04 · TIPOGRAFÍA ══ -->
+  <div class="card">
+    <div class="section-tag">04 · Tipografía</div>
+    <div class="type-row">
+      <div class="type-block">
+        <div class="type-label">Tipografía principal · Titulares</div>
+        <div class="type-family">Playfair Display · Google Fonts</div>
+        <div class="type-specimen-serif">Aire de Babia</div>
+        <div class="type-specimen-serif-italic">«Respira diferente.»</div>
+        <div class="type-specimen-sans">Usada en H1, H2, H3, citas destacadas y el logotipo. Transmite elegancia, historia y carácter artesanal.</div>
+        <div class="type-weights">
+          <div class="type-w serif-400">Playfair Display Regular <span>400</span></div>
+          <div class="type-w serif-600">Playfair Display SemiBold <span>600</span></div>
+          <div class="type-w serif-700">Playfair Display Bold <span>700</span></div>
+          <div class="type-w serif-i">Playfair Display Italic <span>400i</span></div>
+        </div>
+      </div>
+      <div class="type-block">
+        <div class="type-label">Tipografía secundaria · Cuerpo</div>
+        <div class="type-family">Lato · Google Fonts</div>
+        <div class="type-specimen-sans" style="font-size:1rem; color:var(--text); margin-bottom:12px; font-weight:300;">
+          Una casona de piedra centenaria restaurada con mimo, donde el tiempo se ralentiza y el silencio sabe a libertad.
+        </div>
+        <div class="type-specimen-sans">Usada en navegación, cuerpo de texto, botones y etiquetas. Limpia, legible y versátil.</div>
+        <div class="type-weights">
+          <div class="type-w w300">Lato Light <span>300</span></div>
+          <div class="type-w w400">Lato Regular <span>400</span></div>
+          <div class="type-w w700">Lato Bold <span>700</span></div>
+          <div class="type-w w900">Lato Black <span>900</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Escala tipográfica -->
+    <div style="margin-top:36px">
+      <div class="type-label" style="margin-bottom:24px">Escala tipográfica</div>
+      <div class="scale-list">
+        <div class="scale-item">
+          <div class="scale-meta"><strong>H1 / Hero</strong>clamp(3.2rem→6rem)<br>Playfair Bold</div>
+          <div style="font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--green);line-height:1">Aire de Babia</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-meta"><strong>H2 / Sección</strong>clamp(1.9rem→2.9rem)<br>Playfair Bold</div>
+          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--green)">Una casona con alma</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-meta"><strong>H3 / Tarjeta</strong>1.15rem<br>Playfair SemiBold</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--green)">Habitaciones dobles</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-meta"><strong>Label</strong>0.72rem · +0.18em<br>Lato Black · uppercase</div>
+          <div style="font-size:0.72rem;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)">Nuestra historia</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-meta"><strong>Body</strong>1.05rem · lh 1.8<br>Lato Light 300</div>
+          <div style="font-weight:300;font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:600px">En el corazón de la Comarca de Babia, rodeada de montañas, ríos y cielos limpios, se alza Aire de Babia.</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-meta"><strong>Botón</strong>0.82rem · +0.07em<br>Lato Bold · uppercase</div>
+          <div style="font-size:0.82rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--text)">Consultar disponibilidad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 05 · BOTONES Y UI ══ -->
+  <div class="card">
+    <div class="section-tag">05 · Botones y elementos UI</div>
+
+    <div style="margin-bottom:10px;font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em">Sobre fondo claro</div>
+    <div class="btn-row">
+      <a class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Reservar ahora</a>
+      <a class="btn btn-gold">Consultar disponibilidad</a>
+      <a class="btn btn-outline-dark">Ver la casona</a>
+      <a class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary btn-sm">Reservar</a>
+      <a class="btn btn-gold btn-sm">Actividades</a>
+      <a class="btn btn-outline-dark btn-sm">Saber más</a>
+    </div>
+
+    <div style="margin-top:32px;background:var(--green);padding:28px;border-radius:4px;">
+      <div style="margin-bottom:10px;font-size:0.72rem;color:rgba(255,255,255,.5);font-weight:700;text-transform:uppercase;letter-spacing:.1em">Sobre fondo oscuro</div>
+      <div class="btn-row">
+        <a class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Reservar</a>
+        <a class="btn btn-ghost">Ver la casona</a>
+        <a class="btn btn-outline-white">Más información</a>
+        <a class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div style="margin-top:32px">
+      <div style="margin-bottom:14px;font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em">Etiquetas / Tags</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="background:rgba(196,168,87,.15);color:var(--gold);border:1px solid rgba(196,168,87,.4);padding:5px 14px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Todo el año</span>
+        <span style="background:rgba(196,168,87,.15);color:var(--gold);border:1px solid rgba(196,168,87,.4);padding:5px 14px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Con guía local</span>
+        <span style="background:rgba(196,168,87,.15);color:var(--gold);border:1px solid rgba(196,168,87,.4);padding:5px 14px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Primavera / Otoño</span>
+        <span style="background:rgba(196,168,87,.15);color:var(--gold);border:1px solid rgba(196,168,87,.4);padding:5px 14px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Historia viva</span>
+        <span style="background:rgba(196,168,87,.15);color:var(--gold);border:1px solid rgba(196,168,87,.4);padding:5px 14px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Única en la zona</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 06 · ICONOGRAFÍA ══ -->
+  <div class="card">
+    <div class="section-tag">06 · Iconografía · Font Awesome 6</div>
+    <div class="icon-grid">
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-wifi"></i></div><span>WiFi</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-fire"></i></div><span>Chimenea</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-utensils"></i></div><span>Cocina</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-paw"></i></div><span>Mascotas</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-mountain-sun"></i></div><span>Montaña</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-star-and-crescent"></i></div><span>Astro</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-person-hiking"></i></div><span>Senderismo</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-snowflake"></i></div><span>Nieve</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-fish"></i></div><span>Pesca</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-water"></i></div><span>Kayak</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-horse"></i></div><span>Equitación</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-seedling"></i></div><span>Micología</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-camera"></i></div><span>Fotografía</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-crown"></i></div><span>Patrimonio</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-bed"></i></div><span>Habitación</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-square-parking"></i></div><span>Parking</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-bath"></i></div><span>Baño</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-temperature-half"></i></div><span>Calefacción</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div><span>WhatsApp</span></div>
+      <div class="icon-item"><div class="icon-circle"><i class="fa-solid fa-envelope"></i></div><span>Email</span></div>
+    </div>
+  </div>
+
+  <!-- ══ 07 · VOZ Y PERSONALIDAD ══ -->
+  <div class="card card-dark">
+    <div class="section-tag">07 · Voz de marca y personalidad</div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h4>Auténtica</h4>
+        <p>Sin artificios. Hablamos de lo que existe de verdad: la piedra, el silencio, el cielo, la fauna. La honestidad es parte de nuestra identidad.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Poética</h4>
+        <p>Usamos el lenguaje con cuidado. «El silencio sabe a libertad» en lugar de «zona tranquila». Evocamos emociones, no solo características.</p>
+      </div>
+      <div class="voice-card">
+        <h4>Cálida</h4>
+        <p>Cercana pero elegante. Tuteamos siempre. No somos un hotel: somos una casona familiar que abre sus puertas con orgullo.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px">
+      <div class="section-tag" style="color:rgba(255,255,255,.4)">Taglines y claims</div>
+      <div class="taglines">
+        <div class="tagline-item">
+          <div class="tag-text">«Respira diferente.»</div>
+          <div class="tag-note">Principal · Hero</div>
+        </div>
+        <div class="tagline-item">
+          <div class="tag-text">«Estar en Babia no es perderse — es encontrarse.»</div>
+          <div class="tag-note">Sección Historia</div>
+        </div>
+        <div class="tagline-item">
+          <div class="tag-text">«Donde el tiempo se ralentiza y el silencio sabe a libertad.»</div>
+          <div class="tag-note">Descripción larga</div>
+        </div>
+        <div class="tagline-item">
+          <div class="tag-text">«Piedra, montaña y cielo sin fin.»</div>
+          <div class="tag-note">Slogan corto</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;display:flex;flex-wrap:wrap;gap:10px;">
+      <div style="font-size:0.72rem;color:rgba(255,255,255,.4);font-weight:700;letter-spacing:.15em;text-transform:uppercase;width:100%;margin-bottom:4px">Palabras clave de marca</div>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Autenticidad</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Silencio</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Historia</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Naturaleza</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Desconexión</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Piedra centenaria</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Montaña</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Cielo limpio</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Libertad</span>
+      <span style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:3px;font-size:0.82rem">Genuino</span>
+    </div>
+  </div>
+
+  <!-- ══ 08 · COMBINACIONES ══ -->
+  <div class="card">
+    <div class="section-tag">08 · Combinaciones de color recomendadas</div>
+    <div class="pattern-row">
+      <div class="pattern-box" style="background:var(--green);color:var(--white);flex-direction:column;gap:4px">
+        <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Aire de Babia</span>
+        <span style="font-size:0.6rem;opacity:.7;letter-spacing:.15em">CASONA RURAL</span>
+      </div>
+      <div class="pattern-box" style="background:var(--gold);color:var(--white);flex-direction:column;gap:4px">
+        <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Reservar</span>
+        <span style="font-size:0.6rem;opacity:.8;letter-spacing:.15em">CTA PRINCIPAL</span>
+      </div>
+      <div class="pattern-box" style="background:var(--cream);color:var(--green);flex-direction:column;gap:4px;border:1px solid var(--sand)">
+        <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--green)">La Casona</span>
+        <span style="font-size:0.6rem;color:var(--stone);letter-spacing:.15em">FONDO CLARO</span>
+      </div>
+      <div class="pattern-box" style="background:var(--sand);color:var(--green);flex-direction:column;gap:4px">
+        <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--green)">Servicios</span>
+        <span style="font-size:0.6rem;color:var(--stone);letter-spacing:.15em">SECCIÓN ALTERNA</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-hint">
+    Aire de Babia · Brand Board v1.0 · 2025 · airedebabia.es
+    <br>Para imprimir: Ctrl+P → Guardar como PDF
+  </div>
+
+</div>
+</body>
+</html>
