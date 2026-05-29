@@ -1,18 +1,18 @@
 # Aire de Babia — Web Oficial
 
-Sitio web estático para **Aire de Babia**, tres casas rurales de piedra en Piedrafita de Babia (Cabrillanes), León. Diseñado y desarrollado desde cero con HTML, CSS y JavaScript puro, sin frameworks ni dependencias externas.
-
-🌐 **[airedebabia.es](https://www.airedebabia.es)** · 📸 **[@airedebabia](https://www.instagram.com/airedebabia/)**
+Sitio web para **Aire de Babia**, tres casas rurales de piedra en Piedrafita de Babia (Cabrillanes), León. Diseñado y desarrollado desde cero con HTML, CSS y JavaScript puro, sin frameworks ni dependencias externas.
 
 ---
 
-## Páginas
+## Vista previa
 
-| Archivo | Descripción |
-|---|---|
-| `index.html` | Página principal — casas, galería, contacto, FAQ |
-| `actividades.html` | Actividades en la comarca de Babia |
-| `404.html` | Página de error personalizada |
+🌐 [Ver web en Netlify](https://aire-de-babia.netlify.app/) &nbsp;·&nbsp; 📸 [@airedebabia](https://www.instagram.com/airedebabia/)
+
+---
+
+## Sobre el proyecto
+
+Aire de Babia es un alojamiento rural con tres casas de piedra restauradas en plena Reserva de la Biosfera de Babia, León. La web actúa como carta de presentación y canal de captación directa, ofreciendo información sobre las casas, actividades en la comarca y contacto directo con los propietarios.
 
 ---
 
@@ -21,21 +21,27 @@ Sitio web estático para **Aire de Babia**, tres casas rurales de piedra en Pied
 - **Bilingüe ES / EN** — toggle con persistencia en `localStorage`
 - **Galería con lightbox** — 4 álbumes (Casa I, II, III, Exterior)
 - **Tabs interactivos** — navegación entre las 3 casas
-- **Formulario de contacto** — integrado con Formspree
-- **WhatsApp popup** — dos números, botón flotante
-- **Banner de cookies** — conforme a RGPD
-- **Open Graph + SEO** — meta tags, `robots.txt`, `sitemap.xml`
-- **Página 404 personalizada**
+- **Formulario de contacto** integrado con Formspree
+- **SEO optimizado** — Open Graph, meta tags, `robots.txt` y `sitemap.xml`
+- **Página de error 404** personalizada
+- **Banner de cookies RGPD** con opciones "Aceptar todo" / "Solo esenciales"
+- **Botón WhatsApp** flotante con dos números
+- **Animaciones de entrada** con IntersectionObserver
 - **Totalmente responsive** — mobile first
 
 ---
 
-## Stack
+## Tecnologías
 
-- HTML5 · CSS3 · JavaScript (vanilla)
-- [Google Fonts](https://fonts.google.com/) — Playfair Display + Lato
-- [Font Awesome 6.5](https://fontawesome.com/) — iconografía
-- [Formspree](https://formspree.io/) — formulario de contacto
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
+- HTML5 semántico
+- CSS3 puro (sin frameworks)
+- JavaScript puro
+- Fuentes de Google: Playfair Display + Lato
+- Iconografía: Font Awesome 6.5
 
 ---
 
@@ -43,10 +49,9 @@ Sitio web estático para **Aire de Babia**, tres casas rurales de piedra en Pied
 
 ```
 babiaa/
-├── index.html
-├── actividades.html
-├── 404.html
-├── favicon.svg
+├── index.html          # Página principal
+├── actividades.html    # Actividades en la comarca
+├── 404.html            # Página de error personalizada
 ├── robots.txt
 ├── sitemap.xml
 ├── .htaccess
@@ -58,15 +63,8 @@ babiaa/
 
 ---
 
-## Despliegue
+## Autor
 
-Alojado en **IONOS** con dominio personalizado `airedebabia.es`.  
-El archivo `.htaccess` redirige los errores 404 a la página personalizada.
+**Daniel Corpas** — Diseño y desarrollo web freelance
 
-Para actualizar: subir los archivos modificados vía FTP al directorio raíz `/`.
-
----
-
-## Desarrollo
-
-Diseño y desarrollo — [Daniel Corpas](https://www.linkedin.com/in/daniel-corpas/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-corpas/)
