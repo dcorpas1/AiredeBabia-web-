@@ -371,21 +371,29 @@
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-group label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--stone); }
     .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-group textarea {
       border: 1px solid var(--border); border-radius: var(--radius);
       padding: 12px 16px; font-family: 'Lato', sans-serif;
       font-size: 0.95rem; color: var(--text); background: var(--white);
       transition: border-color var(--T), box-shadow var(--T); width: 100%;
     }
     .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
+    .form-group textarea:focus {
       outline: none; border-color: var(--gold);
       box-shadow: 0 0 0 3px rgba(184,136,42,0.12);
     }
     .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select { height: 48px; cursor: pointer; }
+    .form-group select {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 12px 16px; font-family: 'Lato', sans-serif;
+      font-size: 0.95rem; color: var(--text); background: var(--white);
+      width: 100%; cursor: pointer;
+      display: block; box-sizing: border-box;
+    }
+    .form-group select:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184,136,42,0.12);
+    }
     .btn-form {
       display: inline-flex; align-items: center; gap: 9px;
       background: var(--green); color: var(--white); border: none;
@@ -1254,7 +1262,7 @@
           </div>
           <div class="form-group">
             <label for="alojamiento" data-es="Alojamiento de interés" data-en="Accommodation of interest">Alojamiento de interés</label>
-            <select id="alojamiento" name="alojamiento">
+            <select id="alojamiento" name="alojamiento" style="height:46px;min-height:0;overflow:hidden;padding:0 16px;">
               <option value="" data-es="Cualquiera" data-en="Any accommodation">Cualquiera</option>
               <option value="Alojamiento I">Aire de Babia I</option>
               <option value="Alojamiento II">Aire de Babia II</option>
