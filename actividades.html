@@ -114,12 +114,39 @@
 
     .nav-right { display: flex; align-items: center; gap: 14px; }
 
+    /* ── LANG DROPDOWN ─────────────────────────────────────── */
+    .lang-dropdown { position: relative; }
     .lang-btn {
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
       border: 1px solid rgba(255,255,255,0.45); border-radius: 20px;
-      padding: 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T);
+      padding: 6px 10px 6px 14px; color: rgba(255,255,255,0.85);
+      background: transparent; cursor: pointer; transition: var(--T);
+      display: flex; align-items: center; gap: 5px;
     }
     #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .lang-caret { font-size: 0.58rem; transition: transform var(--T); }
+    .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute; top: calc(100% + 8px); right: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      min-width: 68px; box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+      list-style: none; padding: 4px 0;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 300;
+    }
+    .lang-dropdown.open .lang-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .lang-menu li {
+      padding: 9px 18px; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.06em; cursor: pointer; color: var(--text-muted);
+      transition: background var(--T), color var(--T);
+    }
+    .lang-menu li:hover { background: var(--cream); color: var(--green); }
+    .lang-menu li.active { color: var(--gold); }
 
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
@@ -386,7 +413,17 @@
       <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
     </ul>
     <div class="nav-right">
-      <button class="lang-btn" id="langBtn">EN</button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">ES</span>
+          <i class="fa-solid fa-chevron-down lang-caret"></i>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li data-lang="es" class="active" role="menuitem">ES</li>
+          <li data-lang="en" role="menuitem">EN</li>
+          <li data-lang="fr" role="menuitem">FR</li>
+        </ul>
+      </div>
       <div class="hamburger" id="burger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
@@ -647,21 +684,44 @@
   document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 
   let lang = localStorage.getItem('lang') || 'es';
-  const langBtn = document.getElementById('langBtn');
-  const langCycle = { 'es': 'en', 'en': 'fr', 'fr': 'es' };
-  const langLabel = { 'es': 'EN', 'en': 'FR', 'fr': 'ES' };
+  const langDropdown = document.getElementById('langDropdown');
+  const langBtn      = document.getElementById('langBtn');
+  const langCurrent  = document.getElementById('langCurrent');
+
   function applyLang(l) {
     lang = l;
     localStorage.setItem('lang', l);
-    langBtn.textContent = langLabel[l];
+    langCurrent.textContent = l.toUpperCase();
+    langBtn.setAttribute('aria-expanded', 'false');
     document.documentElement.lang = l;
+    document.querySelectorAll('#langMenu li').forEach(li =>
+      li.classList.toggle('active', li.dataset.lang === l)
+    );
     document.querySelectorAll('[data-es]').forEach(el => {
       const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
       if (val) el.textContent = val;
     });
   }
-  langBtn.addEventListener('click', () => applyLang(langCycle[lang]));
-  if (lang !== 'es') applyLang(lang);
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.querySelectorAll('#langMenu li').forEach(li => {
+    li.addEventListener('click', () => {
+      applyLang(li.dataset.lang);
+      langDropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  applyLang(lang);
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
