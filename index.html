@@ -550,6 +550,47 @@
     .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .faq-a-inner { padding: 18px 26px 24px; color: var(--text-muted); font-size: 0.94rem; line-height: 1.8; background: var(--cream); }
 
+    /* ── INSTAGRAM ────────────────────────────────────────────── */
+    #instagram { padding: 80px 0; background: var(--white); }
+    #instagram .section-header { margin-bottom: 44px; }
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+    .ig-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      background: var(--cream);
+    }
+    .ig-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .ig-item:hover img { transform: scale(1.06); }
+    .ig-overlay {
+      position: absolute; inset: 0;
+      background: rgba(36,61,26,0); display: flex;
+      align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .ig-overlay i { color: #fff; font-size: 1.4rem; opacity: 0; transition: opacity 0.3s; }
+    .ig-item:hover .ig-overlay { background: rgba(36,61,26,0.45); }
+    .ig-item:hover .ig-overlay i { opacity: 1; }
+    .ig-cta { text-align: center; margin-top: 36px; }
+    .btn-ig {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff; border: none; border-radius: var(--radius);
+      padding: 14px 32px; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase; cursor: pointer;
+      transition: opacity 0.3s, transform 0.3s; text-decoration: none;
+    }
+    .btn-ig:hover { opacity: 0.88; transform: translateY(-2px); }
+    @media (max-width: 768px) { .ig-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 480px) { .ig-grid { grid-template-columns: repeat(2,1fr); } }
+
     /* ── FOOTER ───────────────────────────────────────────────── */
     footer { background: var(--green); color: rgba(255,255,255,0.68); padding: 64px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.12); }
@@ -1552,6 +1593,51 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ INSTAGRAM ════════════ -->
+<section id="instagram">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Síguenos" data-en="Follow us" data-fr="Suivez-nous">Síguenos</span>
+      <h2 class="title" data-es="Aire de Babia en Instagram" data-en="Aire de Babia on Instagram" data-fr="Aire de Babia sur Instagram">Aire de Babia en Instagram</h2>
+      <p class="body-text" data-es="Momentos reales del alojamiento, el paisaje y la vida en Babia. Cada estación, una postal distinta." data-en="Real moments from the property, the landscape and life in Babia. Every season, a different postcard." data-fr="Moments authentiques du domaine, du paysage et de la vie à Babia. Chaque saison, une carte postale différente.">Momentos reales del alojamiento, el paisaje y la vida en Babia. Cada estación, una postal distinta.</p>
+    </div>
+
+    <div class="ig-grid">
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/casas/dd.png" alt="Aire de Babia en invierno">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/naturaleza/IMG_8251.jpg" alt="Senderismo en Babia">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/naturaleza/IMG_8235.jpg" alt="Valle de Babia en primavera">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Patio de Aire de Babia">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/naturaleza/IMG_7709.jpg" alt="Lago de montaña en Babia">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Aire de Babia III exterior">
+        <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+    </div>
+
+    <div class="ig-cta">
+      <a class="btn-ig" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i>
+        <span data-es="Seguir @airedebabia" data-en="Follow @airedebabia" data-fr="Suivre @airedebabia">Seguir @airedebabia</span>
+      </a>
     </div>
   </div>
 </section>
