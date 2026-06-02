@@ -330,6 +330,19 @@
     .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
     .footer-credit a:hover { color: var(--gold-light); }
 
+    /* ── BACK TO TOP ──────────────────────────────────────── */
+    .back-to-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 800;
+      width: 46px; height: 46px; background: var(--green); border: none;
+      border-radius: 50%; color: var(--white); font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(36,61,26,0.38);
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .back-to-top:hover { background: var(--green-mid); transform: translateY(-2px); }
+
     /* ── WA FLOAT ──────────────────────────────────────────── */
     .wa-float {
       position: fixed; bottom: 28px; right: 28px; z-index: 800;
@@ -672,13 +685,21 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 <a href="https://wa.me/34679777247" class="wa-float" target="_blank" aria-label="WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <script>
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
   document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
