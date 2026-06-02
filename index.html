@@ -610,6 +610,41 @@
     .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
     .footer-credit a:hover { color: var(--gold-light); }
 
+    /* ── VIDEO ────────────────────────────────────────────────── */
+    #video-section { padding: 90px 0; background: var(--cream); }
+    #video-section .section-header { margin-bottom: 44px; }
+    .video-facade {
+      position: relative; max-width: 860px; margin: 0 auto;
+      border-radius: 6px; overflow: hidden; cursor: pointer;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.22);
+    }
+    .video-facade img {
+      width: 100%; display: block;
+      filter: brightness(0.78);
+      transition: filter 0.3s, transform 0.4s;
+    }
+    .video-facade:hover img { filter: brightness(0.65); transform: scale(1.02); }
+    .video-play {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+    }
+    .video-play-btn {
+      width: 80px; height: 80px; background: rgba(255,255,255,0.92);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .video-facade:hover .video-play-btn { transform: scale(1.1); background: var(--white); }
+    .video-play-btn i { color: var(--green); font-size: 1.9rem; margin-left: 5px; }
+    .video-play-label {
+      color: var(--white); font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; letter-spacing: 0.05em;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .video-facade iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+
     /* ── SCROLL REVEAL ────────────────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -1318,6 +1353,28 @@
   </div>
 </section>
 
+<!-- ════════════ VÍDEO ════════════ -->
+<!-- ⚠️  REEMPLAZA "VIDEO_ID" por el ID real de tu vídeo de YouTube cuando lo tengas -->
+<!-- Ejemplo: si el link es https://www.youtube.com/watch?v=dQw4w9WgXcQ → VIDEO_ID = dQw4w9WgXcQ -->
+<section id="video-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Vídeo" data-en="Video" data-fr="Vidéo">Vídeo</span>
+      <h2 class="title" data-es="Descubre Aire de Babia" data-en="Discover Aire de Babia" data-fr="Découvrez Aire de Babia">Descubre Aire de Babia</h2>
+      <p class="body-text" data-es="Un vistazo a los alojamientos, el entorno y la vida en la Comarca de Babia." data-en="A glimpse of the accommodations, the surroundings and life in the Babia region." data-fr="Un aperçu des hébergements, de l'environnement et de la vie dans la région de Babia.">Un vistazo a los alojamientos, el entorno y la vida en la Comarca de Babia.</p>
+    </div>
+    <div class="video-facade reveal" id="videoFacade" onclick="loadVideo()" style="aspect-ratio:16/9;">
+      <img loading="lazy" decoding="async" src="img/naturaleza/IMG_8251.jpg" alt="Reproducir vídeo de Aire de Babia" style="height:100%;object-fit:cover;">
+      <div class="video-play">
+        <div class="video-play-btn">
+          <i class="fa-solid fa-play"></i>
+        </div>
+        <span class="video-play-label" data-es="Ver vídeo" data-en="Watch video" data-fr="Voir la vidéo">Ver vídeo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════ ENTORNO ════════════ -->
 <section id="entorno">
   <div class="container">
@@ -1888,6 +1945,25 @@
   });
 
   // ── MAP MODAL ────────────────────────────────────────────
+  // ── VIDEO FACADE ─────────────────────────────────────────
+  // ⚠️  Reemplaza VIDEO_ID por el ID de tu vídeo de YouTube
+  const VIDEO_ID = 'VIDEO_ID';
+  function loadVideo() {
+    if (VIDEO_ID === 'VIDEO_ID') {
+      window.open('https://www.instagram.com/airedebabia/', '_blank');
+      return;
+    }
+    const f = document.getElementById('videoFacade');
+    f.style.cursor = 'default';
+    f.onclick = null;
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + VIDEO_ID + '?autoplay=1&rel=0';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+    iframe.allowFullscreen = true;
+    f.innerHTML = '';
+    f.appendChild(iframe);
+  }
+
   function openMap() {
     document.getElementById('mapModal').classList.add('on');
     document.body.style.overflow = 'hidden';
