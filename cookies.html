@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Cookies de Aire de Babia — Información sobre los tipos de cookies utilizadas en airedebabia.es y cómo gestionarlas.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Aire de Babia">
+  <title>Política de Cookies · Aire de Babia</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; font-weight: 300; color: var(--text); background: var(--cream); line-height: 1.75; font-size: 16px; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    #nav { position: fixed; inset: 0 0 auto; z-index: 900; padding: 22px 0; transition: background var(--T), padding var(--T), box-shadow var(--T); }
+    #nav.solid { background: var(--white); padding: 14px 0; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); }
+    #nav.solid .nav-logo { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+
+    /* ── LANG DROPDOWN ───────────────────────────────────── */
+    .lang-dropdown { position: relative; }
+    .lang-btn { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.45); border-radius: 20px; padding: 6px 10px 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T); display: flex; align-items: center; gap: 5px; }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .lang-caret { font-size: 0.58rem; transition: transform var(--T); }
+    .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+    .lang-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 68px; box-shadow: 0 8px 24px rgba(0,0,0,0.13); list-style: none; padding: 4px 0; opacity: 0; pointer-events: none; transform: translateY(-6px); transition: opacity 0.2s ease, transform 0.2s ease; z-index: 300; }
+    .lang-dropdown.open .lang-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .lang-menu li { padding: 9px 18px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; color: var(--text-muted); transition: background var(--T), color var(--T); }
+    .lang-menu li:hover { background: var(--cream); color: var(--green); }
+    .lang-menu li.active { color: var(--gold); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px 28px 28px; gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .page-hero { position: relative; height: 38vh; min-height: 280px; display: flex; align-items: flex-end; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('img/casas/dd.png') center/cover no-repeat; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,20,8,0.88) 0%, rgba(10,20,8,0.4) 60%, rgba(10,20,8,0.25) 100%); }
+    .page-hero-content { position: relative; z-index: 1; padding: 0 0 50px; width: 100%; }
+    .page-hero-content .label { color: var(--gold-light); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+    .page-hero-content h1 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); }
+
+    /* ── CONTENIDO LEGAL ──────────────────────────────────── */
+    .legal-wrap { background: var(--white); }
+    .legal-body { max-width: 780px; margin: 0 auto; padding: 80px 28px 100px; }
+
+    .legal-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--green); margin-top: 52px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .legal-body h2:first-child { margin-top: 0; }
+    .legal-body h3 { font-family: 'Lato', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin-top: 28px; margin-bottom: 12px; }
+
+    .legal-body p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 16px; }
+    .legal-body ol, .legal-body ul { padding-left: 22px; margin-bottom: 16px; }
+    .legal-body li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 10px; }
+    .legal-body a { color: var(--green); text-decoration: underline; transition: color var(--T); }
+    .legal-body a:hover { color: var(--gold); }
+
+    /* Tabla de cookies */
+    .cookie-table-wrap { overflow-x: auto; margin: 24px 0 32px; border-radius: 6px; border: 1px solid var(--border); }
+    .cookie-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .cookie-table th { background: var(--green); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+    .cookie-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table tr:nth-child(even) td { background: var(--cream); }
+    .cookie-table code { font-family: monospace; font-size: 0.83rem; background: rgba(36,61,26,0.07); padding: 2px 6px; border-radius: 3px; color: var(--green); }
+
+    .cookie-type-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 14px; }
+    .cookie-type-label.tecnica  { background: #dff0da; color: #1d4a13; }
+    .cookie-type-label.terceros { background: #fff3dc; color: #7a5500; }
+
+    .browser-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 18px 0; }
+    .browser-link { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 10px 14px; background: var(--cream); border-radius: var(--radius); transition: background var(--T); }
+    .browser-link:hover { background: var(--border); }
+    .browser-link i { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer { background: var(--green); color: rgba(255,255,255,0.68); padding: 40px 0 28px; }
+    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: color var(--T); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { padding-top: 22px; font-size: 0.78rem; text-align: center; line-height: 2; }
+    .footer-bottom a { transition: color var(--T); }
+    .footer-bottom a:hover { color: var(--white); }
+    .footer-credit { text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── BACK TO TOP ─────────────────────────────────────── */
+    .back-to-top { position: fixed; bottom: 28px; left: 28px; z-index: 800; width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: var(--white); border: none; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity var(--T), transform var(--T), background var(--T); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .back-to-top:hover { background: var(--green-mid, #355929); }
+
+    /* ── WHATSAPP ─────────────────────────────────────────── */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 800; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.55rem; box-shadow: 0 4px 18px rgba(0,0,0,0.22); transition: transform var(--T), box-shadow var(--T); }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
+
+    /* ── COOKIE BANNER ───────────────────────────────────── */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-top: 1px solid var(--border); padding: 18px 28px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); transform: translateY(100%); transition: transform 0.4s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-text { font-size: 0.86rem; color: var(--text-muted); flex: 1; min-width: 200px; }
+    .cookie-text a { color: var(--green); text-decoration: underline; margin-left: 6px; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-btn-ess { padding: 9px 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); background: transparent; color: var(--text-muted); border-radius: var(--radius); cursor: pointer; transition: var(--T); }
+    .cookie-btn-ess:hover { border-color: var(--green); color: var(--green); }
+    .cookie-btn-all { padding: 9px 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border: none; background: var(--green); color: var(--white); border-radius: var(--radius); cursor: pointer; transition: var(--T); }
+    .cookie-btn-all:hover { background: var(--green-mid, #355929); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-simple { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: 16px; }
+      .browser-links { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .legal-body { padding: 50px 20px 70px; }
+      .browser-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
+      <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
+      <li><a href="index.html#entorno"   data-es="Entorno"     data-en="Surroundings" data-fr="Environs">Entorno</a></li>
+      <li><a href="actividades.html"     data-es="Actividades" data-en="Activities"   data-fr="Activités">Actividades</a></li>
+      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">ES</span>
+          <i class="fa-solid fa-chevron-down lang-caret"></i>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li data-lang="es" class="active" role="menuitem">ES</li>
+          <li data-lang="en" role="menuitem">EN</li>
+          <li data-lang="fr" role="menuitem">FR</li>
+        </ul>
+      </div>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="label">airedebabia.es</span>
+      <h1>Política de Cookies</h1>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CONTENIDO ════════ -->
+<div class="legal-wrap">
+  <div class="legal-body">
+
+    <p>En este sitio web, <a href="https://www.airedebabia.es/">https://www.airedebabia.es/</a> (en adelante "Sitio Web"), utilizamos cookies y tecnologías de almacenamiento local. A continuación, le ofrecemos información detallada sobre qué son, qué tipos utilizamos y cómo puede gestionarlas.</p>
+
+    <h2>¿Qué es una cookie?</h2>
+    <p>Una cookie es un fichero que se descarga en el dispositivo del usuario cuando accede y utiliza este Sitio Web, para almacenar y recuperar información sobre la navegación que se efectúa, como por ejemplo las páginas visitadas, la frecuencia de las visitas o las preferencias del usuario.</p>
+    <p>Este Sitio Web también utiliza <strong>almacenamiento local</strong> (<em>localStorage</em>), una tecnología similar a las cookies que guarda información en el dispositivo del usuario sin enviarla al servidor, utilizada para recordar el idioma seleccionado y las preferencias de cookies.</p>
+
+    <h2>¿Qué tipo de cookies existen?</h2>
+
+    <h3>Según la entidad que las gestiona</h3>
+    <ul>
+      <li><strong>Cookies propias:</strong> se envían al dispositivo desde nuestros propios equipos o dominios.</li>
+      <li><strong>Cookies de terceros:</strong> se envían al dispositivo desde un equipo o dominio gestionado por otra entidad.</li>
+    </ul>
+
+    <h3>Según el plazo de tiempo que permanecen activas</h3>
+    <ul>
+      <li><strong>Cookies de sesión:</strong> guardan la información necesaria durante la sesión y se eliminan al cerrar el navegador.</li>
+      <li><strong>Cookies persistentes:</strong> se almacenan en el dispositivo y el Sitio Web las lee en cada nueva visita, hasta que expiran o se eliminan manualmente.</li>
+    </ul>
+
+    <h3>Según la finalidad</h3>
+    <ul>
+      <li><strong>Cookies técnicas y funcionales:</strong> permiten la navegación y la utilización de las opciones o servicios del Sitio Web. Son necesarias para su correcto funcionamiento.</li>
+      <li><strong>Cookies analíticas:</strong> permiten el seguimiento y análisis del comportamiento de los usuarios para introducir mejoras en el servicio.</li>
+      <li><strong>Cookies de terceros / redes sociales:</strong> establecidas por plataformas externas vinculadas al Sitio Web (por ejemplo, Google Maps o Instagram).</li>
+    </ul>
+
+    <h2>Cookies utilizadas en este Sitio Web</h2>
+
+    <h3>Cookies y almacenamiento propio — Técnicas y funcionales</h3>
+    <span class="cookie-type-label tecnica">Técnicas · Exentas de consentimiento</span>
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Nombre</th>
+            <th>Finalidad</th>
+            <th>Plazo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>airedebabia.es</td>
+            <td><code>lang</code></td>
+            <td>Almacena el idioma seleccionado por el usuario (ES/EN/FR) para mantenerlo entre visitas.</td>
+            <td>Persistente (localStorage)</td>
+          </tr>
+          <tr>
+            <td>airedebabia.es</td>
+            <td><code>cookieConsent</code></td>
+            <td>Guarda la preferencia del usuario sobre la aceptación de cookies para no mostrar el banner en visitas sucesivas.</td>
+            <td>Persistente (localStorage)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Cookies de terceros</h3>
+    <span class="cookie-type-label terceros">Terceros · Requieren consentimiento</span>
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Nombre</th>
+            <th>Finalidad</th>
+            <th>Plazo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>google.com</td>
+            <td><code>NID, CONSENT, 1P_JAR</code></td>
+            <td>Cookies establecidas por Google al cargar el mapa interactivo (Google Maps) en el modal de ubicación del Sitio Web.</td>
+            <td>Variable (hasta 2 años)</td>
+          </tr>
+          <tr>
+            <td>formspree.io</td>
+            <td>Cookies de sesión</td>
+            <td>Cookies técnicas establecidas al enviar el formulario de contacto a través del servicio Formspree.</td>
+            <td>Sesión</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Cookies afectadas por la normativa y cookies exceptuadas</h2>
+    <p>Según la directiva de la UE, las cookies que requieren el consentimiento informado por parte del usuario son las cookies analíticas y las de publicidad. Las cookies de carácter técnico y las necesarias para el funcionamiento del Sitio Web o la prestación de servicios expresamente solicitados por el usuario están <strong>exceptuadas</strong> de dicho consentimiento.</p>
+    <p>Las cookies propias de este Sitio Web (<code>lang</code> y <code>cookieConsent</code>) son de carácter exclusivamente técnico y funcional, por lo que no requieren consentimiento previo.</p>
+
+    <h2>Cookies de redes sociales</h2>
+    <p>A través del Sitio Web se puede acceder al perfil oficial de AIRE DE BABIA en <strong>Instagram</strong> (@airedebabia). El acceso a dicha red social puede implicar que Instagram (Meta) establezca sus propias cookies en su dispositivo, de acuerdo con sus propias políticas.</p>
+    <p>Para más información sobre las políticas de privacidad de Instagram puede consultar: <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">Política de privacidad de Instagram (Meta)</a>.</p>
+
+    <h2>¿Cómo gestionar las cookies?</h2>
+    <p>Cuando visite nuestro Sitio Web por primera vez, aparecerá un banner con información sobre el uso de cookies. Puede aceptar todas las cookies, o elegir solo las esenciales. En cualquier momento puede modificar sus preferencias eliminando las cookies almacenadas en su navegador.</p>
+
+    <h3>Eliminar las cookies del dispositivo</h3>
+    <p>Las cookies que ya están en un dispositivo se pueden eliminar borrando el historial del navegador. Sin embargo, también puede perder parte de la información guardada, como las preferencias de idioma o las preferencias de cookies.</p>
+
+    <h3>Bloquear las cookies</h3>
+    <p>La mayoría de los navegadores modernos pueden configurarse para evitar que se instalen cookies. Sin embargo, algunos servicios del Sitio Web (como el mapa interactivo) pueden no funcionar correctamente si las cookies de terceros están bloqueadas.</p>
+
+    <h3>¿Cómo eliminar las cookies en los navegadores más comunes?</h3>
+    <div class="browser-links">
+      <a class="browser-link" href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank" rel="noopener">
+        <i class="fa-brands fa-chrome"></i> Google Chrome
+      </a>
+      <a class="browser-link" href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">
+        <i class="fa-brands fa-edge"></i> Microsoft Edge
+      </a>
+      <a class="browser-link" href="https://support.mozilla.org/es/kb/limpiar-cookies-y-datos-de-sitios-en-firefox" target="_blank" rel="noopener">
+        <i class="fa-brands fa-firefox-browser"></i> Mozilla Firefox
+      </a>
+      <a class="browser-link" href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">
+        <i class="fa-brands fa-safari"></i> Safari
+      </a>
+      <a class="browser-link" href="https://help.opera.com/en/latest/security-and-privacy/#clearBrowsingData" target="_blank" rel="noopener">
+        <i class="fa-brands fa-opera"></i> Opera
+      </a>
+    </div>
+
+    <h2>Modificación de la Política de Cookies</h2>
+    <p>AIRE DE BABIA puede modificar esta POLÍTICA DE COOKIES en función de las exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos. Por ello, aconsejamos a los usuarios que la visiten y lean periódicamente.</p>
+    <p>Para cualquier consulta relacionada con esta política puede contactar con nosotros en <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>.</p>
+
+  </div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="footer-logo">Aire de Babia</a>
+      <div class="footer-links">
+        <a href="index.html#nosotros"  data-es="La Casona"   data-en="About"       data-fr="La Propriété">La Casona</a>
+        <a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"     data-fr="Galerie">Galería</a>
+        <a href="actividades.html"     data-es="Actividades" data-en="Activities"  data-fr="Activités">Actividades</a>
+        <a href="index.html#reservas"  data-es="Reservar"    data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved" data-fr="Tous droits réservés">Todos los derechos reservados</span></span>
+      <br style="margin-bottom:6px">
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice" data-fr="Mentions légales">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy" data-fr="Politique de confidentialité">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy" data-fr="Politique de cookies">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<a href="https://wa.me/34679777247" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  let lang = localStorage.getItem('lang') || 'es';
+  const langDropdown = document.getElementById('langDropdown');
+  const langBtn      = document.getElementById('langBtn');
+  const langCurrent  = document.getElementById('langCurrent');
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langCurrent.textContent = l.toUpperCase();
+    langBtn.setAttribute('aria-expanded', 'false');
+    document.documentElement.lang = l;
+    document.querySelectorAll('#langMenu li').forEach(li =>
+      li.classList.toggle('active', li.dataset.lang === l)
+    );
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
+      if (val) el.textContent = val;
+    });
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown.classList.toggle('open');
+    langBtn.setAttribute('aria-enabled', isOpen);
+  });
+  document.querySelectorAll('#langMenu li').forEach(li => {
+    li.addEventListener('click', () => {
+      applyLang(li.dataset.lang);
+      langDropdown.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  applyLang(lang);
+
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => { const b = document.getElementById('cookieBanner'); if (b) b.classList.add('show'); }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <i class="fa-solid fa-cookie-bite" style="color:var(--gold-light);margin-right:8px"></i>
+    <span data-es="Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales." data-en="We use our own cookies to improve your browsing experience. You can accept all or choose only the essential ones." data-fr="Nous utilisons des cookies pour améliorer votre expérience de navigation. Vous pouvez tout accepter ou choisir uniquement les essentiels.">Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales.</span>
+    <a href="cookies.html" data-es="Política de cookies" data-en="Cookie policy" data-fr="Politique de cookies">Política de cookies</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')" data-es="Solo esenciales" data-en="Essential only" data-fr="Essentiels seulement">Solo esenciales</button>
+    <button class="cookie-btn-all" onclick="acceptCookies('all')" data-es="Aceptar todo" data-en="Accept all" data-fr="Tout accepter">Aceptar todo</button>
+  </div>
+</div>
+
+</body>
+</html>

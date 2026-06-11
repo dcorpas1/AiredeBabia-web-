@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
   <!-- ES -->
   <meta name="description"         content="Aire de Babia — Tres alojamientos rurales de piedra en Piedrafita de Babia, León. Naturaleza, silencio y autenticidad en el corazón de la Comarca de Babia.">
   <meta name="keywords"            content="alojamientos rurales Babia, alojamiento rural León, Piedrafita de Babia, turismo rural Cabrillanes, Aire de Babia, casas rurales León">
@@ -65,8 +66,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 42.9338,
-      "longitude": -6.1272
+      "latitude": 42.954028,
+      "longitude": -6.188722
     },
     "image": [
       "https://www.airedebabia.es/img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg",
@@ -182,6 +183,7 @@
       font-family: 'Lato', sans-serif; font-weight: 700;
       font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase;
       cursor: pointer; transition: var(--T); border: 2px solid transparent;
+      touch-action: manipulation;
     }
     .btn-dark  { background: var(--green); color: var(--white); }
     .btn-dark:hover { background: var(--green-mid); }
@@ -256,18 +258,18 @@
 
     /* ── HERO ─────────────────────────────────────────────────── */
     #hero {
-      position: relative; height: 100vh; min-height: 620px;
+      position: relative; height: 100vh; height: 100dvh; min-height: 620px;
       display: flex; align-items: center; justify-content: center;
       text-align: center; overflow: hidden;
     }
     .hero-bg {
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; pointer-events: none;
       background: url('img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg') center/cover no-repeat;
       transform: scale(1.06); transition: transform 10s ease;
     }
     #hero.loaded .hero-bg { transform: scale(1); }
     .hero-overlay {
-      position: absolute; inset: 0;
+      position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom, rgba(10,20,8,0.38) 0%, rgba(10,20,8,0.55) 60%, rgba(10,20,8,0.72) 100%);
     }
     .hero-content { position: relative; z-index: 1; color: var(--white); max-width: 820px; padding: 0 24px; }
@@ -547,6 +549,13 @@
     }
     .btn-form:hover { background: var(--green-mid); }
     .form-note { font-size: 0.78rem; color: var(--text-muted); }
+    .form-rgpd {
+      font-size: 0.73rem; color: var(--text-muted); line-height: 1.5;
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .form-rgpd a { color: var(--gold); text-decoration: underline; }
+    .form-rgpd a:hover { color: var(--green); }
 
     /* ── FAQ ──────────────────────────────────────────────────── */
     #faq { padding: 110px 0; }
@@ -600,6 +609,57 @@
     .btn-ig:hover { opacity: 0.88; transform: translateY(-2px); }
     @media (max-width: 768px) { .ig-grid { grid-template-columns: repeat(3,1fr); } }
     @media (max-width: 480px) { .ig-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* ── CALENDARIO ──────────────────────────────────────────── */
+    #calendario { padding: 100px 0; background: var(--white); }
+    .cal-tabs { display: flex; gap: 6px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+    .cal-tab { padding: 9px 22px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 2px solid var(--green); color: var(--green); background: transparent; border-radius: var(--radius); cursor: pointer; transition: all var(--T); font-family: 'Lato', sans-serif; }
+    .cal-tab.active, .cal-tab:hover { background: var(--green); color: var(--white); }
+    .cal-wrap { max-width: 500px; margin: 0 auto; background: var(--cream); border: 1px solid var(--border); border-radius: 6px; padding: 28px 28px 24px; position: relative; overflow: hidden; }
+    .cal-overlay {
+      position: absolute; inset: 0; z-index: 10;
+      background: rgba(247, 244, 239, 0.82);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      border-radius: 6px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; text-align: center; padding: 24px;
+    }
+    .cal-overlay-icon { font-size: 2rem; color: var(--gold); }
+    .cal-overlay-title {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      color: var(--green); font-weight: 700; margin: 0;
+    }
+    .cal-overlay-sub { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .cal-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .cal-nav-btn { background: none; border: none; cursor: pointer; color: var(--green); font-size: 1rem; padding: 6px 12px; border-radius: var(--radius); transition: background var(--T); }
+    .cal-nav-btn:hover { background: var(--border); }
+    #calTitle { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--green); }
+    .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: 5px; }
+    .cal-days span { text-align: center; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding: 6px 0; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+    .cal-grid span { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 0.86rem; border-radius: 4px; }
+    .cal-day.past   { color: #c8c4be; background: transparent; }
+    .cal-day.today  { background: var(--gold); color: var(--white); font-weight: 700; border-radius: 50%; }
+    .cal-day.free   { background: #dff0da; color: #1d4a13; font-weight: 600; }
+    .cal-day.booked { background: #243D1A; color: rgba(255,255,255,0.4); text-decoration: line-through; cursor: not-allowed; }
+    .cal-empty      { background: transparent; }
+    .cal-legend { display: flex; gap: 20px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .cal-legend-item { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--text-muted); }
+    .cal-legend-dot { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+    .cal-legend-dot.free   { background: #dff0da; }
+    .cal-legend-dot.booked { background: #243D1A; }
+    .cal-legend-dot.today  { background: var(--gold); border-radius: 50%; }
+    .cal-legend-dot.past   { background: #e5e2dd; }
+    .cal-cta { text-align: center; margin-top: 40px; }
+    .cal-note { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.7; }
+    .cal-wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: var(--white); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; padding: 14px 30px; border-radius: var(--radius); text-decoration: none; transition: opacity var(--T), transform var(--T); font-family: 'Lato', sans-serif; }
+    .cal-wa-btn i { font-size: 1.1rem; }
+    .cal-wa-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .cal-wrap { padding: 20px 12px 18px; }
+      .cal-grid span { font-size: 0.78rem; }
+      .cal-legend { gap: 12px; }
+    }
 
     /* ── FOOTER ───────────────────────────────────────────────── */
     footer { background: var(--green); color: rgba(255,255,255,0.68); padding: 64px 0 32px; }
@@ -687,6 +747,7 @@
     }
     .map-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(36,61,26,0.52); }
     .wa-popup {
+      position: absolute; bottom: calc(100% + 10px); right: 0;
       background: var(--white); border-radius: 10px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 18px 20px;
       min-width: 250px; display: flex; flex-direction: column; gap: 8px;
@@ -832,9 +893,9 @@
       <li class="nav-dropdown">
         <a href="#alojamiento" data-es="Los alojamientos" data-en="Our Stays" data-fr="Les hébergements">Los alojamientos <i class="fa-solid fa-chevron-down nav-caret"></i></a>
         <ul class="nav-dropdown-menu">
-          <li><a href="#alojamiento" onclick="showHouse(0)" data-es="Aire de Babia I" data-en="Aire de Babia I" data-fr="Aire de Babia I"><i class="fa-solid fa-house"></i> Aire de Babia I</a></li>
-          <li><a href="#alojamiento" onclick="showHouse(1)" data-es="Aire de Babia II" data-en="Aire de Babia II" data-fr="Aire de Babia II"><i class="fa-solid fa-house"></i> Aire de Babia II</a></li>
-          <li><a href="#alojamiento" onclick="showHouse(2)" data-es="Aire de Babia III" data-en="Aire de Babia III" data-fr="Aire de Babia III"><i class="fa-solid fa-house"></i> Aire de Babia III</a></li>
+          <li><a href="#alojamiento" onclick="showHouse(0)" data-es="Casa Oso" data-en="Casa Oso" data-fr="Casa Oso"><i class="fa-solid fa-house"></i> Casa Oso</a></li>
+          <li><a href="#alojamiento" onclick="showHouse(1)" data-es="Casa Urogallo" data-en="Casa Urogallo" data-fr="Casa Urogallo"><i class="fa-solid fa-house"></i> Casa Urogallo</a></li>
+          <li><a href="#alojamiento" onclick="showHouse(2)" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña"><i class="fa-solid fa-house"></i> Casa Cigüeña</a></li>
         </ul>
       </li>
       <li><a href="#servicios"   data-es="Servicios"    data-en="Amenities"    data-fr="Services">Servicios</a></li>
@@ -899,7 +960,7 @@
     </div>
     <div class="strip-item">
       <i class="fa-solid fa-paw"></i>
-      <span><strong data-es="Mascotas bienvenidas" data-en="Pets welcome" data-fr="Animaux bienvenus">Mascotas bienvenidas</strong></span>
+      <span><strong data-es="Mascotas bienvenidas" data-en="Pets friendly" data-fr="Animaux bienvenus">Mascotas bienvenidas</strong></span>
     </div>
   </div>
 </div>
@@ -915,8 +976,8 @@
           En el corazón de Piedrafita de Babia (Cabrillanes, León), a los pies de montañas que tocan las nubes, se alza Aire de Babia: una casona rural de piedra centenaria restaurada con mimo y respeto por su arquitectura original, donde el tiempo se ralentiza y el silencio sabe a libertad.
         </p>
         <blockquote class="about-quote" data-es="«Estar en Babia» no es perderse — es encontrarse." data-en="«Being in Babia» is not being lost — it is being found." data-fr="«Estar en Babia» n'est pas se perdre — c'est se retrouver.">«Estar en Babia» no es perderse — es encontrarse.</blockquote>
-        <p class="body-text about-body-text" data-es="El conjunto se compone de tres alojamientos independientes: Aire de Babia I, II y III — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España." data-en="The complex comprises three independent accommodations: Aire de Babia I, II and III — each with its own character, complete privacy and its own facilities. The wide stone courtyard, spring water fountain and panoramic views of the Sierra de Gistredo make this place unique in northwest Spain." data-fr="L'ensemble comprend trois hébergements indépendants : Aire de Babia I, II et III — chacun avec son propre caractère, une totale intimité et ses propres équipements. La grande cour en pierre, la fontaine d'eau de source et les vues panoramiques sur la Sierra de Gistredo font de ce lieu un endroit unique dans le nord-ouest de l'Espagne.">
-          El conjunto se compone de tres alojamientos independientes: Aire de Babia I, II y III — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España.
+        <p class="body-text about-body-text" data-es="El conjunto se compone de tres alojamientos independientes: Casa Oso, Casa Urogallo y Casa Cigüeña — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España." data-en="The complex comprises three independent accommodations: Casa Oso, Casa Urogallo and Casa Cigüeña — each with its own character, complete privacy and its own facilities. The wide stone courtyard, spring water fountain and panoramic views of the Sierra de Gistredo make this place unique in northwest Spain." data-fr="L'ensemble comprend trois hébergements indépendants : Casa Oso, Casa Urogallo et Casa Cigüeña — chacun avec son propre caractère, une totale intimité et ses propres équipements. La grande cour en pierre, la fontaine d'eau de source et les vues panoramiques sur la Sierra de Gistredo font de ce lieu un endroit unique dans le nord-ouest de l'Espagne.">
+          El conjunto se compone de tres alojamientos independientes: Casa Oso, Casa Urogallo y Casa Cigüeña — cada uno con su carácter propio, su privacidad completa y sus propias instalaciones. Su amplio patio de piedra, su fuente de agua de manantial y las vistas panorámicas a la Sierra de Gistredo convierten este lugar en único en el noroeste de España.
         </p>
       </div>
       <div class="about-img-wrap reveal">
@@ -937,17 +998,17 @@
     </div>
 
     <div class="house-tabs">
-      <button class="house-tab active" onclick="showHouse(0)">Aire de Babia I</button>
-      <button class="house-tab" onclick="showHouse(1)">Aire de Babia II</button>
-      <button class="house-tab" onclick="showHouse(2)">Aire de Babia III</button>
+      <button class="house-tab active" onclick="showHouse(0)">Casa Oso</button>
+      <button class="house-tab" onclick="showHouse(1)">Casa Urogallo</button>
+      <button class="house-tab" onclick="showHouse(2)">Casa Cigüeña</button>
     </div>
 
     <!-- ── CASA I ── -->
     <div class="house-panel active" id="house-0">
       <div class="house-detail">
         <div>
-          <span class="house-badge" data-es="alojamiento I · Hasta 8 personas" data-en="Accommodation I · Up to 8 guests" data-fr="Hébergement I · Jusqu'à 8 personnes">Alojamiento I · Hasta 8 personas</span>
-          <h3 class="house-title">Aire de Babia I</h3>
+          <span class="house-badge" data-es="Casa Oso · Hasta 8 personas" data-en="Casa Oso · Up to 8 guests" data-fr="Casa Oso · Jusqu'à 8 personnes">Casa Oso · Hasta 8 personas</span>
+          <h3 class="house-title">Casa Oso</h3>
           <p class="house-desc" data-es="El alojamiento más amplio del conjunto. Tres habitaciones dobles en la casona de piedra centenaria, con posibilidad de alojar hasta 8 personas con camas supletorias. Perfecto para familias o grupos de amigos que buscan espacio y privacidad total." data-en="The largest accommodation in the complex. Three double rooms in the centuries-old stone manor, accommodating up to 8 guests with extra beds. Perfect for families or groups of friends seeking full space and privacy." data-fr="Le plus grand hébergement de l'ensemble. Trois chambres doubles dans le manoir en pierre centenaire, pouvant accueillir jusqu'à 8 personnes avec des lits d'appoint. Idéal pour les familles ou groupes d'amis à la recherche d'espace et d'une totale intimité.">El alojamiento más amplio del conjunto. Tres habitaciones dobles en la casona de piedra centenaria, con posibilidad de alojar hasta 8 personas con camas supletorias. Perfecto para familias o grupos de amigos que buscan espacio y privacidad total.</p>
           <div class="house-specs">
             <div class="spec-card">
@@ -982,13 +1043,13 @@
             <div class="price-row"><strong data-es="Semana completa" data-en="Full week" data-fr="Semaine complète">Semana completa</strong><span>840 €</span></div>
           </div>
           <div style="margin-top:24px;">
-            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(0)" data-es="Ver galería — Aire de Babia I" data-en="View gallery — Accommodation I" data-fr="Voir la galerie — Aire de Babia I" style="padding:9px 20px;font-size:0.75rem;">
-              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia I
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(0)" data-es="Ver galería — Casa Oso" data-en="View gallery — Casa Oso" data-fr="Voir la galerie — Casa Oso" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Casa Oso
             </a>
           </div>
         </div>
         <div class="house-img-wrap reveal">
-          <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Aire de Babia I — patio exterior" style="object-position: center 25%;">
+          <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Casa Oso — patio exterior" style="object-position: center 25%;">
           <div class="house-img-accent"></div>
         </div>
       </div>
@@ -998,8 +1059,8 @@
     <div class="house-panel" id="house-1">
       <div class="house-detail">
         <div>
-          <span class="house-badge" data-es="Alojamiento II · Hasta 8 personas" data-en="Accommodation II · Up to 8 guests" data-fr="Hébergement II · Jusqu'à 8 personnes">Alojamiento II · Hasta 8 personas</span>
-          <h3 class="house-title">Aire de Babia II</h3>
+          <span class="house-badge" data-es="Casa Urogallo · Hasta 8 personas" data-en="Casa Urogallo · Up to 8 guests" data-fr="Casa Urogallo · Jusqu'à 8 personnes">Casa Urogallo · Hasta 8 personas</span>
+          <h3 class="house-title">Casa Urogallo</h3>
           <p class="house-desc" data-es="Elegancia y confort en un mismo alojamiento. Dos habitaciones dobles y una Suite exclusiva con cama doble y sofá cama doble. Dos baños completos — uno de ellos con ducha de hidromasaje y bañera. El mayor nivel de confort del conjunto." data-en="Elegance and comfort in one accommodation. Two double rooms and an exclusive Suite with double bed and double sofa bed. Two full bathrooms — one with hydromassage shower and bathtub. The highest level of comfort in the complex." data-fr="Élégance et confort dans un même hébergement. Deux chambres doubles et une Suite exclusive avec lit double et canapé-lit double. Deux salles de bain complètes — l'une avec douche hydromassage et baignoire. Le plus haut niveau de confort de l'ensemble.">Elegancia y confort en un mismo alojamiento. Dos habitaciones dobles y una Suite exclusiva con cama doble y sofá cama doble. Dos baños completos — uno de ellos con ducha de hidromasaje y bañera. El mayor nivel de confort del conjunto.</p>
           <div class="house-specs">
             <div class="spec-card">
@@ -1034,13 +1095,13 @@
             <div class="price-row"><strong data-es="Semana completa" data-en="Full week" data-fr="Semaine complète">Semana completa</strong><span>980 €</span></div>
           </div>
           <div style="margin-top:24px;">
-            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(1)" data-es="Ver galería — Alojamiento II" data-en="View gallery — Accommodation II" data-fr="Voir la galerie — Aire de Babia II" style="padding:9px 20px;font-size:0.75rem;">
-              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia II
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(1)" data-es="Ver galería — Casa Urogallo" data-en="View gallery — Casa Urogallo" data-fr="Voir la galerie — Casa Urogallo" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Casa Urogallo
             </a>
           </div>
         </div>
         <div class="house-img-wrap reveal">
-          <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Aire de Babia II — patio exterior" style="object-position: center 30%;">
+          <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Casa Urogallo — patio exterior" style="object-position: center 30%;">
           <div class="house-img-accent"></div>
         </div>
       </div>
@@ -1050,8 +1111,8 @@
     <div class="house-panel" id="house-2">
       <div class="house-detail">
         <div>
-          <span class="house-badge" data-es="Alojamiento III · Hasta 6 personas" data-en="Accommodation III · Up to 6 guests" data-fr="Hébergement III · Jusqu'à 6 personnes">Alojamiento III · Hasta 6 personas</span>
-          <h3 class="house-title">Aire de Babia III</h3>
+          <span class="house-badge" data-es="Casa Cigüeña · Hasta 6 personas" data-en="Casa Cigüeña · Up to 6 guests" data-fr="Casa Cigüeña · Jusqu'à 6 personnes">Casa Cigüeña · Hasta 6 personas</span>
+          <h3 class="house-title">Casa Cigüeña</h3>
           <p class="house-desc" data-es="Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible." data-en="Cosy apartment with integrated living-kitchen and open bedroom with two partial dividers for up to 6 guests. The perfect option for couples or small families seeking simplicity, privacy and all the charm of Babia at an accessible price." data-fr="Appartement cosy avec séjour-cuisine intégré et chambre ouverte avec deux séparations partielles pour jusqu'à 6 personnes. L'option idéale pour les couples ou petites familles à la recherche de simplicité, d'intimité et de tout le charme de Babia à un prix accessible.">Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible.</p>
           <div class="house-specs">
             <div class="spec-card">
@@ -1086,13 +1147,13 @@
             <div class="price-row"><strong data-es="Semana completa" data-en="Full week" data-fr="Semaine complète">Semana completa</strong><span>420 €</span></div>
           </div>
           <div style="margin-top:24px;">
-            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(2)" data-es="Ver galería — Alojamiento III" data-en="View gallery — Accommodation III" data-fr="Voir la galerie — Aire de Babia III" style="padding:9px 20px;font-size:0.75rem;">
-              <i class="fa-solid fa-images"></i> Ver galería — Aire de Babia III
+            <a href="#galeria" class="btn btn-dark" onclick="showAlbum(2)" data-es="Ver galería — Casa Cigüeña" data-en="View gallery — Casa Cigüeña" data-fr="Voir la galerie — Casa Cigüeña" style="padding:9px 20px;font-size:0.75rem;">
+              <i class="fa-solid fa-images"></i> Ver galería — Casa Cigüeña
             </a>
           </div>
         </div>
         <div class="house-img-wrap reveal">
-          <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Aire de Babia III" style="object-position: center 45%;">
+          <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Casa Cigüeña" style="object-position: center 45%;">
           <div class="house-img-accent"></div>
         </div>
       </div>
@@ -1149,11 +1210,11 @@
       <div class="amenity reveal">
         <div class="amenity-ico"><i class="fa-solid fa-shower"></i></div>
         <span data-es="Hidromasaje y bañera" data-en="Hydromassage &amp; bath" data-fr="Hydromassage et baignoire">Hidromasaje y bañera</span>
-        <small data-es="(Aire de Babia II)" data-en="(Aire de Babia II)" data-fr="(Aire de Babia II)">(Aire de Babia II)</small>
+        <small data-es="(Casa Urogallo)" data-en="(Casa Urogallo)" data-fr="(Casa Urogallo)">(Casa Urogallo)</small>
       </div>
       <div class="amenity reveal">
         <div class="amenity-ico"><i class="fa-solid fa-paw"></i></div>
-        <span data-es="Mascotas admitidas" data-en="Pets welcome" data-fr="Animaux admis">Mascotas admitidas</span>
+        <span data-es="Mascotas admitidas" data-en="Pets friendly" data-fr="Animaux admis">Mascotas admitidas</span>
       </div>
       <div class="amenity reveal">
         <div class="amenity-ico"><i class="fa-solid fa-baby"></i></div>
@@ -1196,9 +1257,9 @@
     </div>
 
     <div class="album-tabs">
-      <button class="album-tab active" onclick="showAlbum(0)" data-es="Aire de Babia I" data-en="Aire de Babia I" data-fr="Aire de Babia I">Aire de Babia I</button>
-      <button class="album-tab" onclick="showAlbum(1)" data-es="Aire de Babia II" data-en="Aire de Babia II" data-fr="Aire de Babia II">Aire de Babia II</button>
-      <button class="album-tab" onclick="showAlbum(2)" data-es="Aire de Babia III" data-en="Aire de Babia III" data-fr="Aire de Babia III">Aire de Babia III</button>
+      <button class="album-tab active" onclick="showAlbum(0)" data-es="Casa Oso" data-en="Casa Oso" data-fr="Casa Oso">Casa Oso</button>
+      <button class="album-tab" onclick="showAlbum(1)" data-es="Casa Urogallo" data-en="Casa Urogallo" data-fr="Casa Urogallo">Casa Urogallo</button>
+      <button class="album-tab" onclick="showAlbum(2)" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña">Casa Cigüeña</button>
       <button class="album-tab" onclick="showAlbum(3)" data-es="Exterior" data-en="Exterior" data-fr="Extérieur">Exterior</button>
     </div>
   </div>
@@ -1207,23 +1268,23 @@
   <div class="album-panel active" id="album-0">
     <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/dd.png" alt="Aire de Babia I — exterior nevado en invierno" style="object-position: center 40%;">
+        <img loading="lazy" decoding="async" src="img/casas/dd.png" alt="Casa Oso — exterior nevado en invierno" style="object-position: center 40%;">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Patio exterior de Aire de Babia I en primavera" style="object-position: center 30%;">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Patio exterior de Casa Oso en primavera" style="object-position: center 30%;">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Aire de Babia I">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Casa Oso">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_20260430_184701.jpg" alt="Vidriera de Aire de Babia I">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_20260430_184701.jpg" alt="Vidriera de Casa Oso">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_20260430_185005.jpg" alt="Vidriera de Aire de Babia I">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_20260430_185005.jpg" alt="Vidriera de Casa Oso">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
     </div>
@@ -1233,7 +1294,7 @@
   <div class="album-panel" id="album-1">
     <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Patio exterior de Aire de Babia II en primavera" style="object-position: center 30%;">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_7881.jpg" alt="Patio exterior de Casa Urogallo en primavera" style="object-position: center 30%;">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
@@ -1251,15 +1312,15 @@
   <div class="album-panel" id="album-2">
     <div class="gallery-grid cols3" style="max-width:1160px;margin:0 auto;padding:0 28px;">
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Exterior de Aire de Babia III con fuente de piedra" style="object-position: center 45%;">
+        <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Exterior de Casa Cigüeña con fuente de piedra" style="object-position: center 45%;">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/dd.png" alt="Aire de Babia III — vista exterior en invierno" style="object-position: center 40%;">
+        <img loading="lazy" decoding="async" src="img/casas/dd.png" alt="Casa Cigüeña — vista exterior en invierno" style="object-position: center 40%;">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="g-item">
-        <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Aire de Babia III">
+        <img loading="lazy" decoding="async" src="img/casas/IMG_8059.jpg" alt="Patio de piedra de Casa Cigüeña">
         <div class="g-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
     </div>
@@ -1383,19 +1444,19 @@
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote" data-es="Los alojamientos superaron todas nuestras expectativas. La piedra, el silencio por las noches, ver las estrellas desde el patio... Un fin de semana que no olvidaremos. Volvemos sin duda el año que viene." data-en="The houses exceeded all our expectations. The stone walls, the silence at night, watching the stars from the courtyard... A weekend we won't forget. We'll definitely be back next year." data-fr="Les hébergements ont dépassé toutes nos attentes. La pierre, le silence la nuit, regarder les étoiles depuis le patio... Un week-end inoubliable. Nous reviendrons sans aucun doute l'année prochaine.">Los alojamientos superaron todas nuestras expectativas. La piedra, el silencio por las noches, ver las estrellas desde el patio... Un fin de semana que no olvidaremos. Volvemos sin duda el año que viene.</p>
         <div class="testi-name">María &amp; Carlos</div>
-        <div class="testi-sub" data-es="Madrid · Alojamiento I" data-en="Madrid · Accommodation I" data-fr="Madrid · Hébergement I">Madrid · Alojamiento I</div>
+        <div class="testi-sub" data-es="Madrid · Casa Oso" data-en="Madrid · Casa Oso" data-fr="Madrid · Casa Oso">Madrid · Casa Oso</div>
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote" data-es="Llevábamos años buscando un sitio así. Babia es otro mundo. Tres días se nos hicieron cortísimos. Los alojamientos están cuidados con mucho mimo y el trato fue de diez." data-en="We'd been looking for a place like this for years. Babia is another world. Three days went by in a flash. The houses are lovingly maintained and the service was outstanding." data-fr="Cela faisait des années que nous cherchions un endroit comme celui-ci. Babia est un autre monde. Trois jours, c'était bien trop court. Les hébergements sont entretenus avec beaucoup de soin et l'accueil était parfait.">Llevábamos años buscando un sitio así. Babia es otro mundo. Tres días se nos hicieron cortísimos. Los alojamientos están cuidados con mucho mimo y el trato fue de diez.</p>
         <div class="testi-name">Javier &amp; Lucía</div>
-        <div class="testi-sub" data-es="Bilbao · Alojamiento II" data-en="Bilbao · Accommodation II" data-fr="Bilbao · Hébergement II">Bilbao · Alojamiento II</div>
+        <div class="testi-sub" data-es="Bilbao · Casa Urogallo" data-en="Bilbao · Casa Urogallo" data-fr="Bilbao · Casa Urogallo">Bilbao · Casa Urogallo</div>
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-quote" data-es="Perfectos para desconectar en familia. Los niños fliparon con el entorno y nosotros con el silencio y las vistas. La cocina equipada y todo impecable. Repetiremos sin duda." data-en="Perfect for a family getaway. The kids were amazed by the surroundings and we loved the silence and the views. Fully equipped kitchen and everything spotless. We'll definitely be back." data-fr="Parfaits pour se déconnecter en famille. Les enfants ont adoré l'environnement et nous avons savouré le silence et les vues. Cuisine équipée et tout impeccable. Nous reviendrons sans aucun doute.">Perfectos para desconectar en familia. Los niños fliparon con el entorno y nosotros con el silencio y las vistas. La cocina equipada y todo impecable. Repetiremos sin duda.</p>
         <div class="testi-name">Familia Romero</div>
-        <div class="testi-sub" data-es="Barcelona · Alojamiento III" data-en="Barcelona · Accommodation III" data-fr="Barcelone · Hébergement III">Barcelona · Alojamiento III</div>
+        <div class="testi-sub" data-es="Barcelona · Casa Cigüeña" data-en="Barcelona · Casa Cigüeña" data-fr="Barcelone · Casa Cigüeña">Barcelona · Casa Cigüeña</div>
       </div>
     </div>
 
@@ -1473,7 +1534,7 @@
             <i class="fa-solid fa-location-dot"></i>
             <div class="c-item-text">
               <small data-es="Dirección" data-en="Address" data-fr="Adresse">Dirección</small>
-              <a href="https://maps.google.com/?q=Plaza+del+Carmen+1+Piedrafita+de+Babia" target="_blank">Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León</a>
+              <a href="https://maps.app.goo.gl/R9mVancJHTzyp5Ax9" target="_blank">Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León</a>
             </div>
           </div>
         </div>
@@ -1483,7 +1544,7 @@
           <li><i class="fa-solid fa-check"></i> <span data-es="Check-in 16:00 · Check-out 12:00" data-en="Check-in 4pm · Check-out 12pm" data-fr="Arrivée 16h00 · Départ 12h00">Check-in 16:00 · Check-out 12:00</span></li>
           <li><i class="fa-solid fa-check"></i> <span data-es="Ropa de cama y toallas incluidas" data-en="Bed linen and towels included" data-fr="Literie et serviettes incluses">Ropa de cama y toallas incluidas</span></li>
           <li><i class="fa-solid fa-check"></i> <span data-es="Todos los suministros incluidos" data-en="All utilities included" data-fr="Toutes les charges incluses">Todos los suministros incluidos</span></li>
-          <li><i class="fa-solid fa-check"></i> <span data-es="Mascotas admitidas (consultar)" data-en="Pets allowed (please enquire)" data-fr="Animaux admis (nous consulter)">Mascotas admitidas (consultar)</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-es="Mascotas admitidas" data-en="Pets allowed" data-fr="Animaux admis">Mascotas admitidas</span></li>
         </ul>
       </div>
 
@@ -1504,9 +1565,9 @@
             <label for="alojamiento" data-es="Alojamiento de interés" data-en="Accommodation of interest" data-fr="Hébergement souhaité">Alojamiento de interés</label>
             <select id="alojamiento" name="alojamiento" style="height:46px;min-height:0;overflow:hidden;padding:0 16px;">
               <option value="" data-es="Cualquiera" data-en="Any accommodation" data-fr="Au choix">Cualquiera</option>
-              <option value="Alojamiento I">Aire de Babia I</option>
-              <option value="Alojamiento II">Aire de Babia II</option>
-              <option value="Alojamiento III">Aire de Babia III</option>
+              <option value="Casa Oso">Casa Oso</option>
+              <option value="Casa Urogallo">Casa Urogallo</option>
+              <option value="Casa Cigüeña">Casa Cigüeña</option>
             </select>
           </div>
           <div class="form-group">
@@ -1518,6 +1579,10 @@
             <span data-es="Enviar mensaje" data-en="Send message" data-fr="Envoyer le message">Enviar mensaje</span>
           </button>
           <p class="form-note" data-es="* Campos obligatorios · Respondemos en menos de 24 h." data-en="* Required fields · We reply within 24 h." data-fr="* Champs obligatoires · Réponse en moins de 24 h.">* Campos obligatorios · Respondemos en menos de 24 h.</p>
+          <p class="form-rgpd"
+             data-es="Aire de Babia tratará los datos facilitados para contactar contigo y/o tramitar tu consulta. Puedes ejercer tus derechos en <a href='mailto:info@airedebabia.es'>info@airedebabia.es</a>. Más información en la <a href='privacidad.html'>Política de Privacidad</a>."
+             data-en="Aire de Babia will process the data provided to contact you and/or handle your enquiry. You may exercise your rights at <a href='mailto:info@airedebabia.es'>info@airedebabia.es</a>. More information in the <a href='privacidad.html'>Privacy Policy</a>."
+             data-fr="Aire de Babia traitera les données fournies pour vous contacter et/ou traiter votre demande. Vous pouvez exercer vos droits à <a href='mailto:info@airedebabia.es'>info@airedebabia.es</a>. Plus d'informations dans la <a href='privacidad.html'>Politique de confidentialité</a>.">Aire de Babia tratará los datos facilitados para contactar contigo y/o tramitar tu consulta. Puedes ejercer tus derechos en <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>. Más información en la <a href="privacidad.html">Política de Privacidad</a>.</p>
         </form>
       </div>
     </div>
@@ -1539,7 +1604,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner" data-es="El conjunto cuenta con tres alojamientos independientes: Aire de Babia I (hasta 8 personas), Aire de Babia II (hasta 8 personas) y Aire de Babia III (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos." data-en="The complex has three independent accommodations: Aire de Babia I (up to 8 guests), Aire de Babia II (up to 8 guests) and Aire de Babia III (up to 6 guests). Each is rented independently with full privacy. It is also possible to book all three at once for large groups or events." data-fr="Le domaine compte trois hébergements indépendants : Aire de Babia I (jusqu'à 8 personnes), Aire de Babia II (jusqu'à 8 personnes) et Aire de Babia III (jusqu'à 6 personnes). Chacun est loué de manière indépendante, avec une totale intimité. Il est également possible de réserver les trois à la fois pour des grands groupes ou des événements.">El conjunto cuenta con tres alojamientos independientes: Aire de Babia I (hasta 8 personas), Aire de Babia II (hasta 8 personas) y Aire de Babia III (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos.</div>
+          <div class="faq-a-inner" data-es="El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos." data-en="The complex has three independent accommodations: Casa Oso (up to 8 guests), Casa Urogallo (up to 8 guests) and Casa Cigüeña (up to 6 guests). Each is rented independently with full privacy. It is also possible to book all three at once for large groups or events." data-fr="Le domaine compte trois hébergements indépendants : Casa Oso (jusqu'à 8 personnes), Casa Urogallo (jusqu'à 8 personnes) et Casa Cigüeña (jusqu'à 6 personnes). Chacun est loué de manière indépendante, avec une totale intimité. Il est également possible de réserver les trois à la fois pour des grands groupes ou des événements.">El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos.</div>
         </div>
       </div>
 
@@ -1559,7 +1624,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner" data-es="Sí, aceptamos mascotas previo aviso. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar." data-en="Yes, we accept pets with prior notice. The courtyard and garden are perfect for your dog to enjoy freely. A small cleaning supplement may apply. Please ask us before booking." data-fr="Oui, nous acceptons les animaux sur notification préalable. La cour et le jardin sont parfaits pour que votre chien profite en toute liberté. Un petit supplément de nettoyage peut s'appliquer. Contactez-nous avant de réserver.">Sí, aceptamos mascotas previo aviso. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar.</div>
+          <div class="faq-a-inner" data-es="Sí, aceptamos mascotas. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar." data-en="Yes, we accept pets. The courtyard and garden are perfect for your dog to enjoy freely. A small cleaning supplement may apply. Please ask us before booking." data-fr="Oui, nous acceptons les animaux. La cour et le jardin sont parfaits pour que votre chien profite en toute liberté. Un petit supplément de nettoyage peut s'appliquer. Contactez-nous avant de réserver.">Sí, aceptamos mascotas. El patio y el jardín son perfectos para que tu perro disfrute con libertad. Puede aplicarse un pequeño suplemento de limpieza. Consúltanos antes de reservar.</div>
         </div>
       </div>
 
@@ -1607,6 +1672,64 @@
   </div>
 </section>
 
+<!-- ════════════ CALENDARIO ════════════ -->
+<section id="calendario">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Disponibilidad" data-en="Availability" data-fr="Disponibilité">Disponibilidad</span>
+      <h2 class="title" data-es="¿Cuándo está libre tu casa?" data-en="When is your house free?" data-fr="Quand votre maison est-elle libre ?">¿Cuándo está libre tu casa?</h2>
+      <p class="body-text" data-es="Consulta el calendario de disponibilidad y escríbenos para reservar." data-en="Check the availability calendar and write to us to book." data-fr="Consultez le calendrier de disponibilité et écrivez-nous pour réserver.">Consulta el calendario de disponibilidad y escríbenos para reservar.</p>
+    </div>
+
+    <div class="cal-tabs">
+      <button class="cal-tab active" onclick="switchHouse(1)">Casa Oso</button>
+      <button class="cal-tab"        onclick="switchHouse(2)">Casa Urogallo</button>
+      <button class="cal-tab"        onclick="switchHouse(3)">Casa Cigüeña</button>
+    </div>
+
+    <div class="cal-wrap">
+      <div class="cal-overlay">
+        <i class="fa-regular fa-calendar-xmark cal-overlay-icon"></i>
+        <p class="cal-overlay-title" data-es="Reservas próximamente" data-en="Bookings coming soon" data-fr="Réservations bientôt disponibles">Reservas próximamente</p>
+        <p class="cal-overlay-sub" data-es="Estamos ultimando los detalles. Muy pronto podrás consultar disponibilidad y reservar tu estancia." data-en="We're finalising the details. Very soon you'll be able to check availability and book your stay." data-fr="Nous finalisons les derniers détails. Très bientôt vous pourrez consulter les disponibilités et réserver votre séjour.">Estamos ultimando los detalles. Muy pronto podrás consultar disponibilidad y reservar tu estancia.</p>
+      </div>
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="calNav(-1)" aria-label="Mes anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <span id="calTitle"></span>
+        <button class="cal-nav-btn" onclick="calNav(1)"  aria-label="Mes siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="cal-days" id="calDays"></div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot free"></span>
+          <span data-es="Disponible" data-en="Available" data-fr="Disponible">Disponible</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot booked"></span>
+          <span data-es="Ocupado" data-en="Booked" data-fr="Réservé">Ocupado</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot today"></span>
+          <span data-es="Hoy" data-en="Today" data-fr="Aujourd'hui">Hoy</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot past"></span>
+          <span data-es="Pasado" data-en="Past" data-fr="Passé">Pasado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cal-cta">
+      <p class="cal-note" data-es="Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto." data-en="Minimum stay: 2 nights · Prices and conditions are listed in the contact section." data-fr="Séjour minimum : 2 nuits · Tarifs et conditions dans la section contact.">Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto.</p>
+      <a class="cal-wa-btn" href="https://wa.me/34679777247" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════ INSTAGRAM ════════════ -->
 <section id="instagram">
   <div class="container">
@@ -1638,7 +1761,7 @@
         <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
       </a>
       <a class="ig-item reveal" href="https://www.instagram.com/airedebabia/" target="_blank" rel="noopener">
-        <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Aire de Babia III exterior">
+        <img loading="lazy" decoding="async" src="img/casas/s.jpg" alt="Casa Cigüeña exterior">
         <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
       </a>
     </div>
@@ -1669,10 +1792,11 @@
         <h4 data-es="Los alojamientos" data-en="The accommodations" data-fr="Les hébergements">Los alojamientos</h4>
         <ul>
           <li><a href="#nosotros"    data-es="Nuestra historia"  data-en="Our story" data-fr="Notre histoire">Nuestra historia</a></li>
-          <li><a href="#alojamiento" data-es="Aire de Babia I"   data-en="Aire de Babia I" data-fr="Aire de Babia I" onclick="showHouse(0)">Aire de Babia I</a></li>
-          <li><a href="#alojamiento" data-es="Aire de Babia II"  data-en="Aire de Babia II" data-fr="Aire de Babia II" onclick="showHouse(1)">Aire de Babia II</a></li>
-          <li><a href="#alojamiento" data-es="Aire de Babia III" data-en="Aire de Babia III" data-fr="Aire de Babia III" onclick="showHouse(2)">Aire de Babia III</a></li>
+          <li><a href="#alojamiento" data-es="Casa Oso"   data-en="Casa Oso" data-fr="Casa Oso" onclick="showHouse(0)">Casa Oso</a></li>
+          <li><a href="#alojamiento" data-es="Casa Urogallo"  data-en="Casa Urogallo" data-fr="Casa Urogallo" onclick="showHouse(1)">Casa Urogallo</a></li>
+          <li><a href="#alojamiento" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña" onclick="showHouse(2)">Casa Cigüeña</a></li>
           <li><a href="#servicios"   data-es="Servicios"         data-en="Amenities" data-fr="Services">Servicios</a></li>
+          <li><a href="#calendario"  data-es="Disponibilidad"   data-en="Availability" data-fr="Disponibilité">Disponibilidad</a></li>
           <li><a href="actividades.html" data-es="Actividades"   data-en="Activities" data-fr="Activités">Actividades</a></li>
         </ul>
       </div>
@@ -1737,17 +1861,20 @@
       <span class="map-modal-close" onclick="closeMap()"><i class="fa-solid fa-xmark"></i></span>
     </div>
     <iframe
-      src="https://maps.google.com/maps?q=Piedrafita+de+Babia,+Cabrillanes,+León,+España&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      src="https://maps.google.com/maps?q=42.954028,-6.188722&t=&z=17&ie=UTF8&iwloc=&output=embed"
       allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
     <div class="map-modal-footer">
       <span><i class="fa-solid fa-location-dot" style="color:var(--green);margin-right:6px"></i>Plaza del Carmen 1, Piedrafita de Babia (Cabrillanes), 24141 León</span>
-      <a href="https://maps.google.com/?q=Plaza+del+Carmen+1+Piedrafita+de+Babia" target="_blank" data-es="Abrir en Google Maps" data-en="Open in Google Maps" data-fr="Ouvrir dans Google Maps">Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem"></i></a>
+      <a href="https://maps.app.goo.gl/R9mVancJHTzyp5Ax9" target="_blank" data-es="Abrir en Google Maps" data-en="Open in Google Maps" data-fr="Ouvrir dans Google Maps">Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem"></i></a>
     </div>
   </div>
 </div>
 
 <script>
+  // Fix iOS WebKit: registrar touch para que los elementos sean tapeables desde el scroll=0
+  document.addEventListener('touchstart', function(){}, {passive: true});
+
   // ── NAV SCROLL ──────────────────────────────────────────
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -1797,12 +1924,20 @@
     );
     document.querySelectorAll('[data-es]').forEach(el => {
       const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
-      if (val) el.textContent = val;
+      if (val) {
+        if (val.includes('<')) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
+      }
     });
     document.querySelectorAll('[data-es-placeholder]').forEach(el => {
       const ph = el.getAttribute('data-' + l + '-placeholder') || el.getAttribute('data-es-placeholder');
       if (ph) el.placeholder = ph;
     });
+    // Refresh calendar labels when language changes
+    if (typeof buildCalendar === 'function') buildCalendar();
   }
 
   langBtn.addEventListener('click', (e) => {
@@ -1822,6 +1957,36 @@
     langDropdown.classList.remove('open');
     langBtn.setAttribute('aria-expanded', 'false');
   });
+
+  // ── CALENDARIO — variables (deben estar antes de applyLang) ─
+  // ╔══════════════════════════════════════════════════════════╗
+  // ║  EDITAR AQUÍ — Introduce las fechas reservadas por casa  ║
+  // ║  Formato: 'AAAA-MM-DD'.  El rango incluye ambos días.   ║
+  // ╚══════════════════════════════════════════════════════════╝
+  const bookings = {
+    1: [
+      /* Ejemplo: { from: '2026-07-01', to: '2026-07-07' }, */
+    ],
+    2: [
+      /* Ejemplo: { from: '2026-06-20', to: '2026-06-23' }, */
+    ],
+    3: [
+      /* Ejemplo: { from: '2026-08-10', to: '2026-08-17' }, */
+    ]
+  };
+  const CAL_MONTHS = {
+    es: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+    en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+    fr: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+  };
+  const CAL_DAYS = {
+    es: ['L','M','X','J','V','S','D'],
+    en: ['Mo','Tu','We','Th','Fr','Sa','Su'],
+    fr: ['Lu','Ma','Me','Je','Ve','Sa','Di'],
+  };
+  let calHouse = 1;
+  let calYear  = new Date().getFullYear();
+  let calMonth = new Date().getMonth();
 
   applyLang(lang);
 
@@ -1851,6 +2016,62 @@
       answer.style.maxHeight = answer.scrollHeight + 'px';
     }
   }
+
+  // ── CALENDARIO DE DISPONIBILIDAD — funciones ────────────
+  function calPad(n) { return String(n).padStart(2, '0'); }
+
+  function isBooked(house, dateStr) {
+    return (bookings[house] || []).some(r => dateStr >= r.from && dateStr <= r.to);
+  }
+
+  function buildCalendar() {
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const l = lang || 'es';
+
+    // Título mes + año
+    document.getElementById('calTitle').textContent =
+      CAL_MONTHS[l][calMonth] + ' ' + calYear;
+
+    // Cabecera días de la semana
+    document.getElementById('calDays').innerHTML =
+      CAL_DAYS[l].map(d => `<span>${d}</span>`).join('');
+
+    // Cuadrícula del mes
+    const firstDay  = new Date(calYear, calMonth, 1);
+    const lastDay   = new Date(calYear, calMonth + 1, 0);
+    const startDow  = (firstDay.getDay() + 6) % 7; // Lunes = 0
+
+    let html = '';
+    for (let i = 0; i < startDow; i++) html += '<span class="cal-empty"></span>';
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const dt      = new Date(calYear, calMonth, d);
+      const dateStr = `${calYear}-${calPad(calMonth + 1)}-${calPad(d)}`;
+      let cls = 'cal-day';
+      if      (dt < today)                                    cls += ' past';
+      else if (dt.toDateString() === today.toDateString())    cls += ' today';
+      else if (isBooked(calHouse, dateStr))                   cls += ' booked';
+      else                                                    cls += ' free';
+      html += `<span class="${cls}">${d}</span>`;
+    }
+    document.getElementById('calGrid').innerHTML = html;
+  }
+
+  function calNav(dir) {
+    calMonth += dir;
+    if (calMonth > 11) { calMonth = 0; calYear++; }
+    if (calMonth <  0) { calMonth = 11; calYear--; }
+    buildCalendar();
+  }
+
+  function switchHouse(n) {
+    calHouse = n;
+    document.querySelectorAll('.cal-tab').forEach((t, i) =>
+      t.classList.toggle('active', i + 1 === n)
+    );
+    buildCalendar();
+  }
+
+  buildCalendar();
 
   // ── GALLERY / LIGHTBOX ──────────────────────────────────
   let albumImgs = [];

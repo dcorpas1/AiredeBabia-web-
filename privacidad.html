@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidad de Aire de Babia — Babia Laciana Rules, S.L. Información sobre el tratamiento de datos personales de los usuarios del sitio web.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Aire de Babia">
+  <title>Política de Privacidad · Aire de Babia</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; font-weight: 300; color: var(--text); background: var(--cream); line-height: 1.75; font-size: 16px; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    #nav { position: fixed; inset: 0 0 auto; z-index: 900; padding: 22px 0; transition: background var(--T), padding var(--T), box-shadow var(--T); }
+    #nav.solid { background: var(--white); padding: 14px 0; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); }
+    #nav.solid .nav-logo { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+
+    /* ── LANG DROPDOWN ───────────────────────────────────── */
+    .lang-dropdown { position: relative; }
+    .lang-btn { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.45); border-radius: 20px; padding: 6px 10px 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T); display: flex; align-items: center; gap: 5px; }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .lang-caret { font-size: 0.58rem; transition: transform var(--T); }
+    .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+    .lang-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 68px; box-shadow: 0 8px 24px rgba(0,0,0,0.13); list-style: none; padding: 4px 0; opacity: 0; pointer-events: none; transform: translateY(-6px); transition: opacity 0.2s ease, transform 0.2s ease; z-index: 300; }
+    .lang-dropdown.open .lang-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .lang-menu li { padding: 9px 18px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; color: var(--text-muted); transition: background var(--T), color var(--T); }
+    .lang-menu li:hover { background: var(--cream); color: var(--green); }
+    .lang-menu li.active { color: var(--gold); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px 28px 28px; gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .page-hero { position: relative; height: 38vh; min-height: 280px; display: flex; align-items: flex-end; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('img/naturaleza/IMG_8251.jpg') center/cover no-repeat; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,20,8,0.88) 0%, rgba(10,20,8,0.4) 60%, rgba(10,20,8,0.25) 100%); }
+    .page-hero-content { position: relative; z-index: 1; padding: 0 0 50px; width: 100%; }
+    .page-hero-content .label { color: var(--gold-light); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+    .page-hero-content h1 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); }
+
+    /* ── CONTENIDO LEGAL ──────────────────────────────────── */
+    .legal-wrap { background: var(--white); }
+    .legal-body { max-width: 780px; margin: 0 auto; padding: 80px 28px 100px; }
+
+    .legal-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--green); margin-top: 52px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .legal-body h2:first-child { margin-top: 0; }
+    .legal-body h3 { font-family: 'Lato', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin-top: 28px; margin-bottom: 10px; }
+
+    .legal-body p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 16px; }
+    .legal-body ol, .legal-body ul { padding-left: 22px; margin-bottom: 16px; }
+    .legal-body li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 10px; }
+    .legal-body a { color: var(--green); text-decoration: underline; transition: color var(--T); }
+    .legal-body a:hover { color: var(--gold); }
+
+    .legal-intro { background: var(--cream); border-radius: 6px; padding: 22px 26px; margin-bottom: 48px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.8; border-left: 3px solid var(--gold); }
+
+    .legal-info-box { background: var(--cream); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin-bottom: 24px; }
+    .legal-info-box p { margin-bottom: 6px; font-size: 0.92rem; }
+    .legal-info-box p:last-child { margin-bottom: 0; }
+    .legal-info-box strong { color: var(--text); font-weight: 700; }
+
+    .treatment-block { background: var(--cream); border-radius: 6px; padding: 22px 26px; margin-bottom: 20px; }
+    .treatment-block p { margin-bottom: 8px; font-size: 0.92rem; }
+    .treatment-block p:last-child { margin-bottom: 0; }
+    .treatment-block strong { color: var(--text); font-weight: 700; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer { background: var(--green); color: rgba(255,255,255,0.68); padding: 40px 0 28px; }
+    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: color var(--T); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { padding-top: 22px; font-size: 0.78rem; text-align: center; line-height: 2; }
+    .footer-bottom a { transition: color var(--T); }
+    .footer-bottom a:hover { color: var(--white); }
+    .footer-credit { text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── BACK TO TOP ─────────────────────────────────────── */
+    .back-to-top { position: fixed; bottom: 28px; left: 28px; z-index: 800; width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: var(--white); border: none; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity var(--T), transform var(--T), background var(--T); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .back-to-top:hover { background: var(--green-mid, #355929); }
+
+    /* ── WHATSAPP ─────────────────────────────────────────── */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 800; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.55rem; box-shadow: 0 4px 18px rgba(0,0,0,0.22); transition: transform var(--T), box-shadow var(--T); }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
+
+    /* ── COOKIE BANNER ───────────────────────────────────── */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-top: 1px solid var(--border); padding: 18px 28px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); transform: translateY(100%); transition: transform 0.4s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-text { font-size: 0.86rem; color: var(--text-muted); flex: 1; min-width: 200px; }
+    .cookie-text a { color: var(--green); text-decoration: underline; margin-left: 6px; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-btn-ess { padding: 9px 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); background: transparent; color: var(--text-muted); border-radius: var(--radius); cursor: pointer; transition: var(--T); }
+    .cookie-btn-ess:hover { border-color: var(--green); color: var(--green); }
+    .cookie-btn-all { padding: 9px 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border: none; background: var(--green); color: var(--white); border-radius: var(--radius); cursor: pointer; transition: var(--T); }
+    .cookie-btn-all:hover { background: var(--green-mid, #355929); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-simple { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      .legal-body { padding: 50px 20px 70px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
+      <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
+      <li><a href="index.html#entorno"   data-es="Entorno"     data-en="Surroundings" data-fr="Environs">Entorno</a></li>
+      <li><a href="actividades.html"     data-es="Actividades" data-en="Activities"   data-fr="Activités">Actividades</a></li>
+      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">ES</span>
+          <i class="fa-solid fa-chevron-down lang-caret"></i>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li data-lang="es" class="active" role="menuitem">ES</li>
+          <li data-lang="en" role="menuitem">EN</li>
+          <li data-lang="fr" role="menuitem">FR</li>
+        </ul>
+      </div>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="label">Babia Laciana Rules, S.L.</span>
+      <h1>Política de Privacidad</h1>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CONTENIDO ════════ -->
+<div class="legal-wrap">
+  <div class="legal-body">
+
+    <div class="legal-intro">
+      Esta política se aplica a todas las personas físicas que interactúen con AIRE DE BABIA a través del Sitio Web, ya sea como usuarios, clientes personas físicas o personas de contacto que actúan en nombre de clientes personas jurídicas. A todas ellas se les denominará, en adelante, de forma conjunta, USUARIOS.<br><br>
+      Cualquier cambio en el tratamiento de los datos lo reflejaremos y actualizaremos en la presente política; por lo que, recomendamos a los USUARIOS revisarla con frecuencia y, ante cualquier duda, rogamos nos escriban a <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>.
+    </div>
+
+    <h2>1. ¿Quiénes somos?</h2>
+    <div class="legal-info-box">
+      <p><strong>Razón social:</strong> BABIA LACIANA RULES, S.L. (en adelante AIRE DE BABIA)</p>
+      <p><strong>NIF:</strong> B-26824219</p>
+      <p><strong>Registro Mercantil:</strong> Madrid, presentación de 12 de marzo de 2026 (Diario 2026, Asiento 6465)</p>
+      <p><strong>Domicilio Social:</strong> Calle del Carmen 9, Piedrafita de Babia (Cabrillanes), 24142 León</p>
+      <p><strong>Correo electrónico:</strong> <a href="mailto:info@airedebabia.es">info@airedebabia.es</a></p>
+    </div>
+    <p>AIRE DE BABIA es el RESPONSABLE del tratamiento de los datos personales de los USUARIOS y les informa de que estos datos serán tratados de conformidad con lo dispuesto en la normativa aplicable al USUARIO y, especialmente conforme a la normativa europea en materia de protección de datos.</p>
+
+    <h2>2. ¿Qué es un dato personal?</h2>
+    <p>Dato personal es toda información que independientemente o combinada con otra información disponible, identifique o permita identificar a una persona física, directa o indirectamente, como el nombre, apellidos, imagen, voz, dirección postal, correo electrónico, número de teléfono, documentos oficiales de identidad, etc. y/o que esté relacionada con una persona física, como su número de cuenta corriente, número de tarjeta de crédito y/o débito, dirección IP, condiciones físicas, gustos, preferencias, hábitos y comportamiento, y/o la información sobre la navegación por la red, obtenida a través de las cookies.</p>
+
+    <h2>3. ¿Qué datos tratamos?</h2>
+    <p>Los tipos de datos personales que se tratarán dependerán de cada tratamiento que se va a efectuar y, en todo caso, serán los estrictamente necesarios para realizar dicho tratamiento.</p>
+    <p>En cada formulario y/o medio de contacto el USUARIO facilitará, al menos, los datos marcados como obligatorios, siendo voluntaria la inclusión de datos en los campos restantes. El USUARIO garantiza que los datos personales facilitados a AIRE DE BABIA son veraces y se hace responsable de comunicar cualquier modificación de los mismos.</p>
+    <p>AIRE DE BABIA tratará los datos necesarios para cumplir las finalidades de tratamiento, tales como:</p>
+    <ul>
+      <li><strong>Detalles de contacto</strong> — nombre, número de teléfono y dirección de correo electrónico.</li>
+      <li><strong>Información sobre la consulta o reserva</strong> — fechas, número de personas, alojamiento solicitado y cualquier preferencia o requerimiento especial indicado.</li>
+      <li><strong>Comunicaciones con nosotros</strong> — información facilitada a través del formulario de contacto, correo electrónico o WhatsApp.</li>
+      <li><strong>Información del dispositivo</strong> — dirección IP y otros datos de navegación obtenidos mediante cookies, siempre que el USUARIO haya aceptado previamente la Política de Cookies.</li>
+    </ul>
+
+    <h2>4. Tratamiento de datos, finalidad, base que legitima y plazos de conservación</h2>
+    <p>AIRE DE BABIA realiza los siguientes tratamientos de datos personales:</p>
+
+    <div class="treatment-block">
+      <h3>Tratamiento 1 — Gestión de consultas y reservas</h3>
+      <p><strong>Finalidad:</strong> Gestión y respuesta de consultas o solicitudes de reserva planteadas a través del formulario de contacto, correo electrónico o WhatsApp.</p>
+      <p><strong>Base legal:</strong> Interés legítimo de AIRE DE BABIA en responder a las consultas planteadas y ejecución de la relación precontractual o contractual derivada de la reserva.</p>
+      <p><strong>Destinatarios:</strong> No se prevén cesiones de datos a terceros, salvo obligación legal.</p>
+      <p><strong>Plazos de conservación:</strong> Hasta la resolución de la petición o consulta realizada; en caso de reserva confirmada, durante el tiempo necesario para dar cumplimiento a las obligaciones legales y contractuales.</p>
+    </div>
+
+    <div class="treatment-block">
+      <h3>Tratamiento 2 — Cookies y navegación</h3>
+      <p><strong>Finalidad:</strong> Almacenamiento y recuperación de datos de los USUARIOS que visitan y/o interactúan en el Sitio Web.</p>
+      <p><strong>Base legal:</strong> Consentimiento informado y expreso del USUARIO otorgado al visitar la web y aceptar y/o configurar las cookies.</p>
+      <p><strong>Destinatarios:</strong> Terceros destinatarios indicados en cada cookie.</p>
+      <p><strong>Plazos de conservación:</strong> Mientras el USUARIO no las borre y/o durante los plazos indicados en cada cookie.</p>
+    </div>
+
+    <div class="treatment-block">
+      <h3>Tratamiento 3 — Comunicaciones comerciales</h3>
+      <p><strong>Finalidad:</strong> Envío de comunicaciones comerciales relacionadas con la actividad de AIRE DE BABIA, incluyendo información sobre disponibilidad, ofertas y novedades similares a los servicios ya consultados o contratados por el USUARIO.</p>
+      <p><strong>Base legal:</strong> Interés legítimo de AIRE DE BABIA en mantener informados a sus clientes, sin perjuicio del derecho del USUARIO a oponerse en cualquier momento al tratamiento de sus datos con fines de marketing directo.</p>
+      <p><strong>Destinatarios:</strong> No se realizan cesiones de datos a terceros, salvo obligación legal.</p>
+      <p><strong>Plazos de conservación:</strong> Mientras exista la relación entre el USUARIO y AIRE DE BABIA y/o hasta que el USUARIO se oponga al tratamiento con fines comerciales mediante solicitud dirigida a <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>.</p>
+    </div>
+
+    <h2>5. Encargados de tratamiento y cesionarios</h2>
+    <p>Los datos personales tratados podrán ser asimismo tratados por colaboradores externos, en calidad de encargados de tratamiento de AIRE DE BABIA, para la prestación de los siguientes servicios:</p>
+    <ol>
+      <li>Proveedores de servicios informáticos, mantenimiento, soporte técnico, ciberseguridad y alojamiento web.</li>
+      <li>Asesorías laborales, fiscales, contables y/o jurídicas, necesarias para el cumplimiento de las obligaciones legales de AIRE DE BABIA.</li>
+      <li>Organismos y Administraciones Públicas, cuando exista una obligación legal de comunicación.</li>
+    </ol>
+    <p>AIRE DE BABIA no cederá los datos personales a ningún tercero sin antes haber informado y/u obtenido el consentimiento del titular de los datos personales y únicamente en casos limitados. Todos los encargados de tratamiento mantendrán el mismo nivel de protección de datos comprometido en la presente POLÍTICA DE PRIVACIDAD.</p>
+
+    <h2>6. Transferencias internacionales</h2>
+    <p>Como regla general, AIRE DE BABIA no realiza transferencias internacionales de los datos de los USUARIOS fuera del Espacio Económico Europeo. En caso de efectuarse alguna transferencia internacional, se realizará conforme a la normativa de protección de datos vigente y se informará previamente al USUARIO.</p>
+
+    <h2>7. ¿De dónde obtenemos los datos?</h2>
+    <p>Los datos de los USUARIOS los obtenemos directamente de los USUARIOS que hayan contactado a través de las distintas formas de comunicación disponibles en el Sitio Web (formulario de contacto, correo electrónico o WhatsApp).</p>
+    <p>Asimismo, a través del sistema de cookies, AIRE DE BABIA obtendrá determinados datos sobre la navegación de los USUARIOS visitantes del Sitio Web, siempre y cuando el USUARIO haya aceptado previamente la POLÍTICA DE COOKIES.</p>
+
+    <h2>8. Ejercicio de derechos</h2>
+    <p>AIRE DE BABIA informa a los titulares de los datos personales que cuentan con los siguientes derechos:</p>
+    <ul>
+      <li><strong>Acceso:</strong> permite obtener información sobre si AIRE DE BABIA está tratando datos personales que le conciernen y, en tal caso, obtener información sobre dichos datos.</li>
+      <li><strong>Rectificación:</strong> permite corregir errores y modificar los datos que resulten inexactos o incompletos.</li>
+      <li><strong>Supresión:</strong> permite que los datos sean suprimidos y dejen de tratarse, salvo que exista obligación legal de conservarlos.</li>
+      <li><strong>Limitación:</strong> permite solicitar que se apliquen medidas sobre los datos para limitar su tratamiento mientras se verifica su exactitud o la legitimidad de su uso.</li>
+      <li><strong>Oposición:</strong> en determinadas circunstancias, los titulares podrán oponerse al tratamiento de sus datos por motivos relacionados con su situación particular.</li>
+      <li><strong>Portabilidad:</strong> permite recibir los datos personales en un formato estructurado y de lectura mecánica, o que sean transmitidos a otro responsable.</li>
+    </ul>
+    <p>El USUARIO puede ejercer cualquiera de estos derechos mediante comunicación escrita dirigida a AIRE DE BABIA en el correo electrónico: <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>.</p>
+
+    <h2>9. Reclamación ante una autoridad de control</h2>
+    <p>Para cualquier información o duda al respecto no dude en contactar con AIRE DE BABIA a través del correo electrónico <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>.</p>
+    <p>Asimismo, le recordamos que puede dirigirse a la <strong>Agencia Española de Protección de Datos</strong> para cualquier reclamación y/o información adicional sobre sus derechos: <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>.</p>
+
+    <h2>10. Seguridad y garantías</h2>
+    <p>AIRE DE BABIA se compromete a adoptar las medidas de seguridad a su alcance que garanticen la seguridad de los datos de carácter personal y eviten su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que estén expuestos, todo ello de conformidad con lo establecido en la normativa aplicable.</p>
+
+    <h2>11. Menores</h2>
+    <p>AIRE DE BABIA dirige el Sitio Web y/o la prestación de los servicios a mayores de 18 años. En caso de que un menor de edad desee solicitar información y/o pretenda contratar los servicios de AIRE DE BABIA, rogamos lo realice con la previa autorización de sus padres o tutores.</p>
+    <p>AIRE DE BABIA no recopila, deliberadamente, información procedente de personas menores de 18 años sin que medie la autorización escrita y expresa de los padres y/o tutores. Si AIRE DE BABIA detecta que un menor de edad está utilizando este Sitio Web sin la autorización correspondiente, procederá a cancelar la información enviada y lo comunicará a la autoridad u organismo competente.</p>
+
+    <h2>12. Redes sociales</h2>
+    <p>AIRE DE BABIA dispone de perfil oficial en la red social <strong>Instagram</strong> (@airedebabia), en adelante el SITIO OFICIAL.</p>
+    <p>El acceso y uso del SITIO OFICIAL requiere la aceptación de las condiciones establecidas en el presente Aviso Legal y Política de Privacidad, así como la política y las normas de la plataforma Instagram (Meta). Para más información sobre las políticas de privacidad y términos de uso de Instagram puede consultar: <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">Política de privacidad de Instagram</a>.</p>
+    <p>AIRE DE BABIA podrá eliminar del SITIO OFICIAL cualquier información que vaya en contra de la legislación vigente, la moral, el orden público o las presentes condiciones. Asimismo, AIRE DE BABIA se reserva el derecho de crear, editar, modificar y/o eliminar el perfil sin necesidad de informar previamente.</p>
+    <p>El USUARIO será el único responsable de la información, imágenes, opiniones o contenidos de cualquier tipo que comunique o publique a través del SITIO OFICIAL. AIRE DE BABIA no podrá ser considerado responsable editorial de los contenidos publicados por los USUARIOS.</p>
+    <p>Queda prohibido el uso del SITIO OFICIAL con fines ilegales, comerciales no autorizados, o cualquier actividad contraria a la moral, al orden público o a los derechos de terceros, incluyendo la publicación de contenidos que vulneren derechos fundamentales, la propiedad intelectual o la protección de datos.</p>
+
+  </div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="footer-logo">Aire de Babia</a>
+      <div class="footer-links">
+        <a href="index.html#nosotros"  data-es="La Casona"   data-en="About"       data-fr="La Propriété">La Casona</a>
+        <a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"     data-fr="Galerie">Galería</a>
+        <a href="actividades.html"     data-es="Actividades" data-en="Activities"  data-fr="Activités">Actividades</a>
+        <a href="index.html#reservas"  data-es="Reservar"    data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved" data-fr="Tous droits réservés">Todos los derechos reservados</span></span>
+      <br style="margin-bottom:6px">
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice" data-fr="Mentions légales">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy" data-fr="Politique de confidentialité">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy" data-fr="Politique de cookies">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<a href="https://wa.me/34679777247" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  let lang = localStorage.getItem('lang') || 'es';
+  const langDropdown = document.getElementById('langDropdown');
+  const langBtn      = document.getElementById('langBtn');
+  const langCurrent  = document.getElementById('langCurrent');
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langCurrent.textContent = l.toUpperCase();
+    langBtn.setAttribute('aria-expanded', 'false');
+    document.documentElement.lang = l;
+    document.querySelectorAll('#langMenu li').forEach(li =>
+      li.classList.toggle('active', li.dataset.lang === l)
+    );
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
+      if (val) el.textContent = val;
+    });
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('#langMenu li').forEach(li => {
+    li.addEventListener('click', () => {
+      applyLang(li.dataset.lang);
+      langDropdown.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  applyLang(lang);
+
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => { const b = document.getElementById('cookieBanner'); if (b) b.classList.add('show'); }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <i class="fa-solid fa-cookie-bite" style="color:var(--gold-light);margin-right:8px"></i>
+    <span data-es="Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales." data-en="We use our own cookies to improve your browsing experience. You can accept all or choose only the essential ones." data-fr="Nous utilisons des cookies pour améliorer votre expérience de navigation. Vous pouvez tout accepter ou choisir uniquement les essentiels.">Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales.</span>
+    <a href="cookies.html" data-es="Política de cookies" data-en="Cookie policy" data-fr="Politique de cookies">Política de cookies</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')" data-es="Solo esenciales" data-en="Essential only" data-fr="Essentiels seulement">Solo esenciales</button>
+    <button class="cookie-btn-all" onclick="acceptCookies('all')" data-es="Aceptar todo" data-en="Accept all" data-fr="Tout accepter">Aceptar todo</button>
+  </div>
+</div>
+
+</body>
+</html>
