@@ -630,6 +630,8 @@
       color: var(--green); font-weight: 700; margin: 0;
     }
     .cal-overlay-sub { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .cal-overlay-sub a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+    .cal-overlay-sub a:hover { color: var(--gold-light); }
     .cal-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
     .cal-nav-btn { background: none; border: none; cursor: pointer; color: var(--green); font-size: 1rem; padding: 6px 12px; border-radius: var(--radius); transition: background var(--T); }
     .cal-nav-btn:hover { background: var(--border); }
@@ -1697,7 +1699,7 @@
       <div class="cal-overlay">
         <i class="fa-regular fa-calendar-xmark cal-overlay-icon"></i>
         <p class="cal-overlay-title" data-es="Reservas próximamente" data-en="Bookings coming soon" data-fr="Réservations bientôt disponibles">Reservas próximamente</p>
-        <p class="cal-overlay-sub" data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del formulario" data-en="While we finalize the details, you can check availability through the form." data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le formulaire.">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del formulario</p>
+        <p class="cal-overlay-sub"><span data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del " data-en="While we finalize the details, you can check availability through the " data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le ">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del </span><a href="#reservas" data-es="formulario" data-en="form" data-fr="formulaire">formulario</a>.</p>
       </div>
       <div class="cal-nav">
         <button class="cal-nav-btn" onclick="calNav(-1)" aria-label="Mes anterior"><i class="fa-solid fa-chevron-left"></i></button>
