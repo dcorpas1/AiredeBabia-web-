@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ES -->
+  <meta name="description"         content="Descubre los pueblos y rincones de baño cerca de Aire de Babia: Villablino, Río Oscuro, Lumajo, Laguna Grande de Babia y el Embalse de Barrios de Luna.">
+  <meta name="keywords"            content="pueblos de Laciana, Villablino, Río Oscuro, Lumajo, Laguna Grande de Babia, Embalse de Barrios de Luna, qué ver cerca de Babia">
+  <!-- EN -->
+  <meta name="description-en"      content="Discover the villages and swimming spots near Aire de Babia: Villablino, Río Oscuro, Lumajo, Laguna Grande de Babia and the Barrios de Luna reservoir.">
+  <!-- FR -->
+  <meta name="description-fr"      content="Découvrez les villages et lieux de baignade près d'Aire de Babia : Villablino, Río Oscuro, Lumajo, Laguna Grande de Babia et le barrage de Barrios de Luna.">
+  <meta name="robots"              content="index, follow">
+  <meta name="author"              content="Aire de Babia">
+
+  <!-- Open Graph / WhatsApp / redes sociales -->
+  <meta property="og:type"              content="website">
+  <meta property="og:url"               content="https://www.airedebabia.es/alrededores.html">
+  <meta property="og:site_name"         content="Aire de Babia">
+  <meta property="og:locale"            content="es_ES">
+  <meta property="og:locale:alternate"  content="en_GB">
+  <meta property="og:locale:alternate"  content="fr_FR">
+  <meta property="og:title"             content="Alrededores · Aire de Babia">
+  <meta property="og:description"       content="Pueblos con historia y rincones de baño cerca de Aire de Babia: Villablino, Río Oscuro, Lumajo, Laguna Grande de Babia y el Embalse de Barrios de Luna.">
+  <meta property="og:image"             content="https://www.airedebabia.es/img/actividades/embalsebarriodeluna.jpg">
+  <meta property="og:image:width"       content="1200">
+  <meta property="og:image:height"      content="630">
+  <meta property="og:image:alt"         content="Embalse de Barrios de Luna, León">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"             content="summary_large_image">
+  <meta name="twitter:site"             content="@airedebabia">
+  <meta name="twitter:title"            content="Alrededores · Aire de Babia">
+  <meta name="twitter:description"      content="Pueblos con historia y rincones de baño cerca de Aire de Babia.">
+  <meta name="twitter:image"            content="https://www.airedebabia.es/img/actividades/embalsebarriodeluna.jpg">
+  <meta name="twitter:image:alt"        content="Embalse de Barrios de Luna, León">
+
+  <title>Alrededores · Aire de Babia</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --green-light: #4A7C3F;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --stone:       #8A7A6A;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+      --shadow:      0 6px 30px rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.75;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .title { font-size: clamp(1.9rem, 4vw, 2.9rem); color: var(--green); margin-bottom: 22px; }
+    .body-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 900;
+      padding: 22px 0;
+      transition: background var(--T), padding var(--T), box-shadow var(--T);
+    }
+    #nav.solid {
+      background: var(--white);
+      padding: 14px 0;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); }
+    #nav.solid .nav-logo { color: var(--green); }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-links a.active { color: var(--gold-light) !important; }
+
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+
+    /* ── LANG DROPDOWN ─────────────────────────────────────── */
+    .lang-dropdown { position: relative; }
+    .lang-btn {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      border: 1px solid rgba(255,255,255,0.45); border-radius: 20px;
+      padding: 6px 10px 6px 14px; color: rgba(255,255,255,0.85);
+      background: transparent; cursor: pointer; transition: var(--T);
+      display: flex; align-items: center; gap: 5px;
+    }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .lang-caret { font-size: 0.58rem; transition: transform var(--T); }
+    .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute; top: calc(100% + 8px); right: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      min-width: 68px; box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+      list-style: none; padding: 4px 0;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 300;
+    }
+    .lang-dropdown.open .lang-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .lang-menu li {
+      padding: 9px 18px; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.06em; cursor: pointer; color: var(--text-muted);
+      transition: background var(--T), color var(--T);
+    }
+    .lang-menu li:hover { background: var(--cream); color: var(--green); }
+    .lang-menu li.active { color: var(--gold); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--white); padding: 20px 28px 28px;
+      gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      height: 55vh;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('img/actividades/embalsebarriodeluna.jpg') center/cover no-repeat;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,20,8,0.85) 0%, rgba(10,20,8,0.3) 60%, rgba(10,20,8,0.2) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 60px;
+      width: 100%;
+    }
+    .page-hero-content .label { color: var(--gold-light); }
+    .page-hero-content h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: var(--white); margin-bottom: 10px; }
+    .page-hero-content p { color: rgba(255,255,255,0.78); font-size: 1.1rem; font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* ── PUEBLOS (sección clara) ──────────────────────────────── */
+    #pueblos { padding: 110px 0 90px; background: var(--white); }
+
+    .place-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+
+    .place-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform var(--T), box-shadow var(--T);
+    }
+    .place-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .place-img { width: 100%; height: 200px; background-size: cover; background-position: center; border-top: 3px solid var(--gold); }
+
+    .place-body { padding: 26px 24px 30px; }
+    .place-body h3 { font-size: 1.3rem; color: var(--green); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .place-body h3 i { font-size: 1rem; color: var(--gold); }
+
+    .place-dist {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.03em;
+      color: var(--gold); background: rgba(184,136,42,0.1);
+      border: 1px solid rgba(184,136,42,0.25);
+      padding: 5px 13px; border-radius: 20px; margin-bottom: 16px;
+    }
+
+    .place-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 16px 0 6px;
+    }
+    .place-label:first-of-type { margin-top: 0; }
+
+    .place-text { font-size: 0.89rem; color: var(--text-muted); line-height: 1.75; }
+
+    /* ── DÓNDE BAÑARSE (sección oscura) ───────────────────────── */
+    #banarse { padding: 90px 0 110px; background: var(--green); }
+    #banarse .label { color: var(--gold-light); }
+    #banarse .title { color: var(--white); margin-bottom: 10px; }
+    #banarse .body-text { color: rgba(255,255,255,0.65); }
+
+    .place-card-dark {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: background var(--T), transform var(--T);
+    }
+    .place-card-dark:hover { background: rgba(255,255,255,0.13); transform: translateY(-4px); }
+
+    .place-card-dark .place-body h3 { color: var(--white); }
+    .place-card-dark .place-body h3 i { color: var(--gold-light); }
+    .place-card-dark .place-dist { color: var(--gold-light); background: rgba(196,168,87,0.15); border-color: rgba(196,168,87,0.32); }
+    .place-card-dark .place-text { color: rgba(255,255,255,0.65); }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .act-cta {
+      margin-top: 64px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .act-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 14px; }
+    .act-cta p  { color: rgba(255,255,255,0.62); font-size: 1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 34px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase;
+      cursor: pointer; transition: var(--T); border: 2px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-wa   { background: #25D366; color: var(--white); }
+    .btn-wa:hover { background: #1fbe5a; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.68);
+      padding: 48px 0 28px;
+    }
+    .footer-simple {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.88rem; transition: color var(--T); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { font-size: 0.78rem; text-align: center; }
+    .footer-credit { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── BACK TO TOP ──────────────────────────────────────── */
+    .back-to-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 800;
+      width: 46px; height: 46px; background: var(--green); border: none;
+      border-radius: 50%; color: var(--white); font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(36,61,26,0.38);
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .back-to-top:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+    /* ── WA FLOAT ──────────────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 800;
+      width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.65rem; color: var(--white);
+      box-shadow: 0 5px 20px rgba(37,211,102,0.42);
+      transition: transform var(--T), box-shadow var(--T);
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* ── REVEAL ────────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .place-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-simple { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 540px) {
+      .act-cta  { padding: 36px 22px; }
+    }
+
+    /* ── COOKIE BANNER ─────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1A2E12;
+      border-top: 2px solid var(--gold);
+      padding: 18px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      box-shadow: 0 -4px 32px rgba(0,0,0,0.28);
+      transform: translateY(100%);
+      transition: transform 0.45s ease;
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-text { color: rgba(255,255,255,0.82); font-size: 0.87rem; line-height: 1.65; flex: 1; min-width: 220px; }
+    .cookie-text a { color: var(--gold-light); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn-all {
+      background: var(--gold); color: #fff; border: none;
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cookie-btn-all:hover { background: var(--gold-light); }
+    .cookie-btn-ess {
+      background: transparent; color: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 10px 22px; border-radius: var(--radius);
+      font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cookie-btn-ess:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+  </style>
+</head>
+<body>
+<!-- Designed & built by Daniel Corpas · dcorpas.dev -->
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
+      <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
+      <li><a href="index.html#entorno"   data-es="Entorno"     data-en="Surroundings" data-fr="Environs">Entorno</a></li>
+      <li><a href="actividades.html" data-es="Actividades" data-en="Activities" data-fr="Activités">Actividades</a></li>
+      <li><a href="alrededores.html" class="active" data-es="Alrededores" data-en="Around" data-fr="Aux alentours">Alrededores</a></li>
+      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">ES</span>
+          <i class="fa-solid fa-chevron-down lang-caret"></i>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li data-lang="es" class="active" role="menuitem">ES</li>
+          <li data-lang="en" role="menuitem">EN</li>
+          <li data-lang="fr" role="menuitem">FR</li>
+        </ul>
+      </div>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="label" data-es="Más allá de la casa" data-en="Beyond the house" data-fr="Au-delà de la maison">Más allá de la casa</span>
+      <h1 data-es="Alrededores" data-en="Around Babia" data-fr="Aux alentours">Alrededores</h1>
+      <p data-es="Pueblos con historia y aguas para refrescarte, todos a un paso de la puerta." data-en="Villages full of history and places to cool off, all just a short drive away." data-fr="Des villages chargés d'histoire et des lieux pour se rafraîchir, tous à deux pas.">Pueblos con historia y aguas para refrescarte, todos a un paso de la puerta.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PUEBLOS CON ENCANTO ════════ -->
+<section id="pueblos">
+  <div class="container">
+    <span class="label" data-es="Pueblos cercanos" data-en="Nearby villages" data-fr="Villages voisins">Pueblos cercanos</span>
+    <h2 class="title" data-es="Pueblos con encanto" data-en="Villages full of charm" data-fr="Des villages pleins de charme">Pueblos con encanto</h2>
+    <p class="body-text" data-es="Tres pueblos a un paso, cada uno con su propia historia que contar." data-en="Three villages just a short drive away, each with its own story to tell." data-fr="Trois villages à deux pas, chacun avec sa propre histoire à raconter.">Tres pueblos a un paso, cada uno con su propia historia que contar.</p>
+
+    <div class="place-grid">
+
+      <!-- Villablino -->
+      <div class="place-card reveal">
+        <div class="place-img" style="background-image:url('img/actividades/villablino-leon-7537-2.jpg');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-industry"></i> Villablino</h3>
+          <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="13 km · 14 min desde la casa" data-en="13 km · 14 min from the house" data-fr="13 km · 14 min depuis la maison">13 km · 14 min desde la casa</span></span>
+          <p class="place-label" data-es="Historia" data-en="History" data-fr="Histoire">Historia</p>
+          <p class="place-text" data-es="Durante más de un siglo, el carbón fue el motor de Villablino. La Minero Siderúrgica de Ponferrada llegó en 1918 y construyó el ferrocarril que conectaba el valle con Ponferrada, transformando para siempre la vida de sus gentes." data-en="For over a century, coal was the driving force of Villablino. The Minero Siderúrgica de Ponferrada company arrived in 1918 and built the railway connecting the valley to Ponferrada, forever transforming the lives of its people." data-fr="Pendant plus d'un siècle, le charbon a été le moteur de Villablino. La Minero Siderúrgica de Ponferrada est arrivée en 1918 et a construit le chemin de fer reliant la vallée à Ponferrada, transformant pour toujours la vie de ses habitants.">Durante más de un siglo, el carbón fue el motor de Villablino. La Minero Siderúrgica de Ponferrada llegó en 1918 y construyó el ferrocarril que conectaba el valle con Ponferrada, transformando para siempre la vida de sus gentes.</p>
+          <p class="place-label" data-es="Curiosidad" data-en="Did you know?" data-fr="Le saviez-vous ?">Curiosidad</p>
+          <p class="place-text" data-es="La Fundación Sierra-Pambley, vinculada a la Institución Libre de Enseñanza de Giner de los Ríos, sigue abierta al público. Y el antiguo Pozo María se está transformando en un centro cultural sobre la memoria minera del valle." data-en="The Sierra-Pambley Foundation, linked to Giner de los Ríos's Institución Libre de Enseñanza, remains open to the public. And the old Pozo María mine shaft is being turned into a cultural centre on the valley's mining heritage." data-fr="La Fondation Sierra-Pambley, liée à l'Institución Libre de Enseñanza de Giner de los Ríos, reste ouverte au public. Et l'ancien puits Pozo María se transforme en centre culturel consacré à la mémoire minière de la vallée.">La Fundación Sierra-Pambley, vinculada a la Institución Libre de Enseñanza de Giner de los Ríos, sigue abierta al público. Y el antiguo Pozo María se está transformando en un centro cultural sobre la memoria minera del valle.</p>
+        </div>
+      </div>
+
+      <!-- Río Oscuro -->
+      <div class="place-card reveal">
+        <div class="place-img" style="background-image:url('img/actividades/rioscuro.JPG');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-tree"></i> Río Oscuro</h3>
+          <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="≈16 km · ≈20 min desde la casa" data-en="≈16 km · ≈20 min from the house" data-fr="≈16 km · ≈20 min depuis la maison">≈16 km · ≈20 min desde la casa</span></span>
+          <p class="place-label" data-es="Historia" data-en="History" data-fr="Histoire">Historia</p>
+          <p class="place-text" data-es="Su nombre viene del río Sil, que aquí los vecinos llamaban «Río Negro» por las aguas oscurecidas por el carbón. Hoy, con apenas un centenar de habitantes, conserva ese aire recogido de aldea de montaña." data-en="Its name comes from the River Sil, which locals here called the «Black River» for its waters darkened by coal. Today, with barely a hundred inhabitants, it keeps that quiet air of a mountain hamlet." data-fr="Son nom vient de la rivière Sil, que les habitants appelaient ici «Río Negro» (rivière noire) en raison de ses eaux noircies par le charbon. Aujourd'hui, avec à peine une centaine d'habitants, il conserve cet air paisible de hameau de montagne.">Su nombre viene del río Sil, que aquí los vecinos llamaban «Río Negro» por las aguas oscurecidas por el carbón. Hoy, con apenas un centenar de habitantes, conserva ese aire recogido de aldea de montaña.</p>
+          <p class="place-label" data-es="Curiosidad" data-en="Did you know?" data-fr="Le saviez-vous ?">Curiosidad</p>
+          <p class="place-text" data-es="Sus tejos milenarios están entre los árboles más antiguos del valle de Laciana, y sus calles estrechas se cruzan por un puente que parece detenido en el tiempo." data-en="Its thousand-year-old yew trees are among the oldest in the Laciana valley, and its narrow streets are reached by a bridge that seems frozen in time." data-fr="Ses ifs millénaires comptent parmi les arbres les plus anciens de la vallée de Laciana, et ses rues étroites se franchissent par un pont qui semble figé dans le temps.">Sus tejos milenarios están entre los árboles más antiguos del valle de Laciana, y sus calles estrechas se cruzan por un puente que parece detenido en el tiempo.</p>
+        </div>
+      </div>
+
+      <!-- Lumajo -->
+      <div class="place-card reveal">
+        <div class="place-img" style="background-image:url('img/actividades/lumajo-1.jpg');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-mountain"></i> Lumajo</h3>
+          <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="≈20 km · ≈25 min desde la casa" data-en="≈20 km · ≈25 min from the house" data-fr="≈20 km · ≈25 min depuis la maison">≈20 km · ≈25 min desde la casa</span></span>
+          <p class="place-label" data-es="Historia" data-en="History" data-fr="Histoire">Historia</p>
+          <p class="place-text" data-es="A 1.371 m de altitud, Lumajo es el pueblo más alto de Laciana. Durante siglos recibió a los «vaqueiros de alzada», pastores trashumantes que subían cada verano en busca de los mejores pastos de montaña." data-en="At 1,371 m, Lumajo is the highest village in Laciana. For centuries it welcomed the «vaqueiros de alzada», transhumant shepherds who came up every summer in search of the best mountain pastures." data-fr="À 1 371 m d'altitude, Lumajo est le village le plus haut de Laciana. Pendant des siècles, il a accueilli les «vaqueiros de alzada», bergers transhumants qui montaient chaque été à la recherche des meilleurs pâturages de montagne.">A 1.371 m de altitud, Lumajo es el pueblo más alto de Laciana. Durante siglos recibió a los «vaqueiros de alzada», pastores trashumantes que subían cada verano en busca de los mejores pastos de montaña.</p>
+          <p class="place-label" data-es="Curiosidad" data-en="Did you know?" data-fr="Le saviez-vous ?">Curiosidad</p>
+          <p class="place-text" data-es="En 1952, el musicólogo Alan Lomax grabó aquí los cantos tradicionales de sus vecinos. Su iglesia de la Magdalena (s. XVII), los hórreos y el lavadero restaurado con dos manantiales siguen contando esa historia." data-en="In 1952, musicologist Alan Lomax recorded the traditional songs of its residents here. Its Church of the Magdalena (17th century), the granaries (hórreos) and the restored washhouse fed by two springs still tell that story." data-fr="En 1952, le musicologue Alan Lomax y a enregistré les chants traditionnels de ses habitants. Son église de la Magdalena (XVIIe siècle), ses greniers (hórreos) et son lavoir restauré, alimenté par deux sources, racontent encore cette histoire.">En 1952, el musicólogo Alan Lomax grabó aquí los cantos tradicionales de sus vecinos. Su iglesia de la Magdalena (s. XVII), los hórreos y el lavadero restaurado con dos manantiales siguen contando esa historia.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ DÓNDE BAÑARSE ════════ -->
+<section id="banarse">
+  <div class="container">
+    <span class="label" data-es="Refrescarse en Babia" data-en="Cool off in Babia" data-fr="Se rafraîchir à Babia">Refrescarse en Babia</span>
+    <h2 class="title" data-es="¿Dónde darte un baño?" data-en="Where to take a dip?" data-fr="Où se baigner ?">¿Dónde darte un baño?</h2>
+    <p class="body-text" data-es="Tres opciones muy distintas para refrescarte, desde la más cercana hasta una excursión de día completo." data-en="Three very different options to cool down, from the closest spot to a full-day excursion." data-fr="Trois options très différentes pour se rafraîchir, du plus proche à une excursion d'une journée complète.">Tres opciones muy distintas para refrescarte, desde la más cercana hasta una excursión de día completo.</p>
+
+    <div class="place-grid">
+
+      <!-- Mena de Babia -->
+      <div class="place-card-dark reveal">
+        <div class="place-img" style="background-image:url('img/actividades/Area_Recreativa_Mena_Babia.jpg');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-water"></i> <span data-es="Mena de Babia" data-en="Mena de Babia" data-fr="Mena de Babia">Mena de Babia</span></h3>
+          <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="≈6 km · ≈10 min — la más cercana" data-en="≈6 km · ≈10 min — the closest" data-fr="≈6 km · ≈10 min — la plus proche">≈6 km · ≈10 min — la más cercana</span></span>
+          <p class="place-text" data-es="El chapuzón más cercano a la casa. Un área recreativa junto al Río del Monte, con aguas claras que bajan directamente del Alto de Terreros — perfecta para una tarde de verano sin apenas coger el coche." data-en="The closest dip to the house. A recreational area by the Río del Monte, with clear waters flowing straight down from the Alto de Terreros — perfect for a summer afternoon without barely needing the car." data-fr="La baignade la plus proche de la maison. Une aire de loisirs au bord du Río del Monte, aux eaux claires descendant directement de l'Alto de Terreros — parfaite pour un après-midi d'été sans presque prendre la voiture.">El chapuzón más cercano a la casa. Un área recreativa junto al Río del Monte, con aguas claras que bajan directamente del Alto de Terreros — perfecta para una tarde de verano sin apenas coger el coche.</p>
+        </div>
+      </div>
+
+      <!-- Laguna Grande de Babia -->
+      <div class="place-card-dark reveal">
+        <div class="place-img" style="background-image:url('img/actividades/laguna-de-lago-de-babia.jpg.webp');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-droplet"></i> <span data-es="Laguna Grande de Babia" data-en="Laguna Grande de Babia" data-fr="Laguna Grande de Babia">Laguna Grande de Babia</span></h3>
+          <span class="place-dist"><i class="fa-solid fa-person-hiking"></i> <span data-es="7,6 km de ruta a pie / coche" data-en="7.6 km hiking route / by car" data-fr="7,6 km de sentier / en voiture">7,6 km de ruta a pie / coche</span></span>
+          <p class="place-text" data-es="Una laguna de origen glaciar a 1.440 m, entre Cabrillanes y Piedrafita. Más que una piscina, es un paraje único — Reserva de la Biosfera y zona protegida para aves — ideal para combinar un chapuzón con una caminata." data-en="A glacial lagoon at 1,440 m, between Cabrillanes and Piedrafita. More than a swimming spot, it's a unique landscape — Biosphere Reserve and protected bird area — ideal for combining a dip with a walk." data-fr="Une lagune d'origine glaciaire à 1 440 m, entre Cabrillanes et Piedrafita. Plus qu'un lieu de baignade, c'est un paysage unique — Réserve de Biosphère et zone protégée pour les oiseaux — idéal pour combiner baignade et randonnée.">Una laguna de origen glaciar a 1.440 m, entre Cabrillanes y Piedrafita. Más que una piscina, es un paraje único — Reserva de la Biosfera y zona protegida para aves — ideal para combinar un chapuzón con una caminata.</p>
+        </div>
+      </div>
+
+      <!-- Embalse de Barrios de Luna -->
+      <div class="place-card-dark reveal">
+        <div class="place-img" style="background-image:url('img/actividades/embalsebarriodeluna.jpg');"></div>
+        <div class="place-body">
+          <h3><i class="fa-solid fa-umbrella-beach"></i> <span data-es="Embalse de Barrios de Luna" data-en="Barrios de Luna Reservoir" data-fr="Barrage de Barrios de Luna">Embalse de Barrios de Luna</span></h3>
+          <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="≈40 km · ≈45 min — excursión de día" data-en="≈40 km · ≈45 min — day trip" data-fr="≈40 km · ≈45 min — excursion d'une journée">≈40 km · ≈45 min — excursión de día</span></span>
+          <p class="place-text" data-es="Conocido como el «Caribe leonés» por el color turquesa de sus aguas. Con más de 40 km de orilla, cuenta con zonas de baño y un club náutico en Mirantes de Luna — ideal para una excursión de día completo." data-en="Known as the «Leonese Caribbean» for the turquoise colour of its waters. With over 40 km of shoreline, it has swimming areas and a sailing club in Mirantes de Luna — ideal for a full-day excursion." data-fr="Connu comme les «Caraïbes léonaises» pour la couleur turquoise de ses eaux. Avec plus de 40 km de rives, il dispose de zones de baignade et d'un club nautique à Mirantes de Luna — idéal pour une excursion d'une journée complète.">Conocido como el «Caribe leonés» por el color turquesa de sus aguas. Con más de 40 km de orilla, cuenta con zonas de baño y un club náutico en Mirantes de Luna — ideal para una excursión de día completo.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="act-cta reveal">
+      <h2 data-es="¿Listo para explorar Babia?" data-en="Ready to explore Babia?" data-fr="Prêt à explorer Babia ?">¿Listo para explorar Babia?</h2>
+      <p data-es="Te contamos en persona los mejores rincones, rutas y secretos de la zona." data-en="We'll happily share in person the best spots, routes and local secrets." data-fr="Nous vous partagerons en personne les meilleurs coins, itinéraires et secrets de la région.">Te contamos en persona los mejores rincones, rutas y secretos de la zona.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/34679777247" class="btn btn-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-es="WhatsApp" data-en="WhatsApp" data-fr="WhatsApp">WhatsApp</span>
+        </a>
+        <a href="index.html#reservas" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="footer-logo">Aire de Babia</a>
+      <div class="footer-links">
+        <a href="index.html#nosotros"  data-es="La Casona"    data-en="About"       data-fr="La Propriété">La Casona</a>
+        <a href="index.html#galeria"   data-es="Galería"      data-en="Gallery"     data-fr="Galerie">Galería</a>
+        <a href="actividades.html"     data-es="Actividades"  data-en="Activities"  data-fr="Activités">Actividades</a>
+        <a href="alrededores.html"     data-es="Alrededores"  data-en="Around"      data-fr="Aux alentours">Alrededores</a>
+        <a href="index.html#reservas"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved" data-fr="Tous droits réservés">Todos los derechos reservados</span></span>
+      <br style="margin-bottom:8px">
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice" data-fr="Mentions légales" style="color:inherit;transition:color .3s">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy" data-fr="Politique de confidentialité" style="color:inherit;transition:color .3s">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy" data-fr="Politique de cookies" style="color:inherit;transition:color .3s">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<a href="https://wa.me/34679777247" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  let lang = localStorage.getItem('lang') || 'es';
+  const langDropdown = document.getElementById('langDropdown');
+  const langBtn      = document.getElementById('langBtn');
+  const langCurrent  = document.getElementById('langCurrent');
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langCurrent.textContent = l.toUpperCase();
+    langBtn.setAttribute('aria-expanded', 'false');
+    document.documentElement.lang = l;
+    document.querySelectorAll('#langMenu li').forEach(li =>
+      li.classList.toggle('active', li.dataset.lang === l)
+    );
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
+      if (val) el.textContent = val;
+    });
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.querySelectorAll('#langMenu li').forEach(li => {
+    li.addEventListener('click', () => {
+      applyLang(li.dataset.lang);
+      langDropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  applyLang(lang);
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── COOKIE BANNER ────────────────────────────────────────
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => {
+        const b = document.getElementById('cookieBanner');
+        if (b) b.classList.add('show');
+      }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <i class="fa-solid fa-cookie-bite" style="color:var(--gold-light);margin-right:8px"></i>
+    <span data-es="Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales." data-en="We use our own cookies to improve your browsing experience. You can accept all or choose only the essential ones." data-fr="Nous utilisons des cookies pour améliorer votre expérience de navigation. Vous pouvez tout accepter ou choisir uniquement les essentiels.">Usamos cookies propias para mejorar tu experiencia de navegación. Puedes aceptar todas o elegir solo las esenciales.</span>
+    <a href="cookies.html" data-es="Política de cookies" data-en="Cookie policy" data-fr="Politique de cookies">Política de cookies</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')" data-es="Solo esenciales" data-en="Essential only" data-fr="Essentiels seulement">Solo esenciales</button>
+    <button class="cookie-btn-all" onclick="acceptCookies('all')" data-es="Aceptar todo" data-en="Accept all" data-fr="Tout accepter">Aceptar todo</button>
+  </div>
+</div>
+</body>
+</html>
