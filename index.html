@@ -1503,6 +1503,64 @@
   </div>
 </section>
 
+<!-- ════════════ CALENDARIO ════════════ -->
+<section id="calendario">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="Disponibilidad" data-en="Availability" data-fr="Disponibilité">Disponibilidad</span>
+      <h2 class="title" data-es="¿Cuándo está libre tu casa?" data-en="When is your house free?" data-fr="Quand votre maison est-elle libre ?">¿Cuándo está libre tu casa?</h2>
+      <p class="body-text" data-es="Consulta el calendario de disponibilidad y escríbenos para reservar." data-en="Check the availability calendar and write to us to book." data-fr="Consultez le calendrier de disponibilité et écrivez-nous pour réserver.">Consulta el calendario de disponibilidad y escríbenos para reservar.</p>
+    </div>
+
+    <div class="cal-tabs">
+      <button class="cal-tab active" onclick="switchHouse(1)">Casa Oso</button>
+      <button class="cal-tab"        onclick="switchHouse(2)">Casa Urogallo</button>
+      <button class="cal-tab"        onclick="switchHouse(3)">Casa Cigüeña</button>
+    </div>
+
+    <div class="cal-wrap">
+      <div class="cal-overlay">
+        <i class="fa-regular fa-calendar-xmark cal-overlay-icon"></i>
+        <p class="cal-overlay-title" data-es="Reservas próximamente" data-en="Bookings coming soon" data-fr="Réservations bientôt disponibles">Reservas próximamente</p>
+        <p class="cal-overlay-sub"><span data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del " data-en="While we finalize the details, you can check availability through the " data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le ">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del </span><a href="#reservas" data-es="formulario" data-en="form" data-fr="formulaire">formulario</a>.</p>
+      </div>
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="calNav(-1)" aria-label="Mes anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <span id="calTitle"></span>
+        <button class="cal-nav-btn" onclick="calNav(1)"  aria-label="Mes siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="cal-days" id="calDays"></div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot free"></span>
+          <span data-es="Disponible" data-en="Available" data-fr="Disponible">Disponible</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot booked"></span>
+          <span data-es="Ocupado" data-en="Booked" data-fr="Réservé">Ocupado</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot today"></span>
+          <span data-es="Hoy" data-en="Today" data-fr="Aujourd'hui">Hoy</span>
+        </div>
+        <div class="cal-legend-item">
+          <span class="cal-legend-dot past"></span>
+          <span data-es="Pasado" data-en="Past" data-fr="Passé">Pasado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cal-cta">
+      <p class="cal-note" data-es="Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto." data-en="Minimum stay: 2 nights · Prices and conditions are listed in the contact section." data-fr="Séjour minimum : 2 nuits · Tarifs et conditions dans la section contact.">Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto.</p>
+      <a class="cal-wa-btn" href="https://wa.me/34679777247" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════ CONTACT ════════════ -->
 <section id="reservas">
   <div class="container">
@@ -1676,64 +1734,6 @@
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ CALENDARIO ════════════ -->
-<section id="calendario">
-  <div class="container">
-    <div class="section-header">
-      <span class="label" data-es="Disponibilidad" data-en="Availability" data-fr="Disponibilité">Disponibilidad</span>
-      <h2 class="title" data-es="¿Cuándo está libre tu casa?" data-en="When is your house free?" data-fr="Quand votre maison est-elle libre ?">¿Cuándo está libre tu casa?</h2>
-      <p class="body-text" data-es="Consulta el calendario de disponibilidad y escríbenos para reservar." data-en="Check the availability calendar and write to us to book." data-fr="Consultez le calendrier de disponibilité et écrivez-nous pour réserver.">Consulta el calendario de disponibilidad y escríbenos para reservar.</p>
-    </div>
-
-    <div class="cal-tabs">
-      <button class="cal-tab active" onclick="switchHouse(1)">Casa Oso</button>
-      <button class="cal-tab"        onclick="switchHouse(2)">Casa Urogallo</button>
-      <button class="cal-tab"        onclick="switchHouse(3)">Casa Cigüeña</button>
-    </div>
-
-    <div class="cal-wrap">
-      <div class="cal-overlay">
-        <i class="fa-regular fa-calendar-xmark cal-overlay-icon"></i>
-        <p class="cal-overlay-title" data-es="Reservas próximamente" data-en="Bookings coming soon" data-fr="Réservations bientôt disponibles">Reservas próximamente</p>
-        <p class="cal-overlay-sub"><span data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del " data-en="While we finalize the details, you can check availability through the " data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le ">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del </span><a href="#reservas" data-es="formulario" data-en="form" data-fr="formulaire">formulario</a>.</p>
-      </div>
-      <div class="cal-nav">
-        <button class="cal-nav-btn" onclick="calNav(-1)" aria-label="Mes anterior"><i class="fa-solid fa-chevron-left"></i></button>
-        <span id="calTitle"></span>
-        <button class="cal-nav-btn" onclick="calNav(1)"  aria-label="Mes siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-      <div class="cal-days" id="calDays"></div>
-      <div class="cal-grid" id="calGrid"></div>
-      <div class="cal-legend">
-        <div class="cal-legend-item">
-          <span class="cal-legend-dot free"></span>
-          <span data-es="Disponible" data-en="Available" data-fr="Disponible">Disponible</span>
-        </div>
-        <div class="cal-legend-item">
-          <span class="cal-legend-dot booked"></span>
-          <span data-es="Ocupado" data-en="Booked" data-fr="Réservé">Ocupado</span>
-        </div>
-        <div class="cal-legend-item">
-          <span class="cal-legend-dot today"></span>
-          <span data-es="Hoy" data-en="Today" data-fr="Aujourd'hui">Hoy</span>
-        </div>
-        <div class="cal-legend-item">
-          <span class="cal-legend-dot past"></span>
-          <span data-es="Pasado" data-en="Past" data-fr="Passé">Pasado</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="cal-cta">
-      <p class="cal-note" data-es="Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto." data-en="Minimum stay: 2 nights · Prices and conditions are listed in the contact section." data-fr="Séjour minimum : 2 nuits · Tarifs et conditions dans la section contact.">Estancia mínima: 2 noches · Los precios y condiciones se indican en el apartado de contacto.</p>
-      <a class="cal-wa-btn" href="https://wa.me/34679777247" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</span>
-      </a>
     </div>
   </div>
 </section>
