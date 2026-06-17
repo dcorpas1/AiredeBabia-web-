@@ -265,7 +265,7 @@
     .hero-bg {
       position: absolute; inset: 0; pointer-events: none;
       background: url('img/casas/Gemini_Generated_Image_glqqdkglqqdkglqq.jpg') center/cover no-repeat;
-      transform: scale(1.06); transition: transform 10s ease;
+      transform: scale(1.06); transition: transform 10s ease; will-change: transform;
     }
     #hero.loaded .hero-bg { transform: scale(1); }
     .hero-overlay {
@@ -849,18 +849,19 @@
     /* ── COOKIE BANNER ─────────────────────────────────────── */
     .cookie-banner {
       position: fixed;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%);
+      width: calc(100% - 40px); max-width: 700px;
       z-index: 9999;
       background: #1A2E12;
-      border-top: 2px solid var(--gold);
-      padding: 18px 28px;
+      border: 2px solid var(--gold); border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      padding: 16px 22px;
       display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; flex-wrap: wrap;
+      gap: 16px; flex-wrap: wrap;
       box-shadow: 0 -4px 32px rgba(0,0,0,0.28);
-      transform: translateY(100%);
       transition: transform 0.45s ease;
     }
-    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner.show { transform: translateX(-50%) translateY(0); }
     .cookie-text { color: rgba(255,255,255,0.82); font-size: 0.87rem; line-height: 1.65; flex: 1; min-width: 220px; }
     .cookie-text a { color: var(--gold-light); text-decoration: underline; }
     .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
@@ -1119,9 +1120,9 @@
     <div class="house-panel" id="house-2">
       <div class="house-detail">
         <div>
-          <span class="house-badge" data-es="Casa Cigüeña · Hasta 6 personas" data-en="Casa Cigüeña · Up to 6 guests" data-fr="Casa Cigüeña · Jusqu'à 6 personnes">Casa Cigüeña · Hasta 6 personas</span>
+          <span class="house-badge" data-es="Casa Cigüeña · Hasta 4 personas" data-en="Casa Cigüeña · Up to 4 guests" data-fr="Casa Cigüeña · Jusqu'à 4 personnes">Casa Cigüeña · Hasta 4 personas</span>
           <h3 class="house-title">Casa Cigüeña</h3>
-          <p class="house-desc" data-es="Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible." data-en="Cosy apartment with integrated living-kitchen and open bedroom with two partial dividers for up to 6 guests. The perfect option for couples or small families seeking simplicity, privacy and all the charm of Babia at an accessible price." data-fr="Appartement cosy avec séjour-cuisine intégré et chambre ouverte avec deux séparations partielles pour jusqu'à 6 personnes. L'option idéale pour les couples ou petites familles à la recherche de simplicité, d'intimité et de tout le charme de Babia à un prix accessible.">Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 6 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible.</p>
+          <p class="house-desc" data-es="Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 4 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible." data-en="Cosy apartment with integrated living-kitchen and open bedroom with two partial dividers for up to 4 guests. The perfect option for couples or small families seeking simplicity, privacy and all the charm of Babia at an accessible price." data-fr="Appartement cosy avec séjour-cuisine intégré et chambre ouverte avec deux séparations partielles pour jusqu'à 4 personnes. L'option idéale pour les couples ou petites familles à la recherche de simplicité, d'intimité et de tout le charme de Babia à un prix accessible.">Apartamento acogedor con salón-cocina integrado y dormitorio diáfano con dos separaciones parciales para hasta 4 personas. La opción perfecta para parejas o familias pequeñas que buscan sencillez, privacidad y todo el encanto de Babia a un precio accesible.</p>
           <div class="house-specs">
             <div class="spec-card">
               <i class="fa-solid fa-door-open"></i>
@@ -1130,7 +1131,7 @@
             </div>
             <div class="spec-card">
               <i class="fa-solid fa-users"></i>
-              <span class="spec-num">6</span>
+              <span class="spec-num">4</span>
               <small data-es="Personas máx." data-en="Guests max.">Personas máx.</small>
             </div>
             <div class="spec-card">
@@ -1670,7 +1671,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner" data-es="El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos." data-en="The complex has three independent accommodations: Casa Oso (up to 8 guests), Casa Urogallo (up to 8 guests) and Casa Cigüeña (up to 6 guests). Each is rented independently with full privacy. It is also possible to book all three at once for large groups or events." data-fr="Le domaine compte trois hébergements indépendants : Casa Oso (jusqu'à 8 personnes), Casa Urogallo (jusqu'à 8 personnes) et Casa Cigüeña (jusqu'à 6 personnes). Chacun est loué de manière indépendante, avec une totale intimité. Il est également possible de réserver les trois à la fois pour des grands groupes ou des événements.">El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 6 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos.</div>
+          <div class="faq-a-inner" data-es="El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 4 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos." data-en="The complex has three independent accommodations: Casa Oso (up to 8 guests), Casa Urogallo (up to 8 guests) and Casa Cigüeña (up to 4 guests). Each is rented independently with full privacy. It is also possible to book all three at once for large groups or events." data-fr="Le domaine compte trois hébergements indépendants : Casa Oso (jusqu'à 8 personnes), Casa Urogallo (jusqu'à 8 personnes) et Casa Cigüeña (jusqu'à 4 personnes). Chacun est loué de manière indépendante, avec une totale intimité. Il est également possible de réserver les trois à la fois pour des grands groupes ou des événements.">El conjunto cuenta con tres alojamientos independientes: Casa Oso (hasta 8 personas), Casa Urogallo (hasta 8 personas) y Casa Cigüeña (hasta 4 personas). Cada uno se alquila de forma independiente, con total privacidad. También es posible reservar los tres a la vez para grupos grandes o eventos.</div>
         </div>
       </div>
 
@@ -1886,9 +1887,12 @@
 
   // ── NAV SCROLL ──────────────────────────────────────────
   const nav = document.getElementById('nav');
+  const heroBg = document.querySelector('.hero-bg');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('solid', window.scrollY > 60);
-    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 500);
+    const scrolled = window.scrollY;
+    nav.classList.toggle('solid', scrolled > 60);
+    document.getElementById('backToTop').classList.toggle('visible', scrolled > 500);
+    if (heroBg && scrolled < window.innerHeight) heroBg.style.transform = 'scale(1) translateY(' + (scrolled * 0.25) + 'px)';
   }, { passive: true });
   document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
