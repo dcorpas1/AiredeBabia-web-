@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ES -->
+  <meta name="description"         content="Rutas de senderismo y BTT cerca de Piedrafita de Babia, León. Desde salidas desde la puerta de casa hasta ascensiones de alta montaña. Distancias, dificultad y tracks GPS.">
+  <meta name="keywords"            content="rutas senderismo Babia, BTT Babia Luna, senderismo Piedrafita de Babia, rutas bici León, Senda Babia Alta, Peña Grachera, Vía Verde Laciana">
+  <!-- EN -->
+  <meta name="description-en"      content="Hiking and mountain bike routes near Piedrafita de Babia, León. From doorstep walks to high mountain ascents. Distances, difficulty and GPS tracks.">
+  <!-- FR -->
+  <meta name="description-fr"      content="Randonnées et VTT près de Piedrafita de Babia, León. Des balades au départ de la maison aux ascensions de haute montagne. Distances, difficulté et traces GPS.">
+  <meta name="robots"              content="index, follow">
+  <meta name="author"              content="Aire de Babia">
+
+  <!-- Open Graph -->
+  <meta property="og:type"              content="website">
+  <meta property="og:url"               content="https://www.airedebabia.es/rutas.html">
+  <meta property="og:site_name"         content="Aire de Babia">
+  <meta property="og:locale"            content="es_ES">
+  <meta property="og:locale:alternate"  content="en_GB">
+  <meta property="og:locale:alternate"  content="fr_FR">
+  <meta property="og:title"             content="Rutas · Aire de Babia">
+  <meta property="og:description"       content="Senderismo y BTT en la Comarca de Babia y Luna, León. Rutas desde la puerta de casa.">
+  <meta property="og:image"             content="https://www.airedebabia.es/img/naturaleza/IMG_8251.jpg">
+  <meta property="og:image:width"       content="1200">
+  <meta property="og:image:height"      content="630">
+
+  <title>Rutas · Aire de Babia</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #243D1A;
+      --green-mid:   #355929;
+      --green-light: #4A7C3F;
+      --gold:        #B8882A;
+      --gold-light:  #D4A84B;
+      --stone:       #8A7A6A;
+      --cream:       #F7F4EF;
+      --white:       #FFFFFF;
+      --text:        #1A1A1A;
+      --text-muted:  #6A6A6A;
+      --border:      #DDD8D0;
+      --radius:      3px;
+      --T:           0.3s ease;
+      --shadow:      0 6px 30px rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; font-weight: 300; color: var(--text); background: var(--cream); line-height: 1.75; font-size: 16px; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+    .title { font-size: clamp(1.9rem, 4vw, 2.9rem); color: var(--green); margin-bottom: 22px; }
+    .body-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+
+    /* ── NAV ───────────────────────────────────────────── */
+    #nav { position: fixed; inset: 0 0 auto; z-index: 900; padding: 22px 0; transition: background var(--T), padding var(--T), box-shadow var(--T); }
+    #nav.solid { background: var(--white); padding: 14px 0; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); transition: color var(--T); }
+    #nav.solid .nav-logo { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--T); }
+    #nav.solid .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light) !important; }
+    .nav-links a.active { color: var(--gold-light) !important; }
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 10px 26px; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+
+    /* ── LANG DROPDOWN ─────────────────────────────────── */
+    .lang-dropdown { position: relative; }
+    .lang-btn { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.45); border-radius: 20px; padding: 6px 10px 6px 14px; color: rgba(255,255,255,0.85); background: transparent; cursor: pointer; transition: var(--T); display: flex; align-items: center; gap: 5px; }
+    #nav.solid .lang-btn { border-color: var(--border); color: var(--text); }
+    .lang-btn:hover { background: rgba(255,255,255,0.15); }
+    #nav.solid .lang-btn:hover { background: var(--cream); }
+    .lang-caret { font-size: 0.58rem; transition: transform var(--T); }
+    .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+    .lang-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 68px; box-shadow: 0 8px 24px rgba(0,0,0,0.13); list-style: none; padding: 4px 0; opacity: 0; pointer-events: none; transform: translateY(-6px); transition: opacity 0.2s ease, transform 0.2s ease; z-index: 300; }
+    .lang-dropdown.open .lang-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .lang-menu li { padding: 9px 18px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; color: var(--text-muted); transition: background var(--T), color var(--T); }
+    .lang-menu li:hover { background: var(--cream); color: var(--green); }
+    .lang-menu li.active { color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--T); }
+    #nav.solid .hamburger span { background: var(--text); }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px 28px 28px; gap: 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .nav-links.open a { color: var(--text) !important; }
+
+    /* ── NAV DROPDOWN ──────────────────────────────────── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-caret { font-size: 0.55rem; transition: transform var(--T); }
+    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+    .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: -20px; right: -20px; height: 14px; }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-4px); background: var(--white); border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); padding: 6px 0; min-width: 200px; list-style: none; opacity: 0; pointer-events: none; transition: opacity 0.22s ease, transform 0.22s ease; z-index: 901; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid var(--white); }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 11px 20px; color: var(--text) !important; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; transition: background var(--T), color var(--T) !important; }
+    .nav-dropdown-menu li a:hover { background: var(--cream); color: var(--green) !important; }
+    .nav-dropdown-menu li a i { color: var(--gold); font-size: 0.68rem; }
+    @media (max-width: 768px) {
+      .nav-dropdown-menu { display: none; position: static; transform: none !important; box-shadow: none; opacity: 1; pointer-events: all; background: var(--cream); border-left: 2px solid var(--gold); border-radius: 4px; margin: 6px 0 4px 16px; padding: 4px 0; min-width: unset; }
+      .nav-dropdown-menu::before { display: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: block; }
+      .nav-dropdown.open .nav-caret { transform: rotate(180deg); }
+    }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    .page-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('img/naturaleza/IMG_8251.jpg') center 30%/cover no-repeat; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,20,8,0.88) 0%, rgba(10,20,8,0.35) 55%, rgba(10,20,8,0.22) 100%); }
+    .page-hero-content { position: relative; z-index: 1; padding: 0 0 60px; width: 100%; }
+    .page-hero-content .label { color: var(--gold-light); }
+    .page-hero-content h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: var(--white); margin-bottom: 10px; }
+    .page-hero-content p { color: rgba(255,255,255,0.78); font-size: 1.1rem; font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* ── SENDERISMO (dark) ─────────────────────────────── */
+    #senderismo { padding: 90px 0 30px; background: var(--green); }
+    #senderismo .section-header { margin-bottom: 56px; }
+    #senderismo .label { color: var(--gold-light); }
+    #senderismo .title { color: var(--white); }
+    #senderismo .body-text { color: rgba(255,255,255,0.65); }
+
+    /* ── BTT (dark continued) ──────────────────────────── */
+    #bici { padding: 30px 0 110px; background: var(--green); }
+    #bici .section-header { margin-bottom: 56px; }
+    #bici .label { color: var(--gold-light); }
+    #bici .title { color: var(--white); }
+    #bici .body-text { color: rgba(255,255,255,0.65); }
+
+    /* ── SECTION DIVIDER ───────────────────────────────── */
+    .section-divider { display: flex; align-items: center; gap: 18px; margin: 20px 0 70px; color: rgba(255,255,255,0.25); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+    /* ── FEAT CARDS ────────────────────────────────────── */
+    .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feat-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); overflow: hidden; transition: background var(--T), transform var(--T); }
+    .feat-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-3px); }
+    .feat-card-img { width: 100%; height: 210px; background-size: cover; background-position: center; border-top: 3px solid var(--gold); }
+    .feat-card-body { padding: 28px 26px 32px; display: flex; flex-direction: column; }
+    .feat-card i.card-icon { font-size: 1.6rem; color: var(--gold-light); margin-bottom: 14px; display: block; }
+    .feat-card h3 { font-size: 1.12rem; color: var(--white); margin-bottom: 10px; }
+    .feat-card p { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.78; margin-bottom: 16px; flex: 1; }
+
+    /* ── ROUTE META ────────────────────────────────────── */
+    .route-meta { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 14px; }
+    .route-meta-item { display: flex; align-items: center; gap: 5px; font-size: 0.74rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.03em; }
+    .route-meta-item i { font-size: 0.68rem; color: var(--gold-light); }
+    .diff-easy  { color: #7EDB92; }
+    .diff-med   { color: var(--gold-light); }
+    .diff-hard  { color: #E08080; }
+
+    .route-from { font-size: 0.76rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 5px; margin-bottom: 12px; }
+    .route-from i { color: var(--gold-light); font-size: 0.65rem; }
+
+    .route-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; color: var(--gold-light); align-self: flex-start; }
+    .route-link i { transition: transform var(--T); }
+    .feat-card:hover .route-link i { transform: translateX(4px); }
+
+    /* ── TAG ────────────────────────────────────────────── */
+    .tag { display: inline-block; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,168,87,0.2); color: var(--gold-light); border: 1px solid rgba(196,168,87,0.38); padding: 4px 11px; border-radius: 20px; margin-right: 6px; margin-bottom: 6px; }
+
+    /* ── CTA ────────────────────────────────────────────── */
+    .act-cta { margin-top: 0; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 52px 40px; text-align: center; }
+    .act-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 14px; }
+    .act-cta p  { color: rgba(255,255,255,0.62); font-size: 1rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 14px 34px; border-radius: var(--radius); font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: var(--T); border: 2px solid transparent; }
+    .btn-gold { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-wa { background: #25D366; color: var(--white); }
+    .btn-wa:hover { background: #1fbe5a; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer { background: var(--text); color: rgba(255,255,255,0.68); padding: 48px 0 28px; }
+    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.88rem; transition: color var(--T); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { font-size: 0.78rem; text-align: center; }
+    .footer-credit { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-credit a { font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); transition: color var(--T); }
+    .footer-credit a:hover { color: var(--gold-light); }
+
+    /* ── BACK TO TOP / WA FLOAT ────────────────────────── */
+    .back-to-top { position: fixed; bottom: 28px; left: 28px; z-index: 800; width: 46px; height: 46px; background: var(--green); border: none; border-radius: 50%; color: var(--white); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(36,61,26,0.38); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s; }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .back-to-top:hover { background: var(--green-mid); transform: translateY(-2px); }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 800; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; color: var(--white); box-shadow: 0 5px 20px rgba(37,211,102,0.42); transition: transform var(--T), box-shadow var(--T); }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* ── REVEAL ────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-simple { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 580px) {
+      .feat-grid { grid-template-columns: 1fr; }
+      .act-cta { padding: 36px 22px; }
+    }
+
+    /* ── COOKIE BANNER ─────────────────────────────────── */
+    .cookie-banner { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%); width: calc(100% - 40px); max-width: 700px; z-index: 9999; background: #1A2E12; border: 2px solid var(--gold); border-bottom: none; border-radius: 10px 10px 0 0; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; box-shadow: 0 -4px 32px rgba(0,0,0,0.28); transition: transform 0.45s ease; }
+    .cookie-banner.show { transform: translateX(-50%) translateY(0); }
+    .cookie-text { color: rgba(255,255,255,0.82); font-size: 0.87rem; line-height: 1.65; flex: 1; min-width: 220px; }
+    .cookie-text a { color: var(--gold-light); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn-all { background: var(--gold); color: #fff; border: none; padding: 10px 22px; border-radius: var(--radius); font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
+    .cookie-btn-all:hover { background: var(--gold-light); }
+    .cookie-btn-ess { background: transparent; color: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.28); padding: 10px 22px; border-radius: var(--radius); font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+    .cookie-btn-ess:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+  </style>
+</head>
+<body>
+<!-- Designed & built by Daniel Corpas · dcorpas.dev -->
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">Aire de Babia</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#alojamiento" data-es="Los alojamientos" data-en="Our Stays" data-fr="Les hébergements">Los alojamientos <i class="fa-solid fa-chevron-down nav-caret"></i></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="index.html#alojamiento" data-es="Casa Oso"     data-en="Casa Oso"     data-fr="Casa Oso"><i class="fa-solid fa-house"></i> Casa Oso</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Urogallo" data-en="Casa Urogallo" data-fr="Casa Urogallo"><i class="fa-solid fa-house"></i> Casa Urogallo</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña"><i class="fa-solid fa-house"></i> Casa Cigüeña</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
+      <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#entorno" data-es="Descubre" data-en="Discover" data-fr="Découvrir">Descubre <i class="fa-solid fa-chevron-down nav-caret"></i></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="index.html#entorno"  data-es="Entorno"      data-en="Surroundings" data-fr="Environs"><i class="fa-solid fa-mountain-sun"></i> Entorno</a></li>
+          <li><a href="actividades.html"    data-es="Actividades"  data-en="Activities"   data-fr="Activités"><i class="fa-solid fa-person-hiking"></i> Actividades</a></li>
+          <li><a href="alrededores.html"    data-es="Alrededores"  data-en="Around"       data-fr="Aux alentours"><i class="fa-solid fa-map"></i> Alrededores</a></li>
+          <li><a href="rutas.html" class="active" data-es="Rutas" data-en="Routes" data-fr="Itinéraires"><i class="fa-solid fa-route"></i> Rutas</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#calendario" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">ES</span>
+          <i class="fa-solid fa-chevron-down lang-caret"></i>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li data-lang="es" class="active" role="menuitem">ES</li>
+          <li data-lang="en" role="menuitem">EN</li>
+          <li data-lang="fr" role="menuitem">FR</li>
+        </ul>
+      </div>
+      <div class="hamburger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="container">
+      <span class="label" data-es="Senderismo y BTT desde la puerta de casa" data-en="Hiking & MTB from the doorstep" data-fr="Randonnée et VTT depuis la maison">Senderismo y BTT desde la puerta de casa</span>
+      <h1 data-es="Rutas" data-en="Routes" data-fr="Itinéraires">Rutas</h1>
+      <p data-es="Babia tiene más de 200 km de senderos y pistas. Aquí, las que más nos gustan." data-en="Babia has over 200 km of trails and tracks. Here are our favourites." data-fr="Babia compte plus de 200 km de sentiers et pistes. Voici nos préférés.">Babia tiene más de 200 km de senderos y pistas. Aquí, las que más nos gustan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SENDERISMO ════════ -->
+<section id="senderismo">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="A pie" data-en="On foot" data-fr="À pied">A pie</span>
+      <h2 class="title" data-es="Rutas de senderismo" data-en="Hiking routes" data-fr="Randonnées pédestres">Rutas de senderismo</h2>
+      <p class="body-text" data-es="Desde paseos familiares por los pueblos de Babia hasta ascensiones de alta montaña. Todas parten desde la casa o a pocos minutos en coche." data-en="From family walks through Babia's villages to high mountain ascents. All start from the house or just a few minutes away by car." data-fr="Des promenades familiales dans les villages de Babia aux ascensions de haute montagne. Toutes partent de la maison ou à quelques minutes en voiture.">Desde paseos familiares por los pueblos de Babia hasta ascensiones de alta montaña. Todas parten desde la casa o a pocos minutos en coche.</p>
+    </div>
+
+    <div class="feat-grid">
+
+      <!-- Senda de Babia Alta -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/Senda de Babia Alta · PRC-LE 63.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-hiking card-icon"></i>
+          <h3 data-es="Senda de Babia Alta · PRC-LE 63" data-en="Senda de Babia Alta · PRC-LE 63" data-fr="Senda de Babia Alta · PRC-LE 63">Senda de Babia Alta · PRC-LE 63</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> 16 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="~4 h" data-en="~4 h" data-fr="~4 h">~4 h</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-rotate"></i> <span data-es="Circular" data-en="Loop" data-fr="Boucle">Circular</span></span>
+            <span class="route-meta-item diff-easy"><i class="fa-solid fa-circle-check"></i> <span data-es="Fácil" data-en="Easy" data-fr="Facile">Fácil</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-house"></i> <span data-es="Sale desde Piedrafita de Babia" data-en="Starts from Piedrafita de Babia" data-fr="Départ de Piedrafita de Babia">Sale desde Piedrafita de Babia</span></p>
+          <p data-es="La ruta oficial del Parque Natural de Babia y Luna. Recorre los pueblos más bonitos de Babia Alta: Cacabillos, Lago de Babia, Las Murias y Quintanilla. Señalizada, apta para toda la familia." data-en="The official route of the Babia y Luna Natural Park. Passes through Babia Alta's most beautiful villages: Cacabillos, Lago de Babia, Las Murias and Quintanilla. Waymarked, suitable for all the family." data-fr="L'itinéraire officiel du Parc Naturel de Babia y Luna. Traverse les plus beaux villages de Babia Alta : Cacabillos, Lago de Babia, Las Murias et Quintanilla. Balisé, adapté à toute la famille.">La ruta oficial del Parque Natural de Babia y Luna. Recorre los pueblos más bonitos de Babia Alta: Cacabillos, Lago de Babia, Las Murias y Quintanilla. Señalizada, apta para toda la familia.</p>
+          <div>
+            <span class="tag" data-es="Señalizada" data-en="Waymarked" data-fr="Balisée">Señalizada</span>
+            <span class="tag" data-es="Familiar" data-en="Family-friendly" data-fr="Familiale">Familiar</span>
+          </div>
+          <a href="https://www.wikiloc.com/hiking-trails/pn-babia-y-luna-senda-de-babia-alta-163193972" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver en Wikiloc" data-en="View on Wikiloc" data-fr="Voir sur Wikiloc">Ver en Wikiloc</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Laguna Grande y Peña Grachera -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/lagunagrandeypeñagrachera.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-mountain card-icon"></i>
+          <h3 data-es="Laguna Grande y Peña Grachera" data-en="Laguna Grande & Peña Grachera" data-fr="Laguna Grande et Peña Grachera">Laguna Grande y Peña Grachera</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> ~10 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="~4 h" data-en="~4 h" data-fr="~4 h">~4 h</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-rotate"></i> <span data-es="Circular" data-en="Loop" data-fr="Boucle">Circular</span></span>
+            <span class="route-meta-item diff-hard"><i class="fa-solid fa-triangle-exclamation"></i> <span data-es="Alta" data-en="Hard" data-fr="Difficile">Alta</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-car"></i> <span data-es="5 min desde la casa · Salida desde Lago de Babia" data-en="5 min from the house · Start from Lago de Babia" data-fr="5 min de la maison · Départ de Lago de Babia">5 min desde la casa · Salida desde Lago de Babia</span></p>
+          <p data-es="Ascensión a Peña Grachera (1.931 m) con vistas panorámicas sobre toda la comarca. El camino pasa por la espectacular Laguna Grande. Requiere orientación y buena forma física. La recompensa: uno de los paisajes más impresionantes de la Cordillera Cantábrica." data-en="Ascent to Peña Grachera (1,931 m) with panoramic views over the whole region. The route passes by the spectacular Laguna Grande. Requires navigation skills and good fitness. The reward: one of the most impressive landscapes in the Cantabrian Mountains." data-fr="Ascension de la Peña Grachera (1 931 m) avec des vues panoramiques sur toute la région. L'itinéraire passe par le spectaculaire Laguna Grande. Nécessite des compétences en orientation et une bonne forme physique.">Ascensión a Peña Grachera (1.931 m) con vistas panorámicas sobre toda la comarca. El camino pasa por la espectacular Laguna Grande. Requiere orientación y buena forma física. La recompensa: uno de los paisajes más impresionantes de la Cordillera Cantábrica.</p>
+          <div>
+            <span class="tag" data-es="+600 m desnivel" data-en="+600 m ascent" data-fr="+600 m dénivelé">+600 m desnivel</span>
+            <span class="tag" data-es="Alta montaña" data-en="High mountain" data-fr="Haute montagne">Alta montaña</span>
+          </div>
+          <a href="https://www.wikiloc.com/hiking-trails/lago-de-babia-pena-larga-1730m-piedrafita-de-babia-lago-de-babia-15401799" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver en Wikiloc" data-en="View on Wikiloc" data-fr="Voir sur Wikiloc">Ver en Wikiloc</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gran vuelta pueblos Babia Alta -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/Gran vuelta por los pueblos de Babia Alta.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-map-signs card-icon"></i>
+          <h3 data-es="Gran vuelta por los pueblos de Babia Alta" data-en="Grand loop through Babia Alta villages" data-fr="Grande boucle des villages de Babia Alta">Gran vuelta por los pueblos de Babia Alta</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> ~25 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="~6-7 h" data-en="~6-7 h" data-fr="~6-7 h">~6-7 h</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-rotate"></i> <span data-es="Circular" data-en="Loop" data-fr="Boucle">Circular</span></span>
+            <span class="route-meta-item diff-med"><i class="fa-solid fa-minus"></i> <span data-es="Media" data-en="Moderate" data-fr="Modérée">Media</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-house"></i> <span data-es="Sale desde Piedrafita de Babia" data-en="Starts from Piedrafita de Babia" data-fr="Départ de Piedrafita de Babia">Sale desde Piedrafita de Babia</span></p>
+          <p data-es="La ruta más completa para conocer la comarca. Recorre Vega de Viejos, Puente de Las Palomas, Carrasconte, Quintanilla, Peñalba, Mena y Cabrillanes. Pueblos de piedra, prados infinitos y el silencio de Babia en estado puro." data-en="The most complete route to discover the region. Passes through Vega de Viejos, Puente de Las Palomas, Carrasconte, Quintanilla, Peñalba, Mena and Cabrillanes. Stone villages, endless meadows and Babia's silence at its purest." data-fr="L'itinéraire le plus complet pour découvrir la région. Traverse Vega de Viejos, Puente de Las Palomas, Carrasconte, Quintanilla, Peñalba, Mena et Cabrillanes. Villages de pierre, prairies infinies et silence de Babia à l'état pur.">La ruta más completa para conocer la comarca. Recorre Vega de Viejos, Puente de Las Palomas, Carrasconte, Quintanilla, Peñalba, Mena y Cabrillanes. Pueblos de piedra, prados infinitos y el silencio de Babia en estado puro.</p>
+          <div>
+            <span class="tag" data-es="Patrimonio" data-en="Heritage" data-fr="Patrimoine">Patrimonio</span>
+            <span class="tag" data-es="Jornada completa" data-en="Full day" data-fr="Journée entière">Jornada completa</span>
+          </div>
+          <a href="https://es.wikiloc.com/rutas-senderismo/piedrafita-de-babia-vega-de-viejos-puente-de-las-palomas-carrasconte-piedrafita-quintanilla-penalba-55034230" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver en Wikiloc" data-en="View on Wikiloc" data-fr="Voir sur Wikiloc">Ver en Wikiloc</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- Divisor -->
+    <div class="section-divider" style="margin-top: 80px;" data-es="En bicicleta" data-en="By bike" data-fr="À vélo">En bicicleta</div>
+
+  </div>
+</section>
+
+<!-- ════════ BTT ════════ -->
+<section id="bici">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" data-es="En bicicleta" data-en="By bike" data-fr="À vélo">En bicicleta</span>
+      <h2 class="title" data-es="Rutas BTT y cicloturismo" data-en="MTB & cycling routes" data-fr="Itinéraires VTT et cyclo">Rutas BTT y cicloturismo</h2>
+      <p class="body-text" data-es="Desde la vía verde apta para niños hasta travesías de un día entero por el Parque Natural. Elige la tuya." data-en="From the greenway suitable for children to full-day crossings of the Natural Park. Choose yours." data-fr="De la voie verte adaptée aux enfants aux traversées d'une journée entière dans le Parc Naturel. Choisissez la vôtre.">Desde la vía verde apta para niños hasta travesías de un día entero por el Parque Natural. Elige la tuya.</p>
+    </div>
+
+    <div class="feat-grid">
+
+      <!-- Vía Verde de Laciana -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/via verde de laciana.png'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-biking card-icon"></i>
+          <h3 data-es="Vía Verde de Laciana" data-en="Vía Verde de Laciana" data-fr="Vía Verde de Laciana">Vía Verde de Laciana</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> 13 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="~2 h" data-en="~2 h" data-fr="~2 h">~2 h</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-arrows-left-right"></i> <span data-es="Lineal" data-en="Linear" data-fr="Linéaire">Lineal</span></span>
+            <span class="route-meta-item diff-easy"><i class="fa-solid fa-circle-check"></i> <span data-es="Fácil" data-en="Easy" data-fr="Facile">Fácil</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-car"></i> <span data-es="13 km desde la casa · Salida desde Villablino" data-en="13 km from the house · Start from Villablino" data-fr="13 km de la maison · Départ de Villablino">13 km desde la casa · Salida desde Villablino</span></p>
+          <p data-es="Antigua vía del ferrocarril minero reconvertida en carril bici. Terreno llano y asfaltado, sin pendiente. Conecta Villablino con el Centro del Urogallo en Caboalles. Perfecta para familias con niños o para una tarde tranquila en bici." data-en="Former mining railway converted into a cycling lane. Flat, paved surface with no gradients. Connects Villablino with the Capercaillie Interpretation Centre in Caboalles. Perfect for families with children or a relaxed afternoon ride." data-fr="Ancienne voie ferrée minière reconvertie en piste cyclable. Terrain plat et asphalté, sans dénivelé. Relie Villablino au Centre d'Interprétation du Grand Tétras à Caboalles. Idéale pour les familles avec enfants.">Antigua vía del ferrocarril minero reconvertida en carril bici. Terreno llano y asfaltado, sin pendiente. Conecta Villablino con el Centro del Urogallo en Caboalles. Perfecta para familias con niños o para una tarde tranquila en bici.</p>
+          <div>
+            <span class="tag" data-es="Apta para niños" data-en="Kid-friendly" data-fr="Pour enfants">Apta para niños</span>
+            <span class="tag" data-es="Sin desnivel" data-en="No gradient" data-fr="Sans dénivelé">Sin desnivel</span>
+          </div>
+          <a href="https://www.terranostrum.es/senderismo/ruta-btt-via-verde-de-laciana" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver ruta" data-en="View route" data-fr="Voir l'itinéraire">Ver ruta</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- BTT Gran Norte -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/btt-gran-norte.webp'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-biking card-icon"></i>
+          <h3 data-es="BTT Gran Norte · P.N. Babia y Luna" data-en="MTB Gran Norte · Babia y Luna N.P." data-fr="VTT Gran Norte · P.N. Babia y Luna">BTT Gran Norte · P.N. Babia y Luna</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> ~55 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="1 día" data-en="1 day" data-fr="1 journée">1 día</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-arrows-left-right"></i> <span data-es="Travesía" data-en="Point-to-point" data-fr="Traversée">Travesía</span></span>
+            <span class="route-meta-item diff-hard"><i class="fa-solid fa-triangle-exclamation"></i> <span data-es="Difícil" data-en="Hard" data-fr="Difficile">Difícil</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-car"></i> <span data-es="Pasa por los alrededores de Piedrafita" data-en="Passes through the area around Piedrafita" data-fr="Passe aux alentours de Piedrafita">Pasa por los alrededores de Piedrafita</span></p>
+          <p data-es="Recorre la mitad norte del Parque Natural de Babia y Luna. Enlaza el Puerto de Somiedo con Caldas de Luna atravesando los paisajes más remotos y salvajes de la comarca. Requiere experiencia en BTT y buena forma física." data-en="Traverses the northern half of the Babia y Luna Natural Park. Links the Puerto de Somiedo with Caldas de Luna through the most remote and wild landscapes in the region. Requires MTB experience and good fitness." data-fr="Traverse la moitié nord du Parc Naturel de Babia y Luna. Relie le Puerto de Somiedo à Caldas de Luna à travers les paysages les plus sauvages et reculés de la région. Nécessite une expérience en VTT et une bonne forme physique.">Recorre la mitad norte del Parque Natural de Babia y Luna. Enlaza el Puerto de Somiedo con Caldas de Luna atravesando los paisajes más remotos y salvajes de la comarca. Requiere experiencia en BTT y buena forma física.</p>
+          <div>
+            <span class="tag" data-es="Ciclistas expertos" data-en="Experienced riders" data-fr="Cyclistes expérimentés">Ciclistas expertos</span>
+            <span class="tag">Parque Natural</span>
+          </div>
+          <a href="https://www.terranostrum.es/senderismo/ruta-btt-gran-norte-p-n-babia-y-luna" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver ruta" data-en="View route" data-fr="Voir l'itinéraire">Ver ruta</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- BTT Gran Sur -->
+      <div class="feat-card reveal">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/btt-gran-sur.webp'); background-position: center;"></div>
+        <div class="feat-card-body">
+          <i class="fa-solid fa-person-biking card-icon"></i>
+          <h3 data-es="BTT Gran Sur · P.N. Babia y Luna" data-en="MTB Gran Sur · Babia y Luna N.P." data-fr="VTT Gran Sur · P.N. Babia y Luna">BTT Gran Sur · P.N. Babia y Luna</h3>
+          <div class="route-meta">
+            <span class="route-meta-item"><i class="fa-solid fa-route"></i> 52,6 km</span>
+            <span class="route-meta-item"><i class="fa-solid fa-clock"></i> <span data-es="1 día" data-en="1 day" data-fr="1 journée">1 día</span></span>
+            <span class="route-meta-item"><i class="fa-solid fa-arrows-left-right"></i> <span data-es="Travesía" data-en="Point-to-point" data-fr="Traversée">Travesía</span></span>
+            <span class="route-meta-item diff-hard"><i class="fa-solid fa-triangle-exclamation"></i> <span data-es="Difícil" data-en="Hard" data-fr="Difficile">Difícil</span></span>
+          </div>
+          <p class="route-from"><i class="fa-solid fa-car"></i> <span data-es="Pasa por los alrededores de Piedrafita" data-en="Passes through the area around Piedrafita" data-fr="Passe aux alentours de Piedrafita">Pasa por los alrededores de Piedrafita</span></p>
+          <p data-es="Travesía por la mitad sur del Parque Natural. Valles, robledales centenarios y puertos de montaña en un recorrido de exigencia técnica y física. Una de las grandes rutas BTT del norte de España." data-en="Crossing of the southern half of the Natural Park. Valleys, centuries-old oak forests and mountain passes in a technically and physically demanding route. One of the great MTB routes in northern Spain." data-fr="Traversée de la moitié sud du Parc Naturel. Vallées, chênaies centenaires et cols de montagne dans un parcours techniquement et physiquement exigeant. L'une des grandes routes VTT du nord de l'Espagne.">Travesía por la mitad sur del Parque Natural. Valles, robledales centenarios y puertos de montaña en un recorrido de exigencia técnica y física. Una de las grandes rutas BTT del norte de España.</p>
+          <div>
+            <span class="tag" data-es="Ciclistas expertos" data-en="Experienced riders" data-fr="Cyclistes expérimentés">Ciclistas expertos</span>
+            <span class="tag">52,6 km</span>
+          </div>
+          <a href="https://www.terranostrum.es/senderismo/ruta-btt-gran-sur-p-n-babia-y-luna" target="_blank" rel="noopener" class="route-link">
+            <span data-es="Ver ruta" data-en="View route" data-fr="Voir l'itinéraire">Ver ruta</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /feat-grid -->
+
+    <!-- CTA -->
+    <div class="act-cta reveal" style="margin-top: 72px;">
+      <h2 data-es="¿Quieres recomendaciones personalizadas?" data-en="Want personalised recommendations?" data-fr="Vous voulez des recommandations personnalisées ?">¿Quieres recomendaciones personalizadas?</h2>
+      <p data-es="Cuéntanos tu nivel y qué tipo de ruta buscas. Te mandamos las que mejor encajan con tus ganas del momento." data-en="Tell us your level and what kind of route you're after. We'll send you the ones that best match what you're looking for." data-fr="Dites-nous votre niveau et le type d'itinéraire souhaité. Nous vous enverrons ceux qui correspondent le mieux à vos envies.">Cuéntanos tu nivel y qué tipo de ruta buscas. Te mandamos las que mejor encajan con tus ganas del momento.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/34679777247" class="btn btn-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="index.html#calendario" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="footer-logo">Aire de Babia</a>
+      <div class="footer-links">
+        <a href="index.html#nosotros"  data-es="La Casona"    data-en="About"       data-fr="La Propriété">La Casona</a>
+        <a href="index.html#galeria"   data-es="Galería"      data-en="Gallery"     data-fr="Galerie">Galería</a>
+        <a href="actividades.html"     data-es="Actividades"  data-en="Activities"  data-fr="Activités">Actividades</a>
+        <a href="alrededores.html"     data-es="Alrededores"  data-en="Around"      data-fr="Aux alentours">Alrededores</a>
+        <a href="rutas.html"           data-es="Rutas"        data-en="Routes"      data-fr="Itinéraires">Rutas</a>
+        <a href="index.html#calendario"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aire de Babia · <span data-es="Todos los derechos reservados" data-en="All rights reserved" data-fr="Tous droits réservés">Todos los derechos reservados</span></span>
+      <br style="margin-bottom:8px">
+      <span>
+        <a href="aviso-legal.html" data-es="Aviso Legal" data-en="Legal Notice" data-fr="Mentions légales" style="color:inherit;transition:color .3s">Aviso Legal</a>
+        &nbsp;·&nbsp;
+        <a href="privacidad.html" data-es="Política de Privacidad" data-en="Privacy Policy" data-fr="Politique de confidentialité" style="color:inherit;transition:color .3s">Política de Privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="cookies.html" data-es="Política de Cookies" data-en="Cookie Policy" data-fr="Politique de cookies" style="color:inherit;transition:color .3s">Política de Cookies</a>
+      </span>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.linkedin.com/in/daniel-corpas/" target="_blank" rel="noopener">Diseño y desarrollo · Daniel Corpas</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<a href="https://wa.me/34679777247" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', e => {
+      const parentLi = a.parentElement;
+      const isDropdownTrigger = parentLi.classList.contains('nav-dropdown');
+      if (isDropdownTrigger && window.innerWidth <= 768) {
+        e.preventDefault();
+        const isOpen = parentLi.classList.toggle('open');
+        parentLi.querySelector('.nav-dropdown-menu').style.display = isOpen ? 'block' : 'none';
+      } else {
+        document.getElementById('navLinks').classList.remove('open');
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          d.classList.remove('open');
+          const m = d.querySelector('.nav-dropdown-menu');
+          if (m) m.style.display = '';
+        });
+      }
+    });
+  });
+
+  let lang = localStorage.getItem('lang') || 'es';
+  const langDropdown = document.getElementById('langDropdown');
+  const langBtn      = document.getElementById('langBtn');
+  const langCurrent  = document.getElementById('langCurrent');
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    langCurrent.textContent = l.toUpperCase();
+    langBtn.setAttribute('aria-expanded', 'false');
+    document.documentElement.lang = l;
+    document.querySelectorAll('#langMenu li').forEach(li =>
+      li.classList.toggle('active', li.dataset.lang === l)
+    );
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const val = el.getAttribute('data-' + l) || el.getAttribute('data-es');
+      if (val) el.textContent = val;
+    });
+  }
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langDropdown.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('#langMenu li').forEach(li => {
+    li.addEventListener('click', () => { applyLang(li.dataset.lang); langDropdown.classList.remove('open'); });
+  });
+  document.addEventListener('click', () => {
+    langDropdown.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  applyLang(lang);
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => { const b = document.getElementById('cookieBanner'); if (b) b.classList.add('show'); }, 900);
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    const b = document.getElementById('cookieBanner');
+    if (b) b.classList.remove('show');
+  }
+</script>
+
+<!-- ════════ COOKIE BANNER ════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    <span data-es="Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas todas o solo las esenciales. " data-en="We use our own and third-party cookies to improve your experience. You can accept all or only essential ones. " data-fr="Nous utilisons des cookies propres et tiers pour améliorer votre expérience. Vous pouvez accepter tous ou seulement les essentiels. ">Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas todas o solo las esenciales. </span>
+    <a href="cookies.html" data-es="Más información" data-en="Learn more" data-fr="En savoir plus">Más información</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-all" onclick="acceptCookies('all')" data-es="Aceptar todas" data-en="Accept all" data-fr="Tout accepter">Aceptar todas</button>
+    <button class="cookie-btn-ess" onclick="acceptCookies('essential')" data-es="Solo esenciales" data-en="Essential only" data-fr="Essentielles seulement">Solo esenciales</button>
+  </div>
+</div>
+
+</body>
+</html>

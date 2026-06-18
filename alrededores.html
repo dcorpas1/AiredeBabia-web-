@@ -233,7 +233,7 @@
     .page-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(10,20,8,0.85) 0%, rgba(10,20,8,0.3) 60%, rgba(10,20,8,0.2) 100%);
+      background: linear-gradient(to bottom, rgba(10,20,8,0.72) 0%, rgba(10,20,8,0.15) 40%, rgba(10,20,8,0.75) 100%);
     }
     .page-hero-content {
       position: relative;
@@ -301,6 +301,8 @@
     .place-card-dark .place-body h3 i { color: var(--gold-light); }
     .place-card-dark .place-dist { color: var(--gold-light); background: rgba(196,168,87,0.15); border-color: rgba(196,168,87,0.32); }
     .place-card-dark .place-text { color: rgba(255,255,255,0.65); }
+    .place-card-dark-link { display: block; text-decoration: none; color: inherit; }
+    .place-card-dark-link .place-card-dark { height: 100%; }
 
     /* ── CTA ───────────────────────────────────────────────── */
     .act-cta {
@@ -393,6 +395,20 @@
       .act-cta  { padding: 36px 22px; }
     }
 
+    /* ── CULTURA Y GASTRONOMÍA ────────────────────────────── */
+    #cultura { padding: 90px 0 110px; background: var(--white); }
+    .place-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 50px; }
+    .place-card-link { display: block; text-decoration: none; color: inherit; }
+    .place-card-link .place-card { height: 100%; }
+    .place-link-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-top: 18px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--gold);
+    }
+    .place-link-badge i { transition: transform var(--T); }
+    .place-card-link:hover .place-link-badge i { transform: translateX(4px); }
+    @media (max-width: 768px) { .place-grid-2 { grid-template-columns: 1fr; } }
+
     /* ── COOKIE BANNER ─────────────────────────────────────── */
     .cookie-banner {
       position: fixed;
@@ -440,6 +456,14 @@
     <a href="index.html" class="nav-logo">Aire de Babia</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#alojamiento" data-es="Los alojamientos" data-en="Our Stays" data-fr="Les hébergements">Los alojamientos <i class="fa-solid fa-chevron-down nav-caret"></i></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="index.html#alojamiento" data-es="Casa Oso" data-en="Casa Oso" data-fr="Casa Oso"><i class="fa-solid fa-house"></i> Casa Oso</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Urogallo" data-en="Casa Urogallo" data-fr="Casa Urogallo"><i class="fa-solid fa-house"></i> Casa Urogallo</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña"><i class="fa-solid fa-house"></i> Casa Cigüeña</a></li>
+        </ul>
+      </li>
       <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
       <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
       <li class="nav-dropdown">
@@ -448,9 +472,10 @@
           <li><a href="index.html#entorno" data-es="Entorno" data-en="Surroundings" data-fr="Environs"><i class="fa-solid fa-mountain-sun"></i> Entorno</a></li>
           <li><a href="actividades.html" data-es="Actividades" data-en="Activities" data-fr="Activités"><i class="fa-solid fa-person-hiking"></i> Actividades</a></li>
           <li><a href="alrededores.html" class="active" data-es="Alrededores" data-en="Around" data-fr="Aux alentours"><i class="fa-solid fa-map"></i> Alrededores</a></li>
+          <li><a href="rutas.html" data-es="Rutas" data-en="Routes" data-fr="Itinéraires"><i class="fa-solid fa-route"></i> Rutas</a></li>
         </ul>
       </li>
-      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+      <li><a href="index.html#calendario" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-dropdown" id="langDropdown">
@@ -483,6 +508,71 @@
     </div>
   </div>
 </div>
+
+<!-- ════════ CULTURA Y GASTRONOMÍA ════════ -->
+<section id="cultura">
+  <div class="container">
+    <span class="label" data-es="Cultura y gastronomía" data-en="Culture & gastronomy" data-fr="Culture et gastronomie">Cultura y gastronomía</span>
+    <h2 class="title" data-es="Planes para conocer la comarca" data-en="Activities to discover the area" data-fr="Activités pour découvrir la région">Planes para conocer la comarca</h2>
+    <p class="body-text" data-es="Cuatro paradas que cuentan la historia viva de Laciana: del carbón a la cerveza artesana." data-en="Four stops that tell the living story of Laciana: from coal to craft beer." data-fr="Quatre étapes qui racontent l'histoire vivante de Laciana : du charbon à la bière artisanale.">Cuatro paradas que cuentan la historia viva de Laciana: del carbón a la cerveza artesana.</p>
+
+    <div class="place-grid-2">
+
+      <!-- Fábrica de Cerveza 1720 -->
+      <a href="https://www.docesetenta.com/" target="_blank" rel="noopener" class="place-card-link reveal">
+        <div class="place-card">
+          <div class="place-img" style="background-image:url('img/actividades/fabrica1270.jpg');"></div>
+          <div class="place-body">
+            <h3><i class="fa-solid fa-beer-mug-empty"></i> <span data-es="Fábrica de Cerveza 1720" data-en="1720 Craft Brewery" data-fr="Brasserie 1720">Fábrica de Cerveza 1720</span></h3>
+            <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="13 km · 14 min desde la casa" data-en="13 km · 14 min from the house" data-fr="13 km · 14 min depuis la maison">13 km · 14 min desde la casa</span></span>
+            <p class="place-text" data-es="Cervecería artesanal que elabora sus cervezas con el agua pura de la sierra de Babia. Una visita a su sala de elaboración y una cata es una de las mejores formas de conocer Laciana desde otro ángulo." data-en="Craft brewery that produces its beers using pure spring water from the Babia mountains. A tour of their brewing room and a tasting is one of the best ways to discover Laciana from a different angle." data-fr="Brasserie artisanale qui élabore ses bières avec l'eau pure de la sierra de Babia. Une visite de leur salle de brassage et une dégustation est l'une des meilleures façons de découvrir Laciana sous un angle différent.">Cervecería artesanal que elabora sus cervezas con el agua pura de la sierra de Babia. Una visita a su sala de elaboración y una cata es una de las mejores formas de conocer Laciana desde otro ángulo.</p>
+            <span class="place-link-badge"><span data-es="Ver web" data-en="Visit website" data-fr="Voir le site">Ver web</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Centro de Interpretación del Urogallo -->
+      <a href="https://www.turismocastillayleon.com/es/naturaleza/centro-urogallo" target="_blank" rel="noopener" class="place-card-link reveal">
+        <div class="place-card">
+          <div class="place-img" style="background-image:url('img/actividades/centrodeinterpretacion.jpg');"></div>
+          <div class="place-body">
+            <h3><i class="fa-solid fa-dove"></i> <span data-es="Centro de Interpretación del Urogallo" data-en="Capercaillie Interpretation Centre" data-fr="Centre d'Interprétation du Grand Tétras">Centro de Interpretación del Urogallo</span></h3>
+            <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="25 km · 30 min desde la casa" data-en="25 km · 30 min from the house" data-fr="25 km · 30 min depuis la maison">25 km · 30 min desde la casa</span></span>
+            <p class="place-text" data-es="Espacio dedicado al urogallo cantábrico, el ave más emblemática y amenazada de la cordillera. Paneles, maquetas y guías explican el frágil ecosistema de hayedos y robledales que rodea Babia." data-en="A space dedicated to the Cantabrian capercaillie, the most emblematic and endangered bird in the mountain range. Panels, models and guides explain the fragile ecosystem of beech and oak forests surrounding Babia." data-fr="Un espace dédié au grand tétras cantabrique, l'oiseau le plus emblématique et menacé de la cordillère. Panneaux, maquettes et guides expliquent le fragile écosystème de hêtraies et chênaies qui entoure Babia.">Espacio dedicado al urogallo cantábrico, el ave más emblemática y amenazada de la cordillera. Paneles, maquetas y guías explican el frágil ecosistema de hayedos y robledales que rodea Babia.</p>
+            <span class="place-link-badge"><span data-es="Ver web" data-en="Visit website" data-fr="Voir le site">Ver web</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Lechería La Popular -->
+      <a href="https://lecherialapopular.es/" target="_blank" rel="noopener" class="place-card-link reveal">
+        <div class="place-card">
+          <div class="place-img" style="background-image:url('img/actividades/lecherialapopular.jpeg');"></div>
+          <div class="place-body">
+            <h3><i class="fa-solid fa-cheese"></i> <span data-es="Lechería La Popular" data-en="La Popular Dairy" data-fr="Laiterie La Popular">Lechería La Popular</span></h3>
+            <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="13 km · 14 min desde la casa" data-en="13 km · 14 min from the house" data-fr="13 km · 14 min depuis la maison">13 km · 14 min desde la casa</span></span>
+            <p class="place-text" data-es="Lechería con historia en Laciana que elabora quesos y productos lácteos artesanos con leche de las vacas de la comarca. Un imprescindible para los amantes del queso de montaña." data-en="A dairy with history in Laciana that produces artisanal cheeses and dairy products using milk from local cows. A must for lovers of mountain cheese." data-fr="Une laiterie avec de l'histoire en Laciana, produisant des fromages et produits laitiers artisanaux avec le lait des vaches locales. Un incontournable pour les amateurs de fromage de montagne.">Lechería con historia en Laciana que elabora quesos y productos lácteos artesanos con leche de las vacas de la comarca. Un imprescindible para los amantes del queso de montaña.</p>
+            <span class="place-link-badge"><span data-es="Ver web" data-en="Visit website" data-fr="Voir le site">Ver web</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Pozo minero María -->
+      <a href="https://turisleon.com/lugares/pozo-minero-maria-de-caboalles-de-abajo/" target="_blank" rel="noopener" class="place-card-link reveal">
+        <div class="place-card">
+          <div class="place-img" style="background-image:url('img/actividades/pozomineromaria.webp');"></div>
+          <div class="place-body">
+            <h3><i class="fa-solid fa-helmet-safety"></i> <span data-es="Pozo minero María" data-en="María Mining Shaft" data-fr="Puits minier María">Pozo minero María</span></h3>
+            <span class="place-dist"><i class="fa-solid fa-car"></i> <span data-es="13 km · 14 min desde la casa" data-en="13 km · 14 min from the house" data-fr="13 km · 14 min depuis la maison">13 km · 14 min desde la casa</span></span>
+            <p class="place-text" data-es="Antiguo pozo minero en proceso de recuperación como espacio cultural dedicado a la memoria del carbón y a los mineros que dieron forma a Laciana durante el siglo XX. Un símbolo de la historia industrial del valle." data-en="A former mining shaft being converted into a cultural space dedicated to the memory of coal and the miners who shaped Laciana throughout the 20th century. A symbol of the valley's industrial history." data-fr="Un ancien puits minier en cours de reconversion en espace culturel dédié à la mémoire du charbon et aux mineurs qui ont façonné Laciana au XXe siècle. Un symbole de l'histoire industrielle de la vallée.">Antiguo pozo minero en proceso de recuperación como espacio cultural dedicado a la memoria del carbón y a los mineros que dieron forma a Laciana durante el siglo XX. Un símbolo de la historia industrial del valle.</p>
+            <span class="place-link-badge"><span data-es="Ver web" data-en="Visit website" data-fr="Voir le site">Ver web</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <!-- ════════ PUEBLOS CON ENCANTO ════════ -->
 <section id="pueblos">
@@ -576,9 +666,12 @@
       </div>
 
     </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <div class="act-cta reveal">
+<section style="background:var(--green);padding:64px 0 90px">
+  <div class="container">
+    <div class="act-cta reveal" style="margin-top:0">
       <h2 data-es="¿Listo para explorar Babia?" data-en="Ready to explore Babia?" data-fr="Prêt à explorer Babia ?">¿Listo para explorar Babia?</h2>
       <p data-es="Te contamos en persona los mejores rincones, rutas y secretos de la zona." data-en="We'll happily share in person the best spots, routes and local secrets." data-fr="Nous vous partagerons en personne les meilleurs coins, itinéraires et secrets de la région.">Te contamos en persona los mejores rincones, rutas y secretos de la zona.</p>
       <div class="cta-btns">
@@ -586,7 +679,7 @@
           <i class="fa-brands fa-whatsapp"></i>
           <span data-es="WhatsApp" data-en="WhatsApp" data-fr="WhatsApp">WhatsApp</span>
         </a>
-        <a href="index.html#reservas" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
+        <a href="index.html#calendario" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
       </div>
     </div>
   </div>
@@ -602,7 +695,7 @@
         <a href="index.html#galeria"   data-es="Galería"      data-en="Gallery"     data-fr="Galerie">Galería</a>
         <a href="actividades.html"     data-es="Actividades"  data-en="Activities"  data-fr="Activités">Actividades</a>
         <a href="alrededores.html"     data-es="Alrededores"  data-en="Around"      data-fr="Aux alentours">Alrededores</a>
-        <a href="index.html#reservas"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="index.html#calendario"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
         <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
       </div>
     </div>

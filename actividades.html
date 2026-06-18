@@ -476,6 +476,14 @@
     <a href="index.html" class="nav-logo">Aire de Babia</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html#nosotros"  data-es="La Casona"   data-en="About"        data-fr="La Propriété">La Casona</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#alojamiento" data-es="Los alojamientos" data-en="Our Stays" data-fr="Les hébergements">Los alojamientos <i class="fa-solid fa-chevron-down nav-caret"></i></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="index.html#alojamiento" data-es="Casa Oso" data-en="Casa Oso" data-fr="Casa Oso"><i class="fa-solid fa-house"></i> Casa Oso</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Urogallo" data-en="Casa Urogallo" data-fr="Casa Urogallo"><i class="fa-solid fa-house"></i> Casa Urogallo</a></li>
+          <li><a href="index.html#alojamiento" data-es="Casa Cigüeña" data-en="Casa Cigüeña" data-fr="Casa Cigüeña"><i class="fa-solid fa-house"></i> Casa Cigüeña</a></li>
+        </ul>
+      </li>
       <li><a href="index.html#servicios" data-es="Servicios"   data-en="Amenities"    data-fr="Services">Servicios</a></li>
       <li><a href="index.html#galeria"   data-es="Galería"     data-en="Gallery"      data-fr="Galerie">Galería</a></li>
       <li class="nav-dropdown">
@@ -484,9 +492,10 @@
           <li><a href="index.html#entorno" data-es="Entorno" data-en="Surroundings" data-fr="Environs"><i class="fa-solid fa-mountain-sun"></i> Entorno</a></li>
           <li><a href="actividades.html" class="active" data-es="Actividades" data-en="Activities" data-fr="Activités"><i class="fa-solid fa-person-hiking"></i> Actividades</a></li>
           <li><a href="alrededores.html" data-es="Alrededores" data-en="Around" data-fr="Aux alentours"><i class="fa-solid fa-map"></i> Alrededores</a></li>
+          <li><a href="rutas.html" data-es="Rutas" data-en="Routes" data-fr="Itinéraires"><i class="fa-solid fa-route"></i> Rutas</a></li>
         </ul>
       </li>
-      <li><a href="index.html#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+      <li><a href="index.html#calendario" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-dropdown" id="langDropdown">
@@ -528,7 +537,7 @@
     <p class="body-text" data-es="Babia atesora tres regalos naturales e históricos que la distinguen de cualquier otro destino rural en España." data-en="Babia holds three natural and historical gifts that set it apart from any other rural destination in Spain." data-fr="Babia recèle trois trésors naturels et historiques qui la distinguent de toute autre destination rurale en Espagne.">Babia atesora tres regalos naturales e históricos que la distinguen de cualquier otro destino rural en España.</p>
 
     <div class="feat-grid">
-      <div class="feat-card reveal">
+      <div class="feat-card reveal" id="astro">
         <div class="feat-card-img" style="background-image:url('img/actividades/Captura de pantalla 2026-05-25 123005.png'); background-position: center 45%;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-moon"></i>
@@ -538,8 +547,8 @@
           <span class="tag" data-es="Cielo sin contaminación lumínica" data-en="Unpolluted skies" data-fr="Ciel sans pollution lumineuse">Cielo sin contaminación lumínica</span>
         </div>
       </div>
-      <div class="feat-card reveal">
-        <div class="feat-card-img" style="background-image:url('img/naturaleza/Gemini_Generated_Image_tmaoggtmaoggtmao.jpg'); background-position: center 60%;"></div>
+      <div class="feat-card reveal" id="fauna">
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/oso.png'); background-position: center 60%;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-paw"></i>
           <h3 data-es="Fauna salvaje cantábrica" data-en="Cantabrian wildlife" data-fr="Faune sauvage cantabrique">Fauna salvaje cantábrica</h3>
@@ -548,7 +557,7 @@
           <span class="tag" data-es="Fauna protegida" data-en="Protected wildlife" data-fr="Faune protégée">Fauna protegida</span>
         </div>
       </div>
-      <div class="feat-card reveal">
+      <div class="feat-card reveal" id="patrimonio">
         <div class="feat-card-img" style="background-image:url('img/actividades/El origen del dicho «estar en Babia».png'); background-position: center 25%;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-crown"></i>
@@ -569,7 +578,7 @@
 
     <div class="feat-grid">
 
-      <div class="feat-card reveal">
+      <div class="feat-card reveal" id="senderismo">
         <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_8251.jpg'); background-position: center 40%;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-person-hiking"></i>
@@ -591,7 +600,7 @@
         </div>
       </div>
 
-      <div class="feat-card reveal">
+      <div class="feat-card reveal" id="esqui">
         <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_7206.jpg'); background-position: center;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-snowflake"></i>
@@ -614,7 +623,7 @@
       </div>
 
       <div class="feat-card reveal">
-        <div class="feat-card-img" style="background-image:url('img/naturaleza/dffff.png'); background-position: center;"></div>
+        <div class="feat-card-img" style="background-image:url('img/naturaleza/caballos.jpg'); background-position: center;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-horse"></i>
           <h3 data-es="Rutas a caballo" data-en="Horse riding" data-fr="Randonnée équestre">Rutas a caballo</h3>
@@ -624,7 +633,7 @@
         </div>
       </div>
 
-      <div class="feat-card reveal">
+      <div class="feat-card reveal" id="lagos">
         <div class="feat-card-img" style="background-image:url('img/naturaleza/IMG_7709.jpg'); background-position: center;"></div>
         <div class="feat-card-body">
           <i class="fa-solid fa-water"></i>
@@ -712,7 +721,7 @@
           <i class="fa-brands fa-whatsapp"></i>
           <span data-es="WhatsApp" data-en="WhatsApp" data-fr="WhatsApp">WhatsApp</span>
         </a>
-        <a href="index.html#reservas" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
+        <a href="index.html#calendario" class="btn btn-gold" data-es="Ver cómo reservar" data-en="How to book" data-fr="Comment réserver">Ver cómo reservar</a>
       </div>
     </div>
   </div>
@@ -728,7 +737,7 @@
         <a href="index.html#galeria"   data-es="Galería"      data-en="Gallery"     data-fr="Galerie">Galería</a>
         <a href="actividades.html"     data-es="Actividades"  data-en="Activities"  data-fr="Activités">Actividades</a>
         <a href="alrededores.html"     data-es="Alrededores"  data-en="Around"      data-fr="Aux alentours">Alrededores</a>
-        <a href="index.html#reservas"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
+        <a href="index.html#calendario"  data-es="Reservar"     data-en="Book"        data-fr="Réserver">Reservar</a>
         <a href="mailto:info@airedebabia.es">info@airedebabia.es</a>
       </div>
     </div>

@@ -449,6 +449,9 @@
     .e-card i { font-size: 1.7rem; color: var(--green-mid); margin-bottom: 16px; display: block; }
     .e-card h3 { font-size: 1.1rem; color: var(--green); margin-bottom: 10px; }
     .e-card p  { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+    a.e-card { text-decoration: none; color: inherit; display: block; transition: border-top-color var(--T); }
+    a.e-card:hover { border-top-color: var(--green); }
+    a.e-card:hover h3 { color: var(--gold); }
 
     /* ── CONTACT ──────────────────────────────────────────────── */
     #reservas { padding: 110px 0; background: #EDE8E1; }
@@ -909,9 +912,10 @@
           <li><a href="#entorno" data-es="Entorno" data-en="Surroundings" data-fr="Environs"><i class="fa-solid fa-mountain-sun"></i> Entorno</a></li>
           <li><a href="actividades.html" data-es="Actividades" data-en="Activities" data-fr="Activités"><i class="fa-solid fa-person-hiking"></i> Actividades</a></li>
           <li><a href="alrededores.html" data-es="Alrededores" data-en="Around" data-fr="Aux alentours"><i class="fa-solid fa-map"></i> Alrededores</a></li>
+          <li><a href="rutas.html" data-es="Rutas" data-en="Routes" data-fr="Itinéraires"><i class="fa-solid fa-route"></i> Rutas</a></li>
         </ul>
       </li>
-      <li><a href="#reservas" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
+      <li><a href="#calendario" class="nav-cta" data-es="Reservar" data-en="Book" data-fr="Réserver">Reservar</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-dropdown" id="langDropdown">
@@ -942,7 +946,7 @@
     <p class="hero-tagline" data-es="Respira diferente." data-en="Breathe differently." data-fr="Respirez différemment.">Respira diferente.</p>
     <div class="hero-btns">
       <a href="#alojamiento" class="btn btn-ghost" data-es="Ver los alojamientos" data-en="Explore the accommodations" data-fr="Voir les hébergements">Ver los alojamientos</a>
-      <a href="#reservas"    class="btn btn-gold"  data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</a>
+      <a href="#calendario"    class="btn btn-gold"  data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</a>
     </div>
   </div>
   <div class="hero-arrow"><i class="fa-solid fa-chevron-down"></i></div>
@@ -990,7 +994,7 @@
         </p>
       </div>
       <div class="about-img-wrap reveal">
-        <img loading="lazy" decoding="async" src="img/casas/Gemini_Generated_Image_nl1ak5nl1ak5nl1a.jpg" alt="Casona de piedra centenaria de Aire de Babia" style="object-position: center 35%;">
+        <img loading="lazy" decoding="async" src="img/casas/casabonita.webp" alt="Casona de piedra centenaria de Aire de Babia" style="object-position: center 35%;">
         <div class="about-img-accent"></div>
       </div>
     </div>
@@ -1407,36 +1411,36 @@
       <p class="body-text" data-es="La Comarca de Babia es uno de los rincones más salvajes y auténticos de la Península Ibérica. Tierra de reyes, lobos y cielos sin fin." data-en="The Babia region is one of the wildest and most authentic corners of the Iberian Peninsula. Land of kings, wolves and endless skies." data-fr="La région de Babia est l'un des coins les plus sauvages et authentiques de la péninsule ibérique. Terre de rois, de loups et de ciels sans fin.">La Comarca de Babia es uno de los rincones más salvajes y auténticos de la Península Ibérica. Tierra de reyes, lobos y cielos sin fin.</p>
     </div>
     <div class="entorno-grid">
-      <div class="e-card reveal">
+      <a href="actividades.html#senderismo" class="e-card reveal">
         <i class="fa-solid fa-person-hiking"></i>
         <h3 data-es="Senderismo" data-en="Hiking" data-fr="Randonnée">Senderismo</h3>
         <p data-es="Rutas para todos los niveles: paseos fluviales junto al Río Luna, ascensiones a cumbres de más de 2.000 m y senderos entre pueblos medievales." data-en="Trails for all levels: riverside walks along the Río Luna, ascents to peaks over 2,000 m and paths between medieval villages." data-fr="Des sentiers pour tous les niveaux : promenades le long du Río Luna, ascensions à des sommets de plus de 2 000 m et chemins entre villages médiévaux.">Rutas para todos los niveles: paseos fluviales junto al Río Luna, ascensiones a cumbres de más de 2.000 m y senderos entre pueblos medievales.</p>
-      </div>
-      <div class="e-card reveal">
+      </a>
+      <a href="actividades.html#fauna" class="e-card reveal">
         <i class="fa-solid fa-otter"></i>
         <h3 data-es="Fauna salvaje" data-en="Wildlife" data-fr="Faune sauvage">Fauna salvaje</h3>
         <p data-es="Avistamiento de oso pardo cantábrico, lobo ibérico, urogallo y cigüeña negra en su hábitat natural. Un espectáculo único en Europa." data-en="Spot Cantabrian brown bears, Iberian wolves, capercaillies and black storks in their natural habitat. A unique spectacle in Europe." data-fr="Observation de l'ours brun cantabrique, du loup ibérique, du grand tétras et de la cigogne noire dans leur habitat naturel. Un spectacle unique en Europe.">Avistamiento de oso pardo cantábrico, lobo ibérico, urogallo y cigüeña negra en su hábitat natural. Un espectáculo único en Europa.</p>
-      </div>
-      <div class="e-card reveal">
+      </a>
+      <a href="actividades.html#lagos" class="e-card reveal">
         <i class="fa-solid fa-water"></i>
         <h3 data-es="Lagos y ríos" data-en="Lakes and rivers" data-fr="Lacs et rivières">Lagos y ríos</h3>
         <p data-es="A 30 minutos, los lagos glaciares del Parque Natural de Somiedo. Pesca en el Río Luna, kayak en los embalses y baño en aguas cristalinas." data-en="30 minutes away, the glacial lakes of Somiedo Natural Park. Fishing on the Río Luna, kayaking on reservoirs and swimming in crystal-clear waters." data-fr="À 30 minutes, les lacs glaciaires du Parc Naturel de Somiedo. Pêche sur le Río Luna, kayak sur les réservoirs et baignade en eaux cristallines.">A 30 minutos, los lagos glaciares del Parque Natural de Somiedo. Pesca en el Río Luna, kayak en los embalses y baño en aguas cristalinas.</p>
-      </div>
-      <div class="e-card reveal">
+      </a>
+      <a href="actividades.html#esqui" class="e-card reveal">
         <i class="fa-solid fa-snowflake"></i>
         <h3 data-es="Esquí en Leitariegos" data-en="Skiing at Leitariegos" data-fr="Ski à Leitariegos">Esquí en Leitariegos</h3>
         <p data-es="La estación de Leitariegos, a solo 20 minutos, ofrece pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son sencillamente de cuento." data-en="Leitariegos ski resort, just 20 minutes away, offers alpine slopes, cross-country skiing and snowshoeing. Winters in Babia are simply fairy-tale material." data-fr="La station de Leitariegos, à seulement 20 minutes, propose des pistes alpines, du ski de fond et des raquettes à neige. Les hivers à Babia sont tout simplement magiques.">La estación de Leitariegos, a solo 20 minutos, ofrece pistas alpinas, esquí de fondo y raquetas de nieve. Los inviernos en Babia son sencillamente de cuento.</p>
-      </div>
-      <div class="e-card reveal">
+      </a>
+      <a href="actividades.html#astro" class="e-card reveal">
         <i class="fa-solid fa-moon"></i>
         <h3 data-es="Cielo estrellado" data-en="Starry skies" data-fr="Ciel étoilé">Cielo estrellado</h3>
         <p data-es="Babia tiene una de las contaminaciones lumínicas más bajas de España. Aquí, la Vía Láctea se ve a simple vista. Noche tras noche." data-en="Babia has one of the lowest light pollution levels in Spain. Here, the Milky Way is visible to the naked eye. Night after night." data-fr="Babia possède l'une des pollutions lumineuses les plus faibles d'Espagne. Ici, la Voie lactée est visible à l'œil nu. Nuit après nuit.">Babia tiene una de las contaminaciones lumínicas más bajas de España. Aquí, la Vía Láctea se ve a simple vista. Noche tras noche.</p>
-      </div>
-      <div class="e-card reveal">
+      </a>
+      <a href="actividades.html#patrimonio" class="e-card reveal">
         <i class="fa-solid fa-church"></i>
         <h3 data-es="Patrimonio" data-en="Heritage" data-fr="Patrimoine">Patrimonio</h3>
         <p data-es="Iglesias románicas, pueblos medievales y el origen del dicho «estar en Babia»: los reyes de León eligieron este valle como su retiro de caza y descanso." data-en="Romanesque churches, medieval villages and the origin of the saying «estar en Babia»: the kings of León chose this valley as their royal hunting and resting retreat." data-fr="Églises romanes, villages médiévaux et l'origine de l'expression «estar en Babia» : les rois de León choisirent cette vallée comme retraite royale de chasse et de repos.">Iglesias románicas, pueblos medievales y el origen del dicho «estar en Babia»: los reyes de León eligieron este valle como su retiro de caza y descanso.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1460,7 +1464,7 @@
       <div class="cal-overlay">
         <i class="fa-regular fa-calendar-xmark cal-overlay-icon"></i>
         <p class="cal-overlay-title" data-es="Reservas próximamente" data-en="Bookings coming soon" data-fr="Réservations bientôt disponibles">Reservas próximamente</p>
-        <p class="cal-overlay-sub"><span data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del " data-en="While we finalize the details, you can check availability through the " data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le ">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del </span><a href="#reservas" data-es="formulario" data-en="form" data-fr="formulaire">formulario</a>.</p>
+        <p class="cal-overlay-sub"><span data-es="Mientras ultimamos los detalles puedes consultar la disponibilidad a través del " data-en="While we finalize the details, you can check availability through the " data-fr="En attendant de finaliser les détails, vous pouvez vérifier la disponibilité via le ">Mientras ultimamos los detalles puedes consultar la disponibilidad a través del </span><a href="#calendario" data-es="formulario" data-en="form" data-fr="formulaire">formulario</a>.</p>
       </div>
       <div class="cal-nav">
         <button class="cal-nav-btn" onclick="calNav(-1)" aria-label="Mes anterior"><i class="fa-solid fa-chevron-left"></i></button>
@@ -1892,7 +1896,6 @@
     const scrolled = window.scrollY;
     nav.classList.toggle('solid', scrolled > 60);
     document.getElementById('backToTop').classList.toggle('visible', scrolled > 500);
-    if (heroBg && scrolled < window.innerHeight) heroBg.style.transform = 'scale(1) translateY(' + (scrolled * 0.25) + 'px)';
   }, { passive: true });
   document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
